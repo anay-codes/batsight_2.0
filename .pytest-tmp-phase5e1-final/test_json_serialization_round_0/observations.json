@@ -1,0 +1,117 @@
+{
+  "schema": "batsight.toa_observation_dataset",
+  "metadata": {
+    "schema_version": "1.0",
+    "observation_model": "uncalibrated_direct_path_toa",
+    "noise_model": "independent_zero_mean_gaussian",
+    "missingness_model": "independent_bernoulli",
+    "timing_noise_std_seconds": 0.001,
+    "missing_probability": 0.25,
+    "random_seed": 55,
+    "length_unit": "metre",
+    "time_unit": "second",
+    "speed_unit": "metre_per_second"
+  },
+  "room": {
+    "dimensions_m": [
+      8.0,
+      7.0,
+      5.0
+    ],
+    "speed_of_sound_m_s": 2.0
+  },
+  "axis_convention": "right-handed Cartesian xyz; room origin at minimum corner",
+  "matrix_axis_order": "[microphone_index, source_index]",
+  "source_positions_m": [
+    [
+      1.0,
+      1.0,
+      1.0
+    ],
+    [
+      2.0,
+      2.0,
+      1.0
+    ]
+  ],
+  "microphone_positions_m": [
+    [
+      3.0,
+      1.0,
+      1.0
+    ],
+    [
+      1.0,
+      4.0,
+      1.0
+    ]
+  ],
+  "source_emission_times_s": [
+    0.2,
+    0.4
+  ],
+  "microphone_clock_offsets_s": [
+    0.01,
+    -0.02
+  ],
+  "true_distances_m": [
+    [
+      2.0,
+      1.4142135623730951
+    ],
+    [
+      3.0,
+      2.23606797749979
+    ]
+  ],
+  "propagation_times_s": [
+    [
+      1.0,
+      0.7071067811865476
+    ],
+    [
+      1.5,
+      1.118033988749895
+    ]
+  ],
+  "ideal_toas_s": [
+    [
+      1.21,
+      1.1171067811865476
+    ],
+    [
+      1.68,
+      1.4980339887498948
+    ]
+  ],
+  "measured_toas_s": [
+    [
+      1.2108422613160907,
+      1.1141306700150377
+    ],
+    [
+      1.6796949761194073,
+      1.4994838766722935
+    ]
+  ],
+  "missing_mask": [
+    [
+      false,
+      false
+    ],
+    [
+      false,
+      false
+    ]
+  ],
+  "timing_noise_s": [
+    [
+      0.0008422613160907126,
+      -0.00297611117150978
+    ],
+    [
+      -0.00030502388059256775,
+      0.0014498879223987968
+    ]
+  ]
+}

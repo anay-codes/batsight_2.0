@@ -1,0 +1,48 @@
+Phase 5C.15 block profiling; exact archived seed-11 data; synthetic only
+
+staged_reference_positive_control
+  timing-only: accepted=True direct=8.12523760959465e-17 echo=1.5505895437889058e-16 xyz=1.3656954478208565e-15 timing={'emission_rmse_s': 2.710505431213761e-20, 'emission_max_abs_s': 5.421010862427522e-20, 'clock_rmse_s': 3.030437198788175e-21, 'clock_max_abs_s': 6.776263578034403e-21} status=1 nfev=1 runtime_s=0.052494199999955526
+  coordinate-only: accepted=True direct=8.12523760959465e-17 echo=1.5505895437889058e-16 xyz=1.3656954478208565e-15 timing={'emission_rmse_s': 2.710505431213761e-20, 'emission_max_abs_s': 5.421010862427522e-20, 'clock_rmse_s': 3.030437198788175e-21, 'clock_max_abs_s': 6.776263578034403e-21} status=1 nfev=1 runtime_s=0.05189850000010665
+  cycle 1: objective=1.80269021e-27 direct=8.1252376e-17 echo=1.5505895e-16 xyz=1.3656954e-15 timing_rmse_e_s=2.7105054e-20 timing_rmse_b_s=3.0304372e-21 accepted=(True,True) assignment_changes=(0,0)
+  stop=objective improvement at or below documented absolute-plus-relative threshold
+
+blind_observation_start_17
+  timing-only: accepted=True direct=0.06424389052149274 echo=0.09423083607036815 xyz=3.342464174609298 timing={'emission_rmse_s': 0.0017164171170876215, 'emission_max_abs_s': 0.004352091300521124, 'clock_rmse_s': 0.006858400512765506, 'clock_max_abs_s': 0.008417358133948649} status=1 nfev=8 runtime_s=0.48658469999986664
+  coordinate-only: accepted=True direct=0.015523139189804625 echo=0.04597422445229792 xyz=1.7310217095930192 timing={'emission_rmse_s': 0.00040251520812957097, 'emission_max_abs_s': 0.0008838592885714874, 'clock_rmse_s': 0.00032124932127726707, 'clock_max_abs_s': 0.0005431007716387588} status=4 nfev=67 runtime_s=2.6689060999999583
+  cycle 1: objective=239.193877 direct=0.024248877 echo=0.058976442 xyz=3.2799654 timing_rmse_e_s=0.0017164171 timing_rmse_b_s=0.0068584005 accepted=(True,True) assignment_changes=(0,57)
+  cycle 2: objective=185.763734 direct=0.020621021 echo=0.05227528 xyz=3.0387979 timing_rmse_e_s=0.00137354 timing_rmse_b_s=0.0068219605 accepted=(True,True) assignment_changes=(0,44)
+  cycle 3: objective=170.427183 direct=0.020554643 echo=0.049746567 xyz=3.0037434 timing_rmse_e_s=0.0010736724 timing_rmse_b_s=0.0068591752 accepted=(True,True) assignment_changes=(0,10)
+  cycle 4: objective=166.610705 direct=0.020564229 echo=0.049086126 xyz=2.9948016 timing_rmse_e_s=0.00093140372 timing_rmse_b_s=0.0068237349 accepted=(True,True) assignment_changes=(0,0)
+  cycle 5: objective=165.268443 direct=0.020332602 echo=0.04895 xyz=2.9926496 timing_rmse_e_s=0.00087727338 timing_rmse_b_s=0.0068204227 accepted=(True,True) assignment_changes=(0,5)
+  cycle 6: objective=153.778282 direct=0.019560542 echo=0.047239526 xyz=2.9304312 timing_rmse_e_s=0.0008318424 timing_rmse_b_s=0.0068029273 accepted=(True,True) assignment_changes=(0,11)
+  cycle 7: objective=153.485822 direct=0.019559895 echo=0.047187143 xyz=2.9303649 timing_rmse_e_s=0.00079743769 timing_rmse_b_s=0.0067822039 accepted=(True,True) assignment_changes=(0,0)
+  cycle 8: objective=153.420531 direct=0.019562036 echo=0.047174492 xyz=2.9304746 timing_rmse_e_s=0.00078431337 timing_rmse_b_s=0.0067737607 accepted=(True,True) assignment_changes=(0,1)
+  stop=maximum alternating cycles reached
+
+blind_observation_start_29
+  timing-only: accepted=True direct=0.05804753239172363 echo=0.10449182932124401 xyz=3.8144546408568 timing={'emission_rmse_s': 0.0026989047161114083, 'emission_max_abs_s': 0.0060020483119517, 'clock_rmse_s': 0.005924542511173163, 'clock_max_abs_s': 0.009675982500740395} status=1 nfev=7 runtime_s=0.37454470000011497
+  coordinate-only: accepted=True direct=0.01518609336804247 echo=0.03919937939754387 xyz=2.1202583886601682 timing={'emission_rmse_s': 0.00040251520812957097, 'emission_max_abs_s': 0.0008838592885714874, 'clock_rmse_s': 0.00032124932127726707, 'clock_max_abs_s': 0.0005431007716387588} status=3 nfev=60 runtime_s=2.0785910999998123
+  cycle 1: objective=207.956311 direct=0.026222395 echo=0.053362767 xyz=3.1520013 timing_rmse_e_s=0.0026989047 timing_rmse_b_s=0.0059245425 accepted=(True,True) assignment_changes=(0,61)
+  cycle 2: objective=188.181753 direct=0.027126461 echo=0.049630557 xyz=3.109291 timing_rmse_e_s=0.0022717575 timing_rmse_b_s=0.005816148 accepted=(True,True) assignment_changes=(0,9)
+  cycle 3: objective=187.090838 direct=0.028123446 echo=0.048883162 xyz=3.109291 timing_rmse_e_s=0.0021943771 timing_rmse_b_s=0.0057460146 accepted=(True,True) assignment_changes=(0,1)
+  cycle 4: objective=187.090837 direct=0.028123446 echo=0.048883162 xyz=3.109291 timing_rmse_e_s=0.0021943771 timing_rmse_b_s=0.0057460146 accepted=(True,True) assignment_changes=(0,0)
+  cycle 5: objective=187.090837 direct=0.028123446 echo=0.048883162 xyz=3.109291 timing_rmse_e_s=0.0021943771 timing_rmse_b_s=0.0057460146 accepted=(True,True) assignment_changes=(0,1)
+  cycle 6: objective=187.090837 direct=0.028123446 echo=0.048883162 xyz=3.109291 timing_rmse_e_s=0.0021943771 timing_rmse_b_s=0.0057460146 accepted=(True,True) assignment_changes=(0,0)
+  cycle 7: objective=187.090837 direct=0.028123446 echo=0.048883162 xyz=3.109291 timing_rmse_e_s=0.0021943771 timing_rmse_b_s=0.0057460146 accepted=(True,True) assignment_changes=(0,1)
+  cycle 8: objective=187.090837 direct=0.028123446 echo=0.048883162 xyz=3.109291 timing_rmse_e_s=0.0021943771 timing_rmse_b_s=0.0057460146 accepted=(True,True) assignment_changes=(0,1)
+  stop=maximum alternating cycles reached
+
+blind_observation_start_41
+  timing-only: accepted=True direct=0.051989205617066256 echo=0.0854313939686228 xyz=3.497380104729836 timing={'emission_rmse_s': 0.002101844007750854, 'emission_max_abs_s': 0.0032963519699118924, 'clock_rmse_s': 0.004229238999854294, 'clock_max_abs_s': 0.00631494928820655} status=1 nfev=7 runtime_s=0.36625640000011117
+  coordinate-only: accepted=True direct=0.02059989908169803 echo=0.0569292820961501 xyz=2.442536728246215 timing={'emission_rmse_s': 0.00040251520812957097, 'emission_max_abs_s': 0.0008838592885714874, 'clock_rmse_s': 0.00032124932127726707, 'clock_max_abs_s': 0.0005431007716387588} status=0 nfev=80 runtime_s=3.8884465000001
+  cycle 1: objective=273.449884 direct=0.026551134 echo=0.062798158 xyz=3.3990669 timing_rmse_e_s=0.002101844 timing_rmse_b_s=0.004229239 accepted=(True,True) assignment_changes=(0,62)
+  cycle 2: objective=226.259338 direct=0.024674382 echo=0.056899211 xyz=3.2553958 timing_rmse_e_s=0.0021146896 timing_rmse_b_s=0.0035590617 accepted=(True,True) assignment_changes=(0,15)
+  cycle 3: objective=219.98533 direct=0.024201874 echo=0.056160112 xyz=3.2280874 timing_rmse_e_s=0.0022109305 timing_rmse_b_s=0.0032126107 accepted=(True,True) assignment_changes=(0,1)
+  cycle 4: objective=219.628692 direct=0.024124237 echo=0.056139534 xyz=3.2279276 timing_rmse_e_s=0.0022412091 timing_rmse_b_s=0.0030783833 accepted=(True,True) assignment_changes=(0,0)
+  cycle 5: objective=219.164726 direct=0.024078499 echo=0.0560889 xyz=3.2193791 timing_rmse_e_s=0.0022412526 timing_rmse_b_s=0.0030773237 accepted=(True,True) assignment_changes=(0,0)
+  cycle 6: objective=218.302982 direct=0.023941442 echo=0.056016933 xyz=3.2057259 timing_rmse_e_s=0.0022439046 timing_rmse_b_s=0.0030266039 accepted=(True,True) assignment_changes=(0,1)
+  cycle 7: objective=218.175792 direct=0.023843137 echo=0.056039558 xyz=3.2055079 timing_rmse_e_s=0.0022472273 timing_rmse_b_s=0.0029597662 accepted=(True,True) assignment_changes=(0,0)
+  cycle 8: objective=218.152246 direct=0.023840977 echo=0.056036906 xyz=3.2050264 timing_rmse_e_s=0.0022472362 timing_rmse_b_s=0.002958398 accepted=(True,True) assignment_changes=(0,0)
+  stop=maximum alternating cycles reached
+
+results_json=C:\Users\ch3ugy\Documents\ChatGPT\Batsight\experiments\exploratory\phase5c15_results.json

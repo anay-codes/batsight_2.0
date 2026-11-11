@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0",
+  "coordinate_frame": "corner_origin_x_length_y_width_z_height",
+  "position_unit": "m",
+  "time_unit": "s",
+  "time_reference": "example-only shared acquisition epoch",
+  "sample_rate_hz": 48000,
+  "speed_of_sound_m_s": 343.0,
+  "synchronization": {
+    "status": "synchronized",
+    "evidence_description": "EXAMPLE ONLY: replace with the actual shared-clock method and evidence"
+  },
+  "microphones": [
+    { "microphone_id": "mic-01", "position_m": [0.5, 0.5, 1.2] },
+    { "microphone_id": "mic-02", "position_m": [1.0, 0.5, 1.2] }
+  ],
+  "events": [
+    {
+      "event_id": "event-01",
+      "source_id": "source-01",
+      "position_m": [2.0, 1.5, 1.4],
+      "emission_time_s": 10.0,
+      "reference_signal": {
+        "waveform": "linear_sweep",
+        "duration_s": 0.02,
+        "start_frequency_hz": 700,
+        "end_frequency_hz": 12000,
+        "amplitude": 0.8
+      }
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="430" viewBox="0 0 760 430">
+<rect width="100%" height="100%" fill="white"/>
+<text x="380" y="32" text-anchor="middle" font-family="sans-serif" font-size="20">dEchorate annotation match scores</text>
+<text x="20" y="230" transform="rotate(-90 20 230)" text-anchor="middle" font-family="sans-serif" font-size="14">Score (0–1)</text>
+<line x1="100" y1="70" x2="100" y2="350" stroke="#444"/>
+<line x1="100" y1="350" x2="730" y2="350" stroke="#444"/>
+<line x1="100" y1="350.0" x2="730" y2="350.0" stroke="#eee"/>
+<text x="86" y="354.0" text-anchor="end" font-family="sans-serif" font-size="11">0.0</text>
+<line x1="100" y1="294.0" x2="730" y2="294.0" stroke="#eee"/>
+<text x="86" y="298.0" text-anchor="end" font-family="sans-serif" font-size="11">0.2</text>
+<line x1="100" y1="238.0" x2="730" y2="238.0" stroke="#eee"/>
+<text x="86" y="242.0" text-anchor="end" font-family="sans-serif" font-size="11">0.4</text>
+<line x1="100" y1="182.0" x2="730" y2="182.0" stroke="#eee"/>
+<text x="86" y="186.0" text-anchor="end" font-family="sans-serif" font-size="11">0.6</text>
+<line x1="100" y1="126.0" x2="730" y2="126.0" stroke="#eee"/>
+<text x="86" y="130.0" text-anchor="end" font-family="sans-serif" font-size="11">0.8</text>
+<line x1="100" y1="70.0" x2="730" y2="70.0" stroke="#eee"/>
+<text x="86" y="74.0" text-anchor="end" font-family="sans-serif" font-size="11">1.0</text>
+<rect x="125" y="70.00" width="115" height="280.00" fill="#17834b"/>
+<text x="182.5" y="62.00" text-anchor="middle" font-family="sans-serif" font-size="12">1.000</text>
+<text x="182.5" y="374" text-anchor="middle" font-family="sans-serif" font-size="11">Direct precision</text>
+<rect x="270" y="70.00" width="115" height="280.00" fill="#44a16e"/>
+<text x="327.5" y="62.00" text-anchor="middle" font-family="sans-serif" font-size="12">1.000</text>
+<text x="327.5" y="374" text-anchor="middle" font-family="sans-serif" font-size="11">Direct recall</text>
+<rect x="415" y="334.24" width="115" height="15.76" fill="#d47716"/>
+<text x="472.5" y="326.24" text-anchor="middle" font-family="sans-serif" font-size="12">0.056</text>
+<text x="472.5" y="374" text-anchor="middle" font-family="sans-serif" font-size="11">Echo precision</text>
+<rect x="560" y="70.00" width="115" height="280.00" fill="#e7ac48"/>
+<text x="617.5" y="62.00" text-anchor="middle" font-family="sans-serif" font-size="12">1.000</text>
+<text x="617.5" y="374" text-anchor="middle" font-family="sans-serif" font-size="11">Echo recall</text>
+<text x="380" y="407" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#555">Imported real multichannel RIR; one source, five microphones</text></svg>

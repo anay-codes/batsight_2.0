@@ -1,0 +1,15 @@
+exact_reference forward_fd direct=8.12524e-17 echo=1.55059e-16 coord=1.3657e-15 rank=83 cond=332.9 status=1 nfev=1 sec=0.04957 exact=True
+exact_reference analytic direct=8.12524e-17 echo=1.55059e-16 coord=1.3657e-15 rank=83 cond=332.9 status=1 nfev=1 sec=0.06374 exact=True
+generating_PCA_wall forward_fd direct=0.00231638 echo=0.0079543 coord=0.383099 rank=83 cond=370.3 status=2 nfev=24 sec=1.16 exact=False
+generating_PCA_wall analytic direct=0.00118583 echo=0.00416331 coord=0.105313 rank=83 cond=346.6 status=2 nfev=27 sec=1.691 exact=False
+competing_PCA_wall forward_fd direct=0.001318 echo=0.00424038 coord=0.118322 rank=83 cond=344.9 status=2 nfev=39 sec=1.663 exact=False
+competing_PCA_wall analytic direct=0.00118268 echo=0.00416524 coord=0.105468 rank=83 cond=346.4 status=2 nfev=47 sec=2.713 exact=False
+perturb_1e-08_seed_1301 forward_fd direct=1.78437e-17 echo=9.51808e-17 coord=4.1682e-15 rank=83 cond=332.9 status=1 nfev=3 sec=0.156 exact=True
+perturb_1e-08_seed_1301 analytic direct=2.80299e-17 echo=1.80557e-16 coord=4.44755e-15 rank=83 cond=332.9 status=1 nfev=2 sec=0.1341 exact=True
+perturb_1e-06_seed_1302 forward_fd direct=1.60282e-17 echo=9.84408e-17 coord=4.21545e-15 rank=83 cond=332.9 status=1 nfev=3 sec=0.161 exact=True
+perturb_1e-06_seed_1302 analytic direct=1.77587e-17 echo=1.12168e-16 coord=3.87159e-15 rank=83 cond=332.9 status=1 nfev=3 sec=0.1996 exact=True
+perturb_0.0001_seed_1303 forward_fd direct=1.55716e-17 echo=1.01618e-16 coord=4.33745e-15 rank=83 cond=332.9 status=1 nfev=4 sec=0.2219 exact=True
+perturb_0.0001_seed_1303 analytic direct=1.00054e-16 echo=4.47019e-16 coord=4.47818e-15 rank=83 cond=332.9 status=1 nfev=3 sec=0.1941 exact=True
+perturb_0.001_seed_1304 forward_fd direct=1.63548e-17 echo=9.60111e-17 coord=3.64333e-15 rank=83 cond=332.9 status=1 nfev=4 sec=0.2084 exact=True
+perturb_0.001_seed_1304 analytic direct=1.62869e-17 echo=1.06999e-16 coord=3.90275e-15 rank=83 cond=332.9 status=1 nfev=4 sec=0.2765 exact=True
+basin runs=36; derivative cases=4; output=C:\Users\ch3ugy\Documents\ChatGPT\Batsight\experiments\exploratory\phase5c12_results.json

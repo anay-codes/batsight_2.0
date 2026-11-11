@@ -1,0 +1,4240 @@
+{
+  "title": "Phase 5D.3 deterministic unlabeled first-order echo association",
+  "synthetic_only": true,
+  "ground_truth_labels_passed_to_estimator": false,
+  "association_method": "per-microphone/event augmented Hungarian matching alternating with the unchanged Phase 5D.2 bounded dimension fit",
+  "cases": [
+    {
+      "case": "complete_room_a",
+      "seed": 21,
+      "noise_standard_deviation_s": 0.0,
+      "requested_missing_rate": 0.0,
+      "possible_first_order_paths": 72,
+      "input_echoes": 72,
+      "usable_echoes": 72,
+      "dimensions_truth_evaluation_only_m": [
+        4.0,
+        3.8,
+        3.3
+      ],
+      "estimated_dimensions_m": [
+        4.000000000005341,
+        3.8,
+        3.2999999999999927
+      ],
+      "absolute_dimension_error_m": [
+        5.340616837656853e-12,
+        0.0,
+        7.105427357601002e-15
+      ],
+      "max_absolute_dimension_error_m": 5.340616837656853e-12,
+      "association_accuracy_excluding_reported_ambiguous_pairs": 1.0,
+      "association_accuracy_all_detected_true_echoes": 1.0,
+      "ambiguous_echo_count": 54,
+      "ambiguous_echo_ids": [
+        "m0/event-0/echo-000",
+        "m0/event-0/echo-001",
+        "m0/event-0/echo-002",
+        "m0/event-0/echo-003",
+        "m0/event-0/echo-004",
+        "m0/event-0/echo-005",
+        "m0/event-1/echo-024",
+        "m0/event-1/echo-025",
+        "m0/event-1/echo-026",
+        "m0/event-1/echo-028",
+        "m0/event-1/echo-029",
+        "m0/event-2/echo-048",
+        "m0/event-2/echo-049",
+        "m0/event-2/echo-050",
+        "m0/event-2/echo-052",
+        "m0/event-2/echo-053",
+        "m1/event-0/echo-007",
+        "m1/event-0/echo-008",
+        "m1/event-0/echo-009",
+        "m1/event-0/echo-010",
+        "m1/event-0/echo-011",
+        "m1/event-1/echo-031",
+        "m1/event-1/echo-032",
+        "m1/event-1/echo-033",
+        "m1/event-1/echo-035",
+        "m1/event-2/echo-054",
+        "m1/event-2/echo-055",
+        "m1/event-2/echo-056",
+        "m1/event-2/echo-057",
+        "m1/event-2/echo-059",
+        "m2/event-0/echo-013",
+        "m2/event-0/echo-015",
+        "m2/event-0/echo-016",
+        "m2/event-0/echo-017",
+        "m2/event-1/echo-036",
+        "m2/event-1/echo-037",
+        "m2/event-1/echo-039",
+        "m2/event-1/echo-040",
+        "m2/event-1/echo-041",
+        "m2/event-2/echo-060",
+        "m2/event-2/echo-061",
+        "m2/event-2/echo-062",
+        "m2/event-2/echo-063",
+        "m2/event-2/echo-064",
+        "m2/event-2/echo-065",
+        "m3/event-0/echo-019",
+        "m3/event-0/echo-020",
+        "m3/event-0/echo-022",
+        "m3/event-0/echo-023",
+        "m3/event-1/echo-043",
+        "m3/event-1/echo-045",
+        "m3/event-1/echo-047",
+        "m3/event-2/echo-067",
+        "m3/event-2/echo-071"
+      ],
+      "unassigned_echo_ids": [],
+      "false_detection_count": 0,
+      "false_detections_assigned_to_walls": 0,
+      "wrongly_assigned_true_echoes": 0,
+      "false_association_count": 0,
+      "false_association_rate_among_assignments": 0.0,
+      "omitted_true_echoes": [],
+      "unmatched_detected_true_echo_count": 0,
+      "unassigned_detected_false_echo_count": 0,
+      "missed_predicted_path_count": 0,
+      "missed_predicted_paths": [],
+      "inferred_associations": [
+        {
+          "microphone_id": "m0",
+          "event_id": "event-0",
+          "echo_id": "m0/event-0/echo-000",
+          "inferred_wall_id": "x_min",
+          "observed_time_s": 0.024768214834086408,
+          "predicted_time_s": 0.024768214834086408,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m0",
+          "event_id": "event-0",
+          "echo_id": "m0/event-0/echo-001",
+          "inferred_wall_id": "x_max",
+          "observed_time_s": 0.02627678664337644,
+          "predicted_time_s": 0.02627678664340378,
+          "residual_s": -2.7342711428346433e-14,
+          "assignment_cost": 4.205384258927775e-22
+        },
+        {
+          "microphone_id": "m0",
+          "event_id": "event-0",
+          "echo_id": "m0/event-0/echo-002",
+          "inferred_wall_id": "y_min",
+          "observed_time_s": 0.025057840044640636,
+          "predicted_time_s": 0.025057840044640636,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m0",
+          "event_id": "event-0",
+          "echo_id": "m0/event-0/echo-003",
+          "inferred_wall_id": "y_max",
+          "observed_time_s": 0.026905916071328535,
+          "predicted_time_s": 0.026905916071328535,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m0",
+          "event_id": "event-0",
+          "echo_id": "m0/event-0/echo-004",
+          "inferred_wall_id": "z_min",
+          "observed_time_s": 0.02433480804740885,
+          "predicted_time_s": 0.02433480804740885,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m0",
+          "event_id": "event-0",
+          "echo_id": "m0/event-0/echo-005",
+          "inferred_wall_id": "z_max",
+          "observed_time_s": 0.02603662171103291,
+          "predicted_time_s": 0.02603662171103288,
+          "residual_s": 2.7755575615628914e-17,
+          "assignment_cost": 4.333342374871281e-28
+        },
+        {
+          "microphone_id": "m0",
+          "event_id": "event-1",
+          "echo_id": "m0/event-1/echo-024",
+          "inferred_wall_id": "x_min",
+          "observed_time_s": 0.046489248102179616,
+          "predicted_time_s": 0.046489248102179616,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m0",
+          "event_id": "event-1",
+          "echo_id": "m0/event-1/echo-025",
+          "inferred_wall_id": "x_max",
+          "observed_time_s": 0.05007319644864206,
+          "predicted_time_s": 0.05007319644867037,
+          "residual_s": -2.8310687127941492e-14,
+          "assignment_cost": 4.50840940681608e-22
+        },
+        {
+          "microphone_id": "m0",
+          "event_id": "event-1",
+          "echo_id": "m0/event-1/echo-026",
+          "inferred_wall_id": "y_min",
+          "observed_time_s": 0.04737265024718539,
+          "predicted_time_s": 0.04737265024718539,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m0",
+          "event_id": "event-1",
+          "echo_id": "m0/event-1/echo-027",
+          "inferred_wall_id": "y_max",
+          "observed_time_s": 0.04837617463201687,
+          "predicted_time_s": 0.04837617463201687,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m0",
+          "event_id": "event-1",
+          "echo_id": "m0/event-1/echo-028",
+          "inferred_wall_id": "z_min",
+          "observed_time_s": 0.04561240508641475,
+          "predicted_time_s": 0.04561240508641475,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m0",
+          "event_id": "event-1",
+          "echo_id": "m0/event-1/echo-029",
+          "inferred_wall_id": "z_max",
+          "observed_time_s": 0.05036362930175557,
+          "predicted_time_s": 0.05036362930175553,
+          "residual_s": 4.163336342344337e-17,
+          "assignment_cost": 9.750020343460382e-28
+        },
+        {
+          "microphone_id": "m0",
+          "event_id": "event-2",
+          "echo_id": "m0/event-2/echo-048",
+          "inferred_wall_id": "x_min",
+          "observed_time_s": 0.07118416216279301,
+          "predicted_time_s": 0.07118416216279301,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m0",
+          "event_id": "event-2",
+          "echo_id": "m0/event-2/echo-049",
+          "inferred_wall_id": "x_max",
+          "observed_time_s": 0.07118416216279301,
+          "predicted_time_s": 0.07118416216282056,
+          "residual_s": -2.7547408798511697e-14,
+          "assignment_cost": 4.268585989756798e-22
+        },
+        {
+          "microphone_id": "m0",
+          "event_id": "event-2",
+          "echo_id": "m0/event-2/echo-050",
+          "inferred_wall_id": "y_min",
+          "observed_time_s": 0.07049569620509437,
+          "predicted_time_s": 0.07049569620509437,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m0",
+          "event_id": "event-2",
+          "echo_id": "m0/event-2/echo-051",
+          "inferred_wall_id": "y_max",
+          "observed_time_s": 0.0752702078362914,
+          "predicted_time_s": 0.0752702078362914,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m0",
+          "event_id": "event-2",
+          "echo_id": "m0/event-2/echo-052",
+          "inferred_wall_id": "z_min",
+          "observed_time_s": 0.07080477624256429,
+          "predicted_time_s": 0.07080477624256429,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m0",
+          "event_id": "event-2",
+          "echo_id": "m0/event-2/echo-053",
+          "inferred_wall_id": "z_max",
+          "observed_time_s": 0.07123563785751155,
+          "predicted_time_s": 0.07123563785751152,
+          "residual_s": 2.7755575615628914e-17,
+          "assignment_cost": 4.333342374871281e-28
+        },
+        {
+          "microphone_id": "m1",
+          "event_id": "event-0",
+          "echo_id": "m1/event-0/echo-006",
+          "inferred_wall_id": "x_min",
+          "observed_time_s": 0.027207931610198223,
+          "predicted_time_s": 0.027207931610198223,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m1",
+          "event_id": "event-0",
+          "echo_id": "m1/event-0/echo-007",
+          "inferred_wall_id": "x_max",
+          "observed_time_s": 0.022434711468322613,
+          "predicted_time_s": 0.022434711468349584,
+          "residual_s": -2.6971480604487397e-14,
+          "assignment_cost": 4.091966808740099e-22
+        },
+        {
+          "microphone_id": "m1",
+          "event_id": "event-0",
+          "echo_id": "m1/event-0/echo-008",
+          "inferred_wall_id": "y_min",
+          "observed_time_s": 0.023400125245491052,
+          "predicted_time_s": 0.023400125245491052,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m1",
+          "event_id": "event-0",
+          "echo_id": "m1/event-0/echo-009",
+          "inferred_wall_id": "y_max",
+          "observed_time_s": 0.02448208433154965,
+          "predicted_time_s": 0.02448208433154965,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m1",
+          "event_id": "event-0",
+          "echo_id": "m1/event-0/echo-010",
+          "inferred_wall_id": "z_min",
+          "observed_time_s": 0.024094733826642296,
+          "predicted_time_s": 0.024094733826642296,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m1",
+          "event_id": "event-0",
+          "echo_id": "m1/event-0/echo-011",
+          "inferred_wall_id": "z_max",
+          "observed_time_s": 0.02261240508641475,
+          "predicted_time_s": 0.022612405086414714,
+          "residual_s": 3.469446951953614e-17,
+          "assignment_cost": 6.770847460736376e-28
+        },
+        {
+          "microphone_id": "m1",
+          "event_id": "event-1",
+          "echo_id": "m1/event-1/echo-030",
+          "inferred_wall_id": "x_min",
+          "observed_time_s": 0.04913317742686977,
+          "predicted_time_s": 0.04913317742686977,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m1",
+          "event_id": "event-1",
+          "echo_id": "m1/event-1/echo-031",
+          "inferred_wall_id": "x_max",
+          "observed_time_s": 0.04647814558893851,
+          "predicted_time_s": 0.04647814558896619,
+          "residual_s": -2.7679247782685934e-14,
+          "assignment_cost": 4.309541762711199e-22
+        },
+        {
+          "microphone_id": "m1",
+          "event_id": "event-1",
+          "echo_id": "m1/event-1/echo-032",
+          "inferred_wall_id": "y_min",
+          "observed_time_s": 0.04638893585109307,
+          "predicted_time_s": 0.04638893585109307,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m1",
+          "event_id": "event-1",
+          "echo_id": "m1/event-1/echo-033",
+          "inferred_wall_id": "y_max",
+          "observed_time_s": 0.04638893585109307,
+          "predicted_time_s": 0.04638893585109307,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m1",
+          "event_id": "event-1",
+          "echo_id": "m1/event-1/echo-034",
+          "inferred_wall_id": "z_min",
+          "observed_time_s": 0.045291173524619706,
+          "predicted_time_s": 0.045291173524619706,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m1",
+          "event_id": "event-1",
+          "echo_id": "m1/event-1/echo-035",
+          "inferred_wall_id": "z_max",
+          "observed_time_s": 0.04727955666976834,
+          "predicted_time_s": 0.0472795566697683,
+          "residual_s": 4.163336342344337e-17,
+          "assignment_cost": 9.750020343460382e-28
+        },
+        {
+          "microphone_id": "m1",
+          "event_id": "event-2",
+          "echo_id": "m1/event-2/echo-054",
+          "inferred_wall_id": "x_min",
+          "observed_time_s": 0.07371642212471552,
+          "predicted_time_s": 0.07371642212471552,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m1",
+          "event_id": "event-2",
+          "echo_id": "m1/event-2/echo-055",
+          "inferred_wall_id": "x_max",
+          "observed_time_s": 0.06715470464612687,
+          "predicted_time_s": 0.06715470464615464,
+          "residual_s": -2.7769453403436728e-14,
+          "assignment_cost": 4.337676800581746e-22
+        },
+        {
+          "microphone_id": "m1",
+          "event_id": "event-2",
+          "echo_id": "m1/event-2/echo-056",
+          "inferred_wall_id": "y_min",
+          "observed_time_s": 0.0681748853449651,
+          "predicted_time_s": 0.0681748853449651,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m1",
+          "event_id": "event-2",
+          "echo_id": "m1/event-2/echo-057",
+          "inferred_wall_id": "y_max",
+          "observed_time_s": 0.072825868379115,
+          "predicted_time_s": 0.072825868379115,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m1",
+          "event_id": "event-2",
+          "echo_id": "m1/event-2/echo-058",
+          "inferred_wall_id": "z_min",
+          "observed_time_s": 0.07056691665437452,
+          "predicted_time_s": 0.07056691665437452,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m1",
+          "event_id": "event-2",
+          "echo_id": "m1/event-2/echo-059",
+          "inferred_wall_id": "z_max",
+          "observed_time_s": 0.0675188499809414,
+          "predicted_time_s": 0.06751884998094136,
+          "residual_s": 4.163336342344337e-17,
+          "assignment_cost": 9.750020343460382e-28
+        },
+        {
+          "microphone_id": "m2",
+          "event_id": "event-0",
+          "echo_id": "m2/event-0/echo-012",
+          "inferred_wall_id": "x_min",
+          "observed_time_s": 0.025067600484556835,
+          "predicted_time_s": 0.025067600484556835,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m2",
+          "event_id": "event-0",
+          "echo_id": "m2/event-0/echo-013",
+          "inferred_wall_id": "x_max",
+          "observed_time_s": 0.023400125245491052,
+          "predicted_time_s": 0.023400125245520518,
+          "residual_s": -2.9466012962942045e-14,
+          "assignment_cost": 4.883883299619011e-22
+        },
+        {
+          "microphone_id": "m2",
+          "event_id": "event-0",
+          "echo_id": "m2/event-0/echo-014",
+          "inferred_wall_id": "y_min",
+          "observed_time_s": 0.02745189504373178,
+          "predicted_time_s": 0.02745189504373178,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m2",
+          "event_id": "event-0",
+          "echo_id": "m2/event-0/echo-015",
+          "inferred_wall_id": "y_max",
+          "observed_time_s": 0.022467243773187314,
+          "predicted_time_s": 0.022467243773187314,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m2",
+          "event_id": "event-0",
+          "echo_id": "m2/event-0/echo-016",
+          "inferred_wall_id": "z_min",
+          "observed_time_s": 0.022912517359890906,
+          "predicted_time_s": 0.022912517359890906,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m2",
+          "event_id": "event-0",
+          "echo_id": "m2/event-0/echo-017",
+          "inferred_wall_id": "z_max",
+          "observed_time_s": 0.023415027376356787,
+          "predicted_time_s": 0.023415027376356753,
+          "residual_s": 3.469446951953614e-17,
+          "assignment_cost": 6.770847460736376e-28
+        },
+        {
+          "microphone_id": "m2",
+          "event_id": "event-1",
+          "echo_id": "m2/event-1/echo-036",
+          "inferred_wall_id": "x_min",
+          "observed_time_s": 0.0465960243739658,
+          "predicted_time_s": 0.0465960243739658,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m2",
+          "event_id": "event-1",
+          "echo_id": "m2/event-1/echo-037",
+          "inferred_wall_id": "x_max",
+          "observed_time_s": 0.04716830131469925,
+          "predicted_time_s": 0.047168301314729835,
+          "residual_s": -3.058664432842306e-14,
+          "assignment_cost": 5.262428313413183e-22
+        },
+        {
+          "microphone_id": "m2",
+          "event_id": "event-1",
+          "echo_id": "m2/event-1/echo-038",
+          "inferred_wall_id": "y_min",
+          "observed_time_s": 0.05028875871968151,
+          "predicted_time_s": 0.05028875871968151,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m2",
+          "event_id": "event-1",
+          "echo_id": "m2/event-1/echo-039",
+          "inferred_wall_id": "y_max",
+          "observed_time_s": 0.04387179245172183,
+          "predicted_time_s": 0.04387179245172183,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m2",
+          "event_id": "event-1",
+          "echo_id": "m2/event-1/echo-040",
+          "inferred_wall_id": "z_min",
+          "observed_time_s": 0.04367806184614415,
+          "predicted_time_s": 0.04367806184614415,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m2",
+          "event_id": "event-1",
+          "echo_id": "m2/event-1/echo-041",
+          "inferred_wall_id": "z_max",
+          "observed_time_s": 0.04784785104170887,
+          "predicted_time_s": 0.04784785104170883,
+          "residual_s": 4.163336342344337e-17,
+          "assignment_cost": 9.750020343460382e-28
+        },
+        {
+          "microphone_id": "m2",
+          "event_id": "event-2",
+          "echo_id": "m2/event-2/echo-060",
+          "inferred_wall_id": "x_min",
+          "observed_time_s": 0.07213317742686975,
+          "predicted_time_s": 0.07213317742686975,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m2",
+          "event_id": "event-2",
+          "echo_id": "m2/event-2/echo-061",
+          "inferred_wall_id": "x_max",
+          "observed_time_s": 0.06886959293428993,
+          "predicted_time_s": 0.06886959293431834,
+          "residual_s": -2.8407831642596193e-14,
+          "assignment_cost": 4.5394025548167535e-22
+        },
+        {
+          "microphone_id": "m2",
+          "event_id": "event-2",
+          "echo_id": "m2/event-2/echo-062",
+          "inferred_wall_id": "y_min",
+          "observed_time_s": 0.0722529522584027,
+          "predicted_time_s": 0.0722529522584027,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m2",
+          "event_id": "event-2",
+          "echo_id": "m2/event-2/echo-063",
+          "inferred_wall_id": "y_max",
+          "observed_time_s": 0.07082136059900643,
+          "predicted_time_s": 0.07082136059900643,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m2",
+          "event_id": "event-2",
+          "echo_id": "m2/event-2/echo-064",
+          "inferred_wall_id": "z_min",
+          "observed_time_s": 0.07008418762452635,
+          "predicted_time_s": 0.07008418762452635,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m2",
+          "event_id": "event-2",
+          "echo_id": "m2/event-2/echo-065",
+          "inferred_wall_id": "z_max",
+          "observed_time_s": 0.06911701222445342,
+          "predicted_time_s": 0.06911701222445338,
+          "residual_s": 4.163336342344337e-17,
+          "assignment_cost": 9.750020343460382e-28
+        },
+        {
+          "microphone_id": "m3",
+          "event_id": "event-0",
+          "echo_id": "m3/event-0/echo-018",
+          "inferred_wall_id": "x_min",
+          "observed_time_s": 0.0285463132637466,
+          "predicted_time_s": 0.0285463132637466,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m3",
+          "event_id": "event-0",
+          "echo_id": "m3/event-0/echo-019",
+          "inferred_wall_id": "x_max",
+          "observed_time_s": 0.019495603575616586,
+          "predicted_time_s": 0.019495603575645656,
+          "residual_s": -2.9070496010419333e-14,
+          "assignment_cost": 4.753652277891411e-22
+        },
+        {
+          "microphone_id": "m3",
+          "event_id": "event-0",
+          "echo_id": "m3/event-0/echo-020",
+          "inferred_wall_id": "y_min",
+          "observed_time_s": 0.024671320007055818,
+          "predicted_time_s": 0.024671320007055818,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m3",
+          "event_id": "event-0",
+          "echo_id": "m3/event-0/echo-021",
+          "inferred_wall_id": "y_max",
+          "observed_time_s": 0.021796091904613086,
+          "predicted_time_s": 0.021796091904613086,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m3",
+          "event_id": "event-0",
+          "echo_id": "m3/event-0/echo-022",
+          "inferred_wall_id": "z_min",
+          "observed_time_s": 0.024644459733062063,
+          "predicted_time_s": 0.024644459733062063,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m3",
+          "event_id": "event-0",
+          "echo_id": "m3/event-0/echo-023",
+          "inferred_wall_id": "z_max",
+          "observed_time_s": 0.019674895965649086,
+          "predicted_time_s": 0.019674895965649048,
+          "residual_s": 3.8163916471489756e-17,
+          "assignment_cost": 8.192725427491015e-28
+        },
+        {
+          "microphone_id": "m3",
+          "event_id": "event-1",
+          "echo_id": "m3/event-1/echo-042",
+          "inferred_wall_id": "x_min",
+          "observed_time_s": 0.05056425401170746,
+          "predicted_time_s": 0.05056425401170746,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m3",
+          "event_id": "event-1",
+          "echo_id": "m3/event-1/echo-043",
+          "inferred_wall_id": "x_max",
+          "observed_time_s": 0.04389093334226059,
+          "predicted_time_s": 0.04389093334228918,
+          "residual_s": -2.859518177800169e-14,
+          "assignment_cost": 4.599474867657899e-22
+        },
+        {
+          "microphone_id": "m3",
+          "event_id": "event-1",
+          "echo_id": "m3/event-1/echo-044",
+          "inferred_wall_id": "y_min",
+          "observed_time_s": 0.04821314191676346,
+          "predicted_time_s": 0.04821314191676346,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m3",
+          "event_id": "event-1",
+          "echo_id": "m3/event-1/echo-045",
+          "inferred_wall_id": "y_max",
+          "observed_time_s": 0.04417325523180891,
+          "predicted_time_s": 0.04417325523180891,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m3",
+          "event_id": "event-1",
+          "echo_id": "m3/event-1/echo-046",
+          "inferred_wall_id": "z_min",
+          "observed_time_s": 0.0457120542687311,
+          "predicted_time_s": 0.0457120542687311,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m3",
+          "event_id": "event-1",
+          "echo_id": "m3/event-1/echo-047",
+          "inferred_wall_id": "z_max",
+          "observed_time_s": 0.044607730060223956,
+          "predicted_time_s": 0.044607730060223914,
+          "residual_s": 4.163336342344337e-17,
+          "assignment_cost": 9.750020343460382e-28
+        },
+        {
+          "microphone_id": "m3",
+          "event_id": "event-2",
+          "echo_id": "m3/event-2/echo-066",
+          "inferred_wall_id": "x_min",
+          "observed_time_s": 0.07527266850565437,
+          "predicted_time_s": 0.07527266850565437,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m3",
+          "event_id": "event-2",
+          "echo_id": "m3/event-2/echo-067",
+          "inferred_wall_id": "x_max",
+          "observed_time_s": 0.06432054909290927,
+          "predicted_time_s": 0.06432054909293942,
+          "residual_s": -3.0156432906380815e-14,
+          "assignment_cost": 5.115433756708393e-22
+        },
+        {
+          "microphone_id": "m3",
+          "event_id": "event-2",
+          "echo_id": "m3/event-2/echo-068",
+          "inferred_wall_id": "y_min",
+          "observed_time_s": 0.0689164112109907,
+          "predicted_time_s": 0.0689164112109907,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m3",
+          "event_id": "event-2",
+          "echo_id": "m3/event-2/echo-069",
+          "inferred_wall_id": "y_max",
+          "observed_time_s": 0.07004191045368127,
+          "predicted_time_s": 0.07004191045368127,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m3",
+          "event_id": "event-2",
+          "echo_id": "m3/event-2/echo-070",
+          "inferred_wall_id": "z_min",
+          "observed_time_s": 0.07139205140274735,
+          "predicted_time_s": 0.07139205140274735,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m3",
+          "event_id": "event-2",
+          "echo_id": "m3/event-2/echo-071",
+          "inferred_wall_id": "z_max",
+          "observed_time_s": 0.0646864985079765,
+          "predicted_time_s": 0.06468649850797646,
+          "residual_s": 4.163336342344337e-17,
+          "assignment_cost": 9.750020343460382e-28
+        }
+      ],
+      "dimension_fit_status": "converged",
+      "dimension_optimizer_success": true,
+      "dimension_optimizer_status": 1,
+      "dimension_optimizer_message": "`gtol` termination condition is satisfied.",
+      "dimension_function_evaluations": 1,
+      "dimension_fit_objective": 4.8778612221233644e-27,
+      "toa_residual_statistics_s": {
+        "mean_signed": -4.742348489214818e-15,
+        "mean_absolute": 4.7549734211788716e-15,
+        "rms": 1.1640281141750072e-14,
+        "maximum_absolute": 3.058664432842306e-14
+      },
+      "jacobian_rank": 3,
+      "jacobian_singular_values": [
+        0.018494379204161915,
+        0.018101477351293367,
+        0.017315468683663376
+      ],
+      "jacobian_condition_number": 1.068084239707055,
+      "physical_valid": true,
+      "converged": true,
+      "association_status": "converged",
+      "iteration_count": 11,
+      "runtime_s_external_wallclock": 0.2589354000010644,
+      "runtime_s_reported": 0.25887819999843487,
+      "warnings": [],
+      "iterations": [
+        {
+          "iteration": 0,
+          "dimensions_before_m": [
+            5.2,
+            4.8,
+            4.1
+          ],
+          "dimensions_after_m": [
+            4.827072187769352,
+            4.407400391424147,
+            3.697055948126434
+          ],
+          "matched_count": 55,
+          "unassigned_count": 17,
+          "missed_path_count": 17,
+          "ambiguous_count": 41,
+          "changed_assignments": 55,
+          "association_objective": 406.04496811679195,
+          "dimension_fit_status": "converged"
+        },
+        {
+          "iteration": 1,
+          "dimensions_before_m": [
+            4.827072187769352,
+            4.407400391424147,
+            3.697055948126434
+          ],
+          "dimensions_after_m": [
+            4.590015881440058,
+            4.0366087459445685,
+            3.278588602970879
+          ],
+          "matched_count": 68,
+          "unassigned_count": 4,
+          "missed_path_count": 4,
+          "ambiguous_count": 50,
+          "changed_assignments": 67,
+          "association_objective": 187.36732910370336,
+          "dimension_fit_status": "converged"
+        },
+        {
+          "iteration": 2,
+          "dimensions_before_m": [
+            4.590015881440058,
+            4.0366087459445685,
+            3.278588602970879
+          ],
+          "dimensions_after_m": [
+            4.239219558096533,
+            3.8094968308204975,
+            3.2224429308041773
+          ],
+          "matched_count": 72,
+          "unassigned_count": 0,
+          "missed_path_count": 0,
+          "ambiguous_count": 56,
+          "changed_assignments": 78,
+          "association_objective": 52.91335697631877,
+          "dimension_fit_status": "converged"
+        },
+        {
+          "iteration": 3,
+          "dimensions_before_m": [
+            4.239219558096533,
+            3.8094968308204975,
+            3.2224429308041773
+          ],
+          "dimensions_after_m": [
+            4.106834869769546,
+            3.7908037395349456,
+            3.232357185304005
+          ],
+          "matched_count": 72,
+          "unassigned_count": 0,
+          "missed_path_count": 0,
+          "ambiguous_count": 56,
+          "changed_assignments": 38,
+          "association_objective": 6.288691098132928,
+          "dimension_fit_status": "converged"
+        },
+        {
+          "iteration": 4,
+          "dimensions_before_m": [
+            4.106834869769546,
+            3.7908037395349456,
+            3.232357185304005
+          ],
+          "dimensions_after_m": [
+            4.060982067413841,
+            3.7950469598060637,
+            3.2376183442776023
+          ],
+          "matched_count": 72,
+          "unassigned_count": 0,
+          "missed_path_count": 0,
+          "ambiguous_count": 54,
+          "changed_assignments": 20,
+          "association_objective": 1.2663653018815364,
+          "dimension_fit_status": "converged"
+        },
+        {
+          "iteration": 5,
+          "dimensions_before_m": [
+            4.060982067413841,
+            3.7950469598060637,
+            3.2376183442776023
+          ],
+          "dimensions_after_m": [
+            4.042110881692896,
+            3.795046959806676,
+            3.2595271194821853
+          ],
+          "matched_count": 72,
+          "unassigned_count": 0,
+          "missed_path_count": 0,
+          "ambiguous_count": 54,
+          "changed_assignments": 8,
+          "association_objective": 0.6748684392437216,
+          "dimension_fit_status": "converged"
+        },
+        {
+          "iteration": 6,
+          "dimensions_before_m": [
+            4.042110881692896,
+            3.795046959806676,
+            3.2595271194821853
+          ],
+          "dimensions_after_m": [
+            4.026391749607566,
+            3.8,
+            3.271929268946152
+          ],
+          "matched_count": 72,
+          "unassigned_count": 0,
+          "missed_path_count": 0,
+          "ambiguous_count": 54,
+          "changed_assignments": 8,
+          "association_objective": 0.34982859870127536,
+          "dimension_fit_status": "converged"
+        },
+        {
+          "iteration": 7,
+          "dimensions_before_m": [
+            4.026391749607566,
+            3.8,
+            3.271929268946152
+          ],
+          "dimensions_after_m": [
+            4.01033722690899,
+            3.8,
+            3.2890548438999527
+          ],
+          "matched_count": 72,
+          "unassigned_count": 0,
+          "missed_path_count": 0,
+          "ambiguous_count": 54,
+          "changed_assignments": 12,
+          "association_objective": 0.2019573559402937,
+          "dimension_fit_status": "converged"
+        },
+        {
+          "iteration": 8,
+          "dimensions_before_m": [
+            4.01033722690899,
+            3.8,
+            3.2890548438999527
+          ],
+          "dimensions_after_m": [
+            4.001016532251048,
+            3.8,
+            3.298998589120305
+          ],
+          "matched_count": 72,
+          "unassigned_count": 0,
+          "missed_path_count": 0,
+          "ambiguous_count": 54,
+          "changed_assignments": 12,
+          "association_objective": 0.036240920162089844,
+          "dimension_fit_status": "converged"
+        },
+        {
+          "iteration": 9,
+          "dimensions_before_m": [
+            4.001016532251048,
+            3.8,
+            3.298998589120305
+          ],
+          "dimensions_after_m": [
+            4.000000000005341,
+            3.8,
+            3.2999999999999927
+          ],
+          "matched_count": 72,
+          "unassigned_count": 0,
+          "missed_path_count": 0,
+          "ambiguous_count": 54,
+          "changed_assignments": 8,
+          "association_objective": 0.00036793320178946706,
+          "dimension_fit_status": "converged"
+        },
+        {
+          "iteration": 10,
+          "dimensions_before_m": [
+            4.000000000005341,
+            3.8,
+            3.2999999999999927
+          ],
+          "dimensions_after_m": [
+            4.000000000005341,
+            3.8,
+            3.2999999999999927
+          ],
+          "matched_count": 72,
+          "unassigned_count": 0,
+          "missed_path_count": 0,
+          "ambiguous_count": 54,
+          "changed_assignments": 0,
+          "association_objective": 5.487593874888785e-21,
+          "dimension_fit_status": "converged"
+        }
+      ],
+      "labeled_phase5d2_baseline": {
+        "status": "converged",
+        "estimated_dimensions_m": [
+          4.000000000008676,
+          3.8,
+          3.3000000000000003
+        ],
+        "absolute_dimension_error_m": [
+          8.675726803630823e-12,
+          0.0,
+          4.440892098500626e-16
+        ],
+        "residual_rms_s": 1.8908981029391593e-14,
+        "jacobian_rank": 3,
+        "condition_number": 1.0680842397073909,
+        "used_observations": 72
+      }
+    },
+    {
+      "case": "complete_room_b",
+      "seed": 22,
+      "noise_standard_deviation_s": 0.0,
+      "requested_missing_rate": 0.0,
+      "possible_first_order_paths": 72,
+      "input_echoes": 72,
+      "usable_echoes": 72,
+      "dimensions_truth_evaluation_only_m": [
+        5.6,
+        4.5,
+        3.7
+      ],
+      "estimated_dimensions_m": [
+        5.6,
+        4.499999999999999,
+        3.7
+      ],
+      "absolute_dimension_error_m": [
+        0.0,
+        8.881784197001252e-16,
+        0.0
+      ],
+      "max_absolute_dimension_error_m": 8.881784197001252e-16,
+      "association_accuracy_excluding_reported_ambiguous_pairs": 1.0,
+      "association_accuracy_all_detected_true_echoes": 0.9444444444444444,
+      "ambiguous_echo_count": 33,
+      "ambiguous_echo_ids": [
+        "m0/event-0/echo-000",
+        "m0/event-0/echo-002",
+        "m0/event-0/echo-004",
+        "m0/event-1/echo-024",
+        "m0/event-1/echo-026",
+        "m0/event-1/echo-027",
+        "m0/event-1/echo-028",
+        "m0/event-1/echo-029",
+        "m0/event-2/echo-048",
+        "m0/event-2/echo-050",
+        "m0/event-2/echo-052",
+        "m1/event-0/echo-008",
+        "m1/event-0/echo-010",
+        "m1/event-0/echo-011",
+        "m1/event-1/echo-030",
+        "m1/event-1/echo-035",
+        "m1/event-2/echo-055",
+        "m1/event-2/echo-057",
+        "m2/event-0/echo-012",
+        "m2/event-0/echo-015",
+        "m2/event-0/echo-017",
+        "m2/event-1/echo-038",
+        "m2/event-1/echo-041",
+        "m2/event-2/echo-060",
+        "m2/event-2/echo-062",
+        "m3/event-0/echo-018",
+        "m3/event-0/echo-019",
+        "m3/event-0/echo-020",
+        "m3/event-0/echo-022",
+        "m3/event-1/echo-044",
+        "m3/event-1/echo-045",
+        "m3/event-2/echo-067",
+        "m3/event-2/echo-069"
+      ],
+      "unassigned_echo_ids": [],
+      "false_detection_count": 0,
+      "false_detections_assigned_to_walls": 0,
+      "wrongly_assigned_true_echoes": 4,
+      "false_association_count": 4,
+      "false_association_rate_among_assignments": 0.05555555555555555,
+      "omitted_true_echoes": [],
+      "unmatched_detected_true_echo_count": 0,
+      "unassigned_detected_false_echo_count": 0,
+      "missed_predicted_path_count": 0,
+      "missed_predicted_paths": [],
+      "inferred_associations": [
+        {
+          "microphone_id": "m0",
+          "event_id": "event-0",
+          "echo_id": "m0/event-0/echo-000",
+          "inferred_wall_id": "x_min",
+          "observed_time_s": 0.024768214834086408,
+          "predicted_time_s": 0.024768214834086408,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m0",
+          "event_id": "event-0",
+          "echo_id": "m0/event-0/echo-001",
+          "inferred_wall_id": "x_max",
+          "observed_time_s": 0.03490810644963638,
+          "predicted_time_s": 0.03490810644963638,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m0",
+          "event_id": "event-0",
+          "echo_id": "m0/event-0/echo-002",
+          "inferred_wall_id": "y_min",
+          "observed_time_s": 0.025057840044640636,
+          "predicted_time_s": 0.025057840044640636,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m0",
+          "event_id": "event-0",
+          "echo_id": "m0/event-0/echo-003",
+          "inferred_wall_id": "y_max",
+          "observed_time_s": 0.03040664037045434,
+          "predicted_time_s": 0.03040664037045434,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m0",
+          "event_id": "event-0",
+          "echo_id": "m0/event-0/echo-004",
+          "inferred_wall_id": "z_min",
+          "observed_time_s": 0.02433480804740885,
+          "predicted_time_s": 0.02433480804740885,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m0",
+          "event_id": "event-0",
+          "echo_id": "m0/event-0/echo-005",
+          "inferred_wall_id": "z_max",
+          "observed_time_s": 0.02789923988855508,
+          "predicted_time_s": 0.02789923988855508,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m0",
+          "event_id": "event-1",
+          "echo_id": "m0/event-1/echo-024",
+          "inferred_wall_id": "x_min",
+          "observed_time_s": 0.046489248102179616,
+          "predicted_time_s": 0.046489248102179616,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m0",
+          "event_id": "event-1",
+          "echo_id": "m0/event-1/echo-025",
+          "inferred_wall_id": "x_max",
+          "observed_time_s": 0.05887290506814492,
+          "predicted_time_s": 0.05887290506814492,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m0",
+          "event_id": "event-1",
+          "echo_id": "m0/event-1/echo-026",
+          "inferred_wall_id": "y_min",
+          "observed_time_s": 0.04737265024718539,
+          "predicted_time_s": 0.04737265024718539,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m0",
+          "event_id": "event-1",
+          "echo_id": "m0/event-1/echo-027",
+          "inferred_wall_id": "y_max",
+          "observed_time_s": 0.05205227850249535,
+          "predicted_time_s": 0.052052278502495344,
+          "residual_s": 6.938893903907228e-18,
+          "assignment_cost": 2.7083389842945504e-29
+        },
+        {
+          "microphone_id": "m0",
+          "event_id": "event-1",
+          "echo_id": "m0/event-1/echo-028",
+          "inferred_wall_id": "z_min",
+          "observed_time_s": 0.04561240508641475,
+          "predicted_time_s": 0.04561240508641475,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m0",
+          "event_id": "event-1",
+          "echo_id": "m0/event-1/echo-029",
+          "inferred_wall_id": "z_max",
+          "observed_time_s": 0.05235857218262881,
+          "predicted_time_s": 0.05235857218262881,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m0",
+          "event_id": "event-2",
+          "echo_id": "m0/event-2/echo-048",
+          "inferred_wall_id": "x_min",
+          "observed_time_s": 0.07118416216279301,
+          "predicted_time_s": 0.07118416216279301,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m0",
+          "event_id": "event-2",
+          "echo_id": "m0/event-2/echo-049",
+          "inferred_wall_id": "x_max",
+          "observed_time_s": 0.07987366236956582,
+          "predicted_time_s": 0.07987366236956582,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m0",
+          "event_id": "event-2",
+          "echo_id": "m0/event-2/echo-050",
+          "inferred_wall_id": "y_min",
+          "observed_time_s": 0.07049569620509437,
+          "predicted_time_s": 0.07049569620509437,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m0",
+          "event_id": "event-2",
+          "echo_id": "m0/event-2/echo-051",
+          "inferred_wall_id": "y_max",
+          "observed_time_s": 0.07877348982778257,
+          "predicted_time_s": 0.07877348982778257,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m0",
+          "event_id": "event-2",
+          "echo_id": "m0/event-2/echo-052",
+          "inferred_wall_id": "z_min",
+          "observed_time_s": 0.07080477624256429,
+          "predicted_time_s": 0.07080477624256429,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m0",
+          "event_id": "event-2",
+          "echo_id": "m0/event-2/echo-053",
+          "inferred_wall_id": "z_max",
+          "observed_time_s": 0.07306191411439007,
+          "predicted_time_s": 0.07306191411439007,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m1",
+          "event_id": "event-0",
+          "echo_id": "m1/event-0/echo-006",
+          "inferred_wall_id": "x_min",
+          "observed_time_s": 0.027207931610198223,
+          "predicted_time_s": 0.027207931610198223,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m1",
+          "event_id": "event-0",
+          "echo_id": "m1/event-0/echo-007",
+          "inferred_wall_id": "x_max",
+          "observed_time_s": 0.03109342779012588,
+          "predicted_time_s": 0.03109342779012588,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m1",
+          "event_id": "event-0",
+          "echo_id": "m1/event-0/echo-008",
+          "inferred_wall_id": "y_min",
+          "observed_time_s": 0.023400125245491052,
+          "predicted_time_s": 0.023400125245491052,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m1",
+          "event_id": "event-0",
+          "echo_id": "m1/event-0/echo-009",
+          "inferred_wall_id": "y_max",
+          "observed_time_s": 0.028360335681164084,
+          "predicted_time_s": 0.028360335681164077,
+          "residual_s": 6.938893903907228e-18,
+          "assignment_cost": 2.7083389842945504e-29
+        },
+        {
+          "microphone_id": "m1",
+          "event_id": "event-0",
+          "echo_id": "m1/event-0/echo-010",
+          "inferred_wall_id": "z_min",
+          "observed_time_s": 0.024094733826642296,
+          "predicted_time_s": 0.024094733826642296,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m1",
+          "event_id": "event-0",
+          "echo_id": "m1/event-0/echo-011",
+          "inferred_wall_id": "z_max",
+          "observed_time_s": 0.024604061994878884,
+          "predicted_time_s": 0.024604061994878884,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m1",
+          "event_id": "event-1",
+          "echo_id": "m1/event-1/echo-030",
+          "inferred_wall_id": "x_min",
+          "observed_time_s": 0.04913317742686977,
+          "predicted_time_s": 0.04913317742686977,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m1",
+          "event_id": "event-1",
+          "echo_id": "m1/event-1/echo-031",
+          "inferred_wall_id": "x_max",
+          "observed_time_s": 0.055228278435803684,
+          "predicted_time_s": 0.055228278435803684,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m1",
+          "event_id": "event-1",
+          "echo_id": "m1/event-1/echo-032",
+          "inferred_wall_id": "y_min",
+          "observed_time_s": 0.04638893585109307,
+          "predicted_time_s": 0.04638893585109307,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m1",
+          "event_id": "event-1",
+          "echo_id": "m1/event-1/echo-033",
+          "inferred_wall_id": "y_max",
+          "observed_time_s": 0.05038850521329055,
+          "predicted_time_s": 0.05038850521329055,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m1",
+          "event_id": "event-1",
+          "echo_id": "m1/event-1/echo-034",
+          "inferred_wall_id": "z_min",
+          "observed_time_s": 0.045291173524619706,
+          "predicted_time_s": 0.045291173524619706,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m1",
+          "event_id": "event-1",
+          "echo_id": "m1/event-1/echo-035",
+          "inferred_wall_id": "z_max",
+          "observed_time_s": 0.04937172891412973,
+          "predicted_time_s": 0.04937172891412973,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m1",
+          "event_id": "event-2",
+          "echo_id": "m1/event-2/echo-054",
+          "inferred_wall_id": "x_min",
+          "observed_time_s": 0.07371642212471552,
+          "predicted_time_s": 0.07371642212471552,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m1",
+          "event_id": "event-2",
+          "echo_id": "m1/event-2/echo-055",
+          "inferred_wall_id": "x_max",
+          "observed_time_s": 0.07597678135214926,
+          "predicted_time_s": 0.07597678135214926,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m1",
+          "event_id": "event-2",
+          "echo_id": "m1/event-2/echo-056",
+          "inferred_wall_id": "y_min",
+          "observed_time_s": 0.0681748853449651,
+          "predicted_time_s": 0.0681748853449651,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m1",
+          "event_id": "event-2",
+          "echo_id": "m1/event-2/echo-057",
+          "inferred_wall_id": "y_max",
+          "observed_time_s": 0.07666344696592328,
+          "predicted_time_s": 0.07666344696592328,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m1",
+          "event_id": "event-2",
+          "echo_id": "m1/event-2/echo-058",
+          "inferred_wall_id": "z_min",
+          "observed_time_s": 0.07056691665437452,
+          "predicted_time_s": 0.07056691665437452,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m1",
+          "event_id": "event-2",
+          "echo_id": "m1/event-2/echo-059",
+          "inferred_wall_id": "z_max",
+          "observed_time_s": 0.06952249145502595,
+          "predicted_time_s": 0.06952249145502595,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m2",
+          "event_id": "event-0",
+          "echo_id": "m2/event-0/echo-012",
+          "inferred_wall_id": "x_min",
+          "observed_time_s": 0.025067600484556835,
+          "predicted_time_s": 0.025067600484556835,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m2",
+          "event_id": "event-0",
+          "echo_id": "m2/event-0/echo-013",
+          "inferred_wall_id": "x_max",
+          "observed_time_s": 0.032451848288391344,
+          "predicted_time_s": 0.032451848288391344,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m2",
+          "event_id": "event-0",
+          "echo_id": "m2/event-0/echo-014",
+          "inferred_wall_id": "y_min",
+          "observed_time_s": 0.02745189504373178,
+          "predicted_time_s": 0.02745189504373178,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m2",
+          "event_id": "event-0",
+          "echo_id": "m2/event-0/echo-015",
+          "inferred_wall_id": "y_max",
+          "observed_time_s": 0.025887469812028635,
+          "predicted_time_s": 0.025887469812028628,
+          "residual_s": 6.938893903907228e-18,
+          "assignment_cost": 2.7083389842945504e-29
+        },
+        {
+          "microphone_id": "m2",
+          "event_id": "event-0",
+          "echo_id": "m2/event-0/echo-016",
+          "inferred_wall_id": "z_min",
+          "observed_time_s": 0.022912517359890906,
+          "predicted_time_s": 0.022912517359890906,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m2",
+          "event_id": "event-0",
+          "echo_id": "m2/event-0/echo-017",
+          "inferred_wall_id": "z_max",
+          "observed_time_s": 0.025490070322168254,
+          "predicted_time_s": 0.025490070322168254,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m2",
+          "event_id": "event-1",
+          "echo_id": "m2/event-1/echo-036",
+          "inferred_wall_id": "x_min",
+          "observed_time_s": 0.0465960243739658,
+          "predicted_time_s": 0.0465960243739658,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m2",
+          "event_id": "event-1",
+          "echo_id": "m2/event-1/echo-037",
+          "inferred_wall_id": "x_max",
+          "observed_time_s": 0.056404262207554116,
+          "predicted_time_s": 0.056404262207554116,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m2",
+          "event_id": "event-1",
+          "echo_id": "m2/event-1/echo-038",
+          "inferred_wall_id": "y_min",
+          "observed_time_s": 0.05028875871968151,
+          "predicted_time_s": 0.05028875871968151,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m2",
+          "event_id": "event-1",
+          "echo_id": "m2/event-1/echo-039",
+          "inferred_wall_id": "y_max",
+          "observed_time_s": 0.047539832750791,
+          "predicted_time_s": 0.047539832750791,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m2",
+          "event_id": "event-1",
+          "echo_id": "m2/event-1/echo-040",
+          "inferred_wall_id": "z_min",
+          "observed_time_s": 0.04367806184614415,
+          "predicted_time_s": 0.04367806184614415,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m2",
+          "event_id": "event-1",
+          "echo_id": "m2/event-1/echo-041",
+          "inferred_wall_id": "z_max",
+          "observed_time_s": 0.050042149667072225,
+          "predicted_time_s": 0.050042149667072225,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m2",
+          "event_id": "event-2",
+          "echo_id": "m2/event-2/echo-060",
+          "inferred_wall_id": "x_min",
+          "observed_time_s": 0.07213317742686975,
+          "predicted_time_s": 0.07213317742686975,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m2",
+          "event_id": "event-2",
+          "echo_id": "m2/event-2/echo-061",
+          "inferred_wall_id": "x_max",
+          "observed_time_s": 0.07775205211190007,
+          "predicted_time_s": 0.07775205211190007,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m2",
+          "event_id": "event-2",
+          "echo_id": "m2/event-2/echo-062",
+          "inferred_wall_id": "y_min",
+          "observed_time_s": 0.0722529522584027,
+          "predicted_time_s": 0.0722529522584027,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m2",
+          "event_id": "event-2",
+          "echo_id": "m2/event-2/echo-063",
+          "inferred_wall_id": "y_max",
+          "observed_time_s": 0.07425870961352615,
+          "predicted_time_s": 0.07425870961352615,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m2",
+          "event_id": "event-2",
+          "echo_id": "m2/event-2/echo-064",
+          "inferred_wall_id": "z_min",
+          "observed_time_s": 0.07008418762452635,
+          "predicted_time_s": 0.07008418762452635,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m2",
+          "event_id": "event-2",
+          "echo_id": "m2/event-2/echo-065",
+          "inferred_wall_id": "z_max",
+          "observed_time_s": 0.07108385170397485,
+          "predicted_time_s": 0.07108385170397485,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m3",
+          "event_id": "event-0",
+          "echo_id": "m3/event-0/echo-018",
+          "inferred_wall_id": "x_max",
+          "observed_time_s": 0.0285463132637466,
+          "predicted_time_s": 0.0285463132637466,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m3",
+          "event_id": "event-0",
+          "echo_id": "m3/event-0/echo-019",
+          "inferred_wall_id": "x_min",
+          "observed_time_s": 0.0285463132637466,
+          "predicted_time_s": 0.0285463132637466,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m3",
+          "event_id": "event-0",
+          "echo_id": "m3/event-0/echo-020",
+          "inferred_wall_id": "y_min",
+          "observed_time_s": 0.024671320007055818,
+          "predicted_time_s": 0.024671320007055818,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m3",
+          "event_id": "event-0",
+          "echo_id": "m3/event-0/echo-021",
+          "inferred_wall_id": "y_max",
+          "observed_time_s": 0.025826129097818513,
+          "predicted_time_s": 0.02582612909781851,
+          "residual_s": 3.469446951953614e-18,
+          "assignment_cost": 6.770847460736376e-30
+        },
+        {
+          "microphone_id": "m3",
+          "event_id": "event-0",
+          "echo_id": "m3/event-0/echo-022",
+          "inferred_wall_id": "z_min",
+          "observed_time_s": 0.024644459733062063,
+          "predicted_time_s": 0.024644459733062063,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m3",
+          "event_id": "event-0",
+          "echo_id": "m3/event-0/echo-023",
+          "inferred_wall_id": "z_max",
+          "observed_time_s": 0.021848015016941422,
+          "predicted_time_s": 0.021848015016941422,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m3",
+          "event_id": "event-1",
+          "echo_id": "m3/event-1/echo-042",
+          "inferred_wall_id": "x_min",
+          "observed_time_s": 0.05056425401170746,
+          "predicted_time_s": 0.05056425401170746,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m3",
+          "event_id": "event-1",
+          "echo_id": "m3/event-1/echo-043",
+          "inferred_wall_id": "x_max",
+          "observed_time_s": 0.05284389941469313,
+          "predicted_time_s": 0.05284389941469313,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m3",
+          "event_id": "event-1",
+          "echo_id": "m3/event-1/echo-044",
+          "inferred_wall_id": "y_max",
+          "observed_time_s": 0.04821314191676346,
+          "predicted_time_s": 0.04821314191676345,
+          "residual_s": 6.938893903907228e-18,
+          "assignment_cost": 2.7083389842945504e-29
+        },
+        {
+          "microphone_id": "m3",
+          "event_id": "event-1",
+          "echo_id": "m3/event-1/echo-045",
+          "inferred_wall_id": "y_min",
+          "observed_time_s": 0.04821314191676346,
+          "predicted_time_s": 0.04821314191676346,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m3",
+          "event_id": "event-1",
+          "echo_id": "m3/event-1/echo-046",
+          "inferred_wall_id": "z_min",
+          "observed_time_s": 0.0457120542687311,
+          "predicted_time_s": 0.0457120542687311,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m3",
+          "event_id": "event-1",
+          "echo_id": "m3/event-1/echo-047",
+          "inferred_wall_id": "z_max",
+          "observed_time_s": 0.046828258177901344,
+          "predicted_time_s": 0.046828258177901344,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m3",
+          "event_id": "event-2",
+          "echo_id": "m3/event-2/echo-066",
+          "inferred_wall_id": "x_min",
+          "observed_time_s": 0.07527266850565437,
+          "predicted_time_s": 0.07527266850565437,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m3",
+          "event_id": "event-2",
+          "echo_id": "m3/event-2/echo-067",
+          "inferred_wall_id": "x_max",
+          "observed_time_s": 0.07353145259692967,
+          "predicted_time_s": 0.07353145259692967,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m3",
+          "event_id": "event-2",
+          "echo_id": "m3/event-2/echo-068",
+          "inferred_wall_id": "y_min",
+          "observed_time_s": 0.0689164112109907,
+          "predicted_time_s": 0.0689164112109907,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m3",
+          "event_id": "event-2",
+          "echo_id": "m3/event-2/echo-069",
+          "inferred_wall_id": "y_max",
+          "observed_time_s": 0.0740270322179414,
+          "predicted_time_s": 0.0740270322179414,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m3",
+          "event_id": "event-2",
+          "echo_id": "m3/event-2/echo-070",
+          "inferred_wall_id": "z_min",
+          "observed_time_s": 0.07139205140274735,
+          "predicted_time_s": 0.07139205140274735,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "m3",
+          "event_id": "event-2",
+          "echo_id": "m3/event-2/echo-071",
+          "inferred_wall_id": "z_max",
+          "observed_time_s": 0.06687179245172183,
+          "predicted_time_s": 0.06687179245172183,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        }
+      ],
+      "dimension_fit_status": "converged",
+      "dimension_optimizer_success": true,
+      "dimension_optimizer_status": 1,
+      "dimension_optimizer_message": "`gtol` termination condition is satisfied.",
+      "dimension_function_evaluations": 1,
+      "dimension_fit_objective": 1.023150282955719e-34,
+      "toa_residual_statistics_s": {
+        "mean_signed": 4.336808689942018e-19,
+        "mean_absolute": 4.336808689942018e-19,
+        "rms": 1.6858481898799315e-18,
+        "maximum_absolute": 6.938893903907228e-18
+      },
+      "jacobian_rank": 3,
+      "jacobian_singular_values": [
+        0.01968495921987676,
+        0.0189596937651576,
+        0.018165471442123753
+      ],
+      "jacobian_condition_number": 1.0836470323709564,
+      "physical_valid": true,
+      "converged": true,
+      "association_status": "converged",
+      "iteration_count": 4,
+      "runtime_s_external_wallclock": 0.07744259999890346,
+      "runtime_s_reported": 0.07739450000008219,
+      "warnings": [],
+      "iterations": [
+        {
+          "iteration": 0,
+          "dimensions_before_m": [
+            5.2,
+            4.8,
+            4.1
+          ],
+          "dimensions_after_m": [
+            5.420666753229129,
+            4.671194384801544,
+            3.8269917061192147
+          ],
+          "matched_count": 72,
+          "unassigned_count": 0,
+          "missed_path_count": 0,
+          "ambiguous_count": 40,
+          "changed_assignments": 72,
+          "association_objective": 64.95313349423697,
+          "dimension_fit_status": "converged"
+        },
+        {
+          "iteration": 1,
+          "dimensions_before_m": [
+            5.420666753229129,
+            4.671194384801544,
+            3.8269917061192147
+          ],
+          "dimensions_after_m": [
+            5.584112869247473,
+            4.515779584800787,
+            3.704136880776092
+          ],
+          "matched_count": 72,
+          "unassigned_count": 0,
+          "missed_path_count": 0,
+          "ambiguous_count": 36,
+          "changed_assignments": 42,
+          "association_objective": 14.881216293234885,
+          "dimension_fit_status": "converged"
+        },
+        {
+          "iteration": 2,
+          "dimensions_before_m": [
+            5.584112869247473,
+            4.515779584800787,
+            3.704136880776092
+          ],
+          "dimensions_after_m": [
+            5.6,
+            4.499999999999999,
+            3.7
+          ],
+          "matched_count": 72,
+          "unassigned_count": 0,
+          "missed_path_count": 0,
+          "ambiguous_count": 33,
+          "changed_assignments": 8,
+          "association_objective": 0.10856196892789212,
+          "dimension_fit_status": "converged"
+        },
+        {
+          "iteration": 3,
+          "dimensions_before_m": [
+            5.6,
+            4.499999999999999,
+            3.7
+          ],
+          "dimensions_after_m": [
+            5.6,
+            4.499999999999999,
+            3.7
+          ],
+          "matched_count": 72,
+          "unassigned_count": 0,
+          "missed_path_count": 0,
+          "ambiguous_count": 33,
+          "changed_assignments": 0,
+          "association_objective": 1.151044068325184e-28,
+          "dimension_fit_status": "converged"
+        }
+      ],
+      "labeled_phase5d2_baseline": {
+        "status": "converged",
+        "estimated_dimensions_m": [
+          5.6,
+          4.500000000000183,
+          3.700000000541706
+        ],
+        "absolute_dimension_error_m": [
+          0.0,
+          1.829647544582258e-13,
+          5.417057913348344e-10
+        ],
+        "residual_rms_s": 1.1596948346534284e-12,
+        "jacobian_rank": 3,
+        "condition_number": 1.0836470323180496,
+        "used_observations": 72
+      }
+    },
+    {
+      "case": "noisy_missing_false_room_a",
+      "seed": 32,
+      "noise_standard_deviation_s": 5e-06,
+      "requested_missing_rate": 0.18,
+      "possible_first_order_paths": 72,
+      "input_echoes": 59,
+      "usable_echoes": 59,
+      "dimensions_truth_evaluation_only_m": [
+        4.0,
+        3.8,
+        3.3
+      ],
+      "estimated_dimensions_m": [
+        3.9996840867173327,
+        3.800290725445096,
+        3.30023504271055
+      ],
+      "absolute_dimension_error_m": [
+        0.000315913282667335,
+        0.0002907254450961183,
+        0.00023504271055019288
+      ],
+      "max_absolute_dimension_error_m": 0.000315913282667335,
+      "association_accuracy_excluding_reported_ambiguous_pairs": 1.0,
+      "association_accuracy_all_detected_true_echoes": 0.9285714285714286,
+      "ambiguous_echo_count": 41,
+      "ambiguous_echo_ids": [
+        "m0/event-0/echo-001",
+        "m0/event-0/echo-002",
+        "m0/event-0/echo-003",
+        "m0/event-0/echo-004",
+        "m0/event-0/echo-005",
+        "m0/event-1/echo-025",
+        "m0/event-1/echo-026",
+        "m0/event-1/echo-028",
+        "m0/event-1/echo-029",
+        "m0/event-2/echo-048",
+        "m0/event-2/echo-049",
+        "m0/event-2/echo-050",
+        "m0/event-2/echo-052",
+        "m0/event-2/echo-053",
+        "m1/event-0/echo-007",
+        "m1/event-0/echo-008",
+        "m1/event-0/echo-011",
+        "m1/event-1/echo-031",
+        "m1/event-1/echo-032",
+        "m1/event-1/echo-033",
+        "m1/event-2/echo-054",
+        "m1/event-2/echo-055",
+        "m1/event-2/echo-056",
+        "m2/event-0/echo-013",
+        "m2/event-0/echo-017",
+        "m2/event-1/echo-036",
+        "m2/event-1/echo-037",
+        "m2/event-1/echo-040",
+        "m2/event-2/echo-060",
+        "m2/event-2/echo-061",
+        "m2/event-2/echo-062",
+        "m2/event-2/echo-063",
+        "m3/event-0/echo-019",
+        "m3/event-0/echo-020",
+        "m3/event-0/echo-022",
+        "m3/event-0/echo-023",
+        "m3/event-1/echo-045",
+        "m3/event-1/echo-046",
+        "m3/event-1/echo-047",
+        "m3/event-2/echo-067",
+        "m3/event-2/echo-071"
+      ],
+      "unassigned_echo_ids": [
+        "m0/event-0/false-00",
+        "m1/event-2/false-01",
+        "m2/event-1/false-02"
+      ],
+      "false_detection_count": 3,
+      "false_detections_assigned_to_walls": 0,
+      "wrongly_assigned_true_echoes": 4,
+      "false_association_count": 4,
+      "false_association_rate_among_assignments": 0.07142857142857142,
+      "omitted_true_echoes": [
+        {
+          "microphone_id": "m0",
+          "event_id": "event-0",
+          "wall_id": "x_min"
+        },
+        {
+          "microphone_id": "m1",
+          "event_id": "event-0",
+          "wall_id": "y_max"
+        },
+        {
+          "microphone_id": "m1",
+          "event_id": "event-0",
+          "wall_id": "z_min"
+        },
+        {
+          "microphone_id": "m2",
+          "event_id": "event-0",
+          "wall_id": "y_max"
+        },
+        {
+          "microphone_id": "m2",
+          "event_id": "event-0",
+          "wall_id": "z_min"
+        },
+        {
+          "microphone_id": "m0",
+          "event_id": "event-1",
+          "wall_id": "x_min"
+        },
+        {
+          "microphone_id": "m1",
+          "event_id": "event-1",
+          "wall_id": "z_max"
+        },
+        {
+          "microphone_id": "m2",
+          "event_id": "event-1",
+          "wall_id": "y_max"
+        },
+        {
+          "microphone_id": "m2",
+          "event_id": "event-1",
+          "wall_id": "z_max"
+        },
+        {
+          "microphone_id": "m3",
+          "event_id": "event-1",
+          "wall_id": "x_min"
+        },
+        {
+          "microphone_id": "m3",
+          "event_id": "event-1",
+          "wall_id": "x_max"
+        },
+        {
+          "microphone_id": "m1",
+          "event_id": "event-2",
+          "wall_id": "y_max"
+        },
+        {
+          "microphone_id": "m1",
+          "event_id": "event-2",
+          "wall_id": "z_min"
+        },
+        {
+          "microphone_id": "m1",
+          "event_id": "event-2",
+          "wall_id": "z_max"
+        },
+        {
+          "microphone_id": "m2",
+          "event_id": "event-2",
+          "wall_id": "z_min"
+        },
+        {
+          "microphone_id": "m2",
+          "event_id": "event-2",
+          "wall_id": "z_max"
+        }
+      ],
+      "unmatched_detected_true_echo_count": 0,
+      "unassigned_detected_false_echo_count": 3,
+      "missed_predicted_path_count": 16,
+      "missed_predicted_paths": [
+        [
+          "m0",
+          "event-0",
+          "x_min"
+        ],
+        [
+          "m1",
+          "event-0",
+          "y_max"
+        ],
+        [
+          "m1",
+          "event-0",
+          "z_min"
+        ],
+        [
+          "m2",
+          "event-0",
+          "y_max"
+        ],
+        [
+          "m2",
+          "event-0",
+          "z_min"
+        ],
+        [
+          "m0",
+          "event-1",
+          "x_min"
+        ],
+        [
+          "m1",
+          "event-1",
+          "z_max"
+        ],
+        [
+          "m2",
+          "event-1",
+          "y_max"
+        ],
+        [
+          "m2",
+          "event-1",
+          "z_max"
+        ],
+        [
+          "m3",
+          "event-1",
+          "x_min"
+        ],
+        [
+          "m3",
+          "event-1",
+          "x_max"
+        ],
+        [
+          "m1",
+          "event-2",
+          "y_max"
+        ],
+        [
+          "m1",
+          "event-2",
+          "z_min"
+        ],
+        [
+          "m1",
+          "event-2",
+          "z_max"
+        ],
+        [
+          "m2",
+          "event-2",
+          "z_min"
+        ],
+        [
+          "m2",
+          "event-2",
+          "z_max"
+        ]
+      ],
+      "inferred_associations": [
+        {
+          "microphone_id": "m0",
+          "event_id": "event-0",
+          "echo_id": "m0/event-0/echo-001",
+          "inferred_wall_id": "x_max",
+          "observed_time_s": 0.026276658951470983,
+          "predicted_time_s": 0.02627516915815066,
+          "residual_s": 1.4897933203229796e-06,
+          "assignment_cost": 1.2484598272194195e-06
+        },
+        {
+          "microphone_id": "m0",
+          "event_id": "event-0",
+          "echo_id": "m0/event-0/echo-002",
+          "inferred_wall_id": "y_min",
+          "observed_time_s": 0.025054585276271985,
+          "predicted_time_s": 0.025057840044640636,
+          "residual_s": -3.254768368651101e-06,
+          "assignment_cost": 5.958853387634109e-06
+        },
+        {
+          "microphone_id": "m0",
+          "event_id": "event-0",
+          "echo_id": "m0/event-0/echo-003",
+          "inferred_wall_id": "y_max",
+          "observed_time_s": 0.026914308624128847,
+          "predicted_time_s": 0.026907308667486904,
+          "residual_s": 6.9999566419433334e-06,
+          "assignment_cost": 2.7562158556361208e-05
+        },
+        {
+          "microphone_id": "m0",
+          "event_id": "event-0",
+          "echo_id": "m0/event-0/echo-004",
+          "inferred_wall_id": "z_min",
+          "observed_time_s": 0.024324476306977802,
+          "predicted_time_s": 0.02433480804740885,
+          "residual_s": -1.0331740431048647e-05,
+          "assignment_cost": 6.0043983938192974e-05
+        },
+        {
+          "microphone_id": "m0",
+          "event_id": "event-0",
+          "echo_id": "m0/event-0/echo-005",
+          "inferred_wall_id": "z_max",
+          "observed_time_s": 0.026033523850760534,
+          "predicted_time_s": 0.0260376749792143,
+          "residual_s": -4.151128453765834e-06,
+          "assignment_cost": 9.692925434811184e-06
+        },
+        {
+          "microphone_id": "m0",
+          "event_id": "event-1",
+          "echo_id": "m0/event-1/echo-025",
+          "inferred_wall_id": "x_max",
+          "observed_time_s": 0.050071473685385115,
+          "predicted_time_s": 0.050071521902678745,
+          "residual_s": -4.821729363002625e-08,
+          "assignment_cost": 1.3077604153148455e-09
+        },
+        {
+          "microphone_id": "m0",
+          "event_id": "event-1",
+          "echo_id": "m0/event-1/echo-026",
+          "inferred_wall_id": "y_min",
+          "observed_time_s": 0.047372951282686815,
+          "predicted_time_s": 0.04737265024718539,
+          "residual_s": 3.0103550142240865e-07,
+          "assignment_cost": 5.0975084878110565e-08
+        },
+        {
+          "microphone_id": "m0",
+          "event_id": "event-1",
+          "echo_id": "m0/event-1/echo-027",
+          "inferred_wall_id": "y_max",
+          "observed_time_s": 0.04837226080585816,
+          "predicted_time_s": 0.04837765258436785,
+          "residual_s": -5.3917785096946336e-06,
+          "assignment_cost": 1.6352592467402746e-05
+        },
+        {
+          "microphone_id": "m0",
+          "event_id": "event-1",
+          "echo_id": "m0/event-1/echo-028",
+          "inferred_wall_id": "z_min",
+          "observed_time_s": 0.04561899783805103,
+          "predicted_time_s": 0.04561240508641475,
+          "residual_s": 6.592751636280703e-06,
+          "assignment_cost": 2.444871045244606e-05
+        },
+        {
+          "microphone_id": "m0",
+          "event_id": "event-1",
+          "echo_id": "m0/event-1/echo-029",
+          "inferred_wall_id": "z_max",
+          "observed_time_s": 0.05036081052438553,
+          "predicted_time_s": 0.05036477364003103,
+          "residual_s": -3.963115645502779e-06,
+          "assignment_cost": 8.834785661041262e-06
+        },
+        {
+          "microphone_id": "m0",
+          "event_id": "event-2",
+          "echo_id": "m0/event-2/echo-048",
+          "inferred_wall_id": "x_max",
+          "observed_time_s": 0.07118082608029015,
+          "predicted_time_s": 0.07118253283062337,
+          "residual_s": -1.7067503332163225e-06,
+          "assignment_cost": 1.6385606437128908e-06
+        },
+        {
+          "microphone_id": "m0",
+          "event_id": "event-2",
+          "echo_id": "m0/event-2/echo-049",
+          "inferred_wall_id": "x_min",
+          "observed_time_s": 0.07118155333873748,
+          "predicted_time_s": 0.07118416216279301,
+          "residual_s": -2.6088240555333098e-06,
+          "assignment_cost": 3.828354160910212e-06
+        },
+        {
+          "microphone_id": "m0",
+          "event_id": "event-2",
+          "echo_id": "m0/event-2/echo-050",
+          "inferred_wall_id": "y_min",
+          "observed_time_s": 0.07049281757666263,
+          "predicted_time_s": 0.07049569620509437,
+          "residual_s": -2.878628431735031e-06,
+          "assignment_cost": 4.661157176996222e-06
+        },
+        {
+          "microphone_id": "m0",
+          "event_id": "event-2",
+          "echo_id": "m0/event-2/echo-051",
+          "inferred_wall_id": "y_max",
+          "observed_time_s": 0.07527326648696937,
+          "predicted_time_s": 0.0752716101056725,
+          "residual_s": 1.656381296871734e-06,
+          "assignment_cost": 1.5432744378523991e-06
+        },
+        {
+          "microphone_id": "m0",
+          "event_id": "event-2",
+          "echo_id": "m0/event-2/echo-052",
+          "inferred_wall_id": "z_min",
+          "observed_time_s": 0.07079991697122238,
+          "predicted_time_s": 0.07080477624256429,
+          "residual_s": -4.859271341903226e-06,
+          "assignment_cost": 1.3282041360511115e-05
+        },
+        {
+          "microphone_id": "m0",
+          "event_id": "event-2",
+          "echo_id": "m0/event-2/echo-053",
+          "inferred_wall_id": "z_max",
+          "observed_time_s": 0.0712311744224103,
+          "predicted_time_s": 0.07123666430270562,
+          "residual_s": -5.48988029532016e-06,
+          "assignment_cost": 1.6953066932031317e-05
+        },
+        {
+          "microphone_id": "m1",
+          "event_id": "event-0",
+          "echo_id": "m1/event-0/echo-006",
+          "inferred_wall_id": "x_min",
+          "observed_time_s": 0.02721456622024554,
+          "predicted_time_s": 0.027207931610198223,
+          "residual_s": 6.634610047316636e-06,
+          "assignment_cost": 2.4760153394974606e-05
+        },
+        {
+          "microphone_id": "m1",
+          "event_id": "event-0",
+          "echo_id": "m1/event-0/echo-007",
+          "inferred_wall_id": "x_max",
+          "observed_time_s": 0.02243254656709665,
+          "predicted_time_s": 0.022433116030684742,
+          "residual_s": -5.694635880938714e-07,
+          "assignment_cost": 1.824124377176699e-07
+        },
+        {
+          "microphone_id": "m1",
+          "event_id": "event-0",
+          "echo_id": "m1/event-0/echo-008",
+          "inferred_wall_id": "y_min",
+          "observed_time_s": 0.023399014392323798,
+          "predicted_time_s": 0.023400125245491052,
+          "residual_s": -1.1108531672542055e-06,
+          "assignment_cost": 6.941220520492686e-07
+        },
+        {
+          "microphone_id": "m1",
+          "event_id": "event-0",
+          "echo_id": "m1/event-0/echo-011",
+          "inferred_wall_id": "z_max",
+          "observed_time_s": 0.022618820879157366,
+          "predicted_time_s": 0.0226135346401361,
+          "residual_s": 5.286239021264766e-06,
+          "assignment_cost": 1.5718681681842526e-05
+        },
+        {
+          "microphone_id": "m1",
+          "event_id": "event-1",
+          "echo_id": "m1/event-1/echo-030",
+          "inferred_wall_id": "x_min",
+          "observed_time_s": 0.049132572048472864,
+          "predicted_time_s": 0.04913317742686977,
+          "residual_s": -6.053783969048321e-07,
+          "assignment_cost": 2.0614668943447373e-07
+        },
+        {
+          "microphone_id": "m1",
+          "event_id": "event-1",
+          "echo_id": "m1/event-1/echo-031",
+          "inferred_wall_id": "x_max",
+          "observed_time_s": 0.04648042637042569,
+          "predicted_time_s": 0.046476508026995905,
+          "residual_s": 3.9183434297832e-06,
+          "assignment_cost": 8.636296068970408e-06
+        },
+        {
+          "microphone_id": "m1",
+          "event_id": "event-1",
+          "echo_id": "m1/event-1/echo-032",
+          "inferred_wall_id": "y_max",
+          "observed_time_s": 0.04639061083157788,
+          "predicted_time_s": 0.046390584875314236,
+          "residual_s": 2.5956263645376954e-08,
+          "assignment_cost": 3.7897178761592847e-10
+        },
+        {
+          "microphone_id": "m1",
+          "event_id": "event-1",
+          "echo_id": "m1/event-1/echo-033",
+          "inferred_wall_id": "y_min",
+          "observed_time_s": 0.04638878216847801,
+          "predicted_time_s": 0.04638893585109307,
+          "residual_s": -1.5368261505749325e-07,
+          "assignment_cost": 1.328531972113668e-08
+        },
+        {
+          "microphone_id": "m1",
+          "event_id": "event-1",
+          "echo_id": "m1/event-1/echo-034",
+          "inferred_wall_id": "z_min",
+          "observed_time_s": 0.04529118094489795,
+          "predicted_time_s": 0.045291173524619706,
+          "residual_s": 7.420278246017542e-09,
+          "assignment_cost": 3.097154770218066e-11
+        },
+        {
+          "microphone_id": "m1",
+          "event_id": "event-2",
+          "echo_id": "m1/event-2/echo-054",
+          "inferred_wall_id": "x_min",
+          "observed_time_s": 0.07371470717133673,
+          "predicted_time_s": 0.07371642212471552,
+          "residual_s": -1.714953378792461e-06,
+          "assignment_cost": 1.6543491139303189e-06
+        },
+        {
+          "microphone_id": "m1",
+          "event_id": "event-2",
+          "echo_id": "m1/event-2/echo-055",
+          "inferred_wall_id": "x_max",
+          "observed_time_s": 0.06715769157542581,
+          "predicted_time_s": 0.06715306211618387,
+          "residual_s": 4.6294592419421354e-06,
+          "assignment_cost": 1.2055439740951942e-05
+        },
+        {
+          "microphone_id": "m1",
+          "event_id": "event-2",
+          "echo_id": "m1/event-2/echo-056",
+          "inferred_wall_id": "y_min",
+          "observed_time_s": 0.06817083222800102,
+          "predicted_time_s": 0.0681748853449651,
+          "residual_s": -4.0531169640811715e-06,
+          "assignment_cost": 9.240613382543946e-06
+        },
+        {
+          "microphone_id": "m2",
+          "event_id": "event-0",
+          "echo_id": "m2/event-0/echo-012",
+          "inferred_wall_id": "x_min",
+          "observed_time_s": 0.02506819193334354,
+          "predicted_time_s": 0.025067600484556835,
+          "residual_s": 5.914487867068885e-07,
+          "assignment_cost": 1.967690628545909e-07
+        },
+        {
+          "microphone_id": "m2",
+          "event_id": "event-0",
+          "echo_id": "m2/event-0/echo-013",
+          "inferred_wall_id": "x_max",
+          "observed_time_s": 0.023397400886264873,
+          "predicted_time_s": 0.023398382243583433,
+          "residual_s": -9.813573185607494e-07,
+          "assignment_cost": 5.417224800146686e-07
+        },
+        {
+          "microphone_id": "m2",
+          "event_id": "event-0",
+          "echo_id": "m2/event-0/echo-014",
+          "inferred_wall_id": "y_min",
+          "observed_time_s": 0.02745518486901327,
+          "predicted_time_s": 0.02745189504373178,
+          "residual_s": 3.28982528149252e-06,
+          "assignment_cost": 6.087909590295377e-06
+        },
+        {
+          "microphone_id": "m2",
+          "event_id": "event-0",
+          "echo_id": "m2/event-0/echo-017",
+          "inferred_wall_id": "z_max",
+          "observed_time_s": 0.02342900884136799,
+          "predicted_time_s": 0.023416217515898296,
+          "residual_s": 1.2791325469694442e-05,
+          "assignment_cost": 9.203512909030523e-05
+        },
+        {
+          "microphone_id": "m2",
+          "event_id": "event-1",
+          "echo_id": "m2/event-1/echo-036",
+          "inferred_wall_id": "x_min",
+          "observed_time_s": 0.04658917943827401,
+          "predicted_time_s": 0.0465960243739658,
+          "residual_s": -6.844935691793785e-06,
+          "assignment_cost": 2.6354893851445763e-05
+        },
+        {
+          "microphone_id": "m2",
+          "event_id": "event-1",
+          "echo_id": "m2/event-1/echo-037",
+          "inferred_wall_id": "x_max",
+          "observed_time_s": 0.047159611539639205,
+          "predicted_time_s": 0.047166491798933355,
+          "residual_s": -6.880259294149427e-06,
+          "assignment_cost": 2.6627606974535382e-05
+        },
+        {
+          "microphone_id": "m2",
+          "event_id": "event-1",
+          "echo_id": "m2/event-1/echo-038",
+          "inferred_wall_id": "y_min",
+          "observed_time_s": 0.050291145962980795,
+          "predicted_time_s": 0.05028875871968151,
+          "residual_s": 2.387243299283026e-06,
+          "assignment_cost": 3.205648445609086e-06
+        },
+        {
+          "microphone_id": "m2",
+          "event_id": "event-1",
+          "echo_id": "m2/event-1/echo-040",
+          "inferred_wall_id": "z_min",
+          "observed_time_s": 0.0436782752843924,
+          "predicted_time_s": 0.04367806184614415,
+          "residual_s": 2.1343824824909818e-07,
+          "assignment_cost": 2.562518577129956e-08
+        },
+        {
+          "microphone_id": "m2",
+          "event_id": "event-2",
+          "echo_id": "m2/event-2/echo-060",
+          "inferred_wall_id": "x_min",
+          "observed_time_s": 0.07212770984437131,
+          "predicted_time_s": 0.07213317742686975,
+          "residual_s": -5.467582498447365e-06,
+          "assignment_cost": 1.6815632837246962e-05
+        },
+        {
+          "microphone_id": "m2",
+          "event_id": "event-2",
+          "echo_id": "m2/event-2/echo-061",
+          "inferred_wall_id": "x_max",
+          "observed_time_s": 0.0688698293057338,
+          "predicted_time_s": 0.06886791309209994,
+          "residual_s": 1.9162136338651825e-06,
+          "assignment_cost": 2.0654295134685794e-06
+        },
+        {
+          "microphone_id": "m2",
+          "event_id": "event-2",
+          "echo_id": "m2/event-2/echo-062",
+          "inferred_wall_id": "y_min",
+          "observed_time_s": 0.07224755220487998,
+          "predicted_time_s": 0.0722529522584027,
+          "residual_s": -5.4000535227166635e-06,
+          "assignment_cost": 1.6402825152115113e-05
+        },
+        {
+          "microphone_id": "m2",
+          "event_id": "event-2",
+          "echo_id": "m2/event-2/echo-063",
+          "inferred_wall_id": "y_max",
+          "observed_time_s": 0.07082205631261342,
+          "predicted_time_s": 0.070822709785399,
+          "residual_s": -6.534727855778133e-07,
+          "assignment_cost": 2.4020250833859e-07
+        },
+        {
+          "microphone_id": "m3",
+          "event_id": "event-0",
+          "echo_id": "m3/event-0/echo-018",
+          "inferred_wall_id": "x_min",
+          "observed_time_s": 0.028551029763270903,
+          "predicted_time_s": 0.0285463132637466,
+          "residual_s": 4.716499524302226e-06,
+          "assignment_cost": 1.2513019366543005e-05
+        },
+        {
+          "microphone_id": "m3",
+          "event_id": "event-0",
+          "echo_id": "m3/event-0/echo-019",
+          "inferred_wall_id": "x_max",
+          "observed_time_s": 0.019494386957541007,
+          "predicted_time_s": 0.019493884056846218,
+          "residual_s": 5.029006947890324e-07,
+          "assignment_cost": 1.422613737108515e-07
+        },
+        {
+          "microphone_id": "m3",
+          "event_id": "event-0",
+          "echo_id": "m3/event-0/echo-020",
+          "inferred_wall_id": "y_min",
+          "observed_time_s": 0.024662623037066022,
+          "predicted_time_s": 0.024671320007055818,
+          "residual_s": -8.696969989795827e-06,
+          "assignment_cost": 4.2545973939417694e-05
+        },
+        {
+          "microphone_id": "m3",
+          "event_id": "event-0",
+          "echo_id": "m3/event-0/echo-021",
+          "inferred_wall_id": "y_max",
+          "observed_time_s": 0.021798089481652898,
+          "predicted_time_s": 0.021797756801127027,
+          "residual_s": 3.326805258704879e-07,
+          "assignment_cost": 6.22554369150737e-08
+        },
+        {
+          "microphone_id": "m3",
+          "event_id": "event-0",
+          "echo_id": "m3/event-0/echo-022",
+          "inferred_wall_id": "z_min",
+          "observed_time_s": 0.024646578945980442,
+          "predicted_time_s": 0.024644459733062063,
+          "residual_s": 2.1192129183791875e-06,
+          "assignment_cost": 2.5262231588016934e-06
+        },
+        {
+          "microphone_id": "m3",
+          "event_id": "event-0",
+          "echo_id": "m3/event-0/echo-023",
+          "inferred_wall_id": "z_max",
+          "observed_time_s": 0.01966880807582213,
+          "predicted_time_s": 0.019676145460487494,
+          "residual_s": -7.337384665365154e-06,
+          "assignment_cost": 3.028343272173884e-05
+        },
+        {
+          "microphone_id": "m3",
+          "event_id": "event-1",
+          "echo_id": "m3/event-1/echo-044",
+          "inferred_wall_id": "y_min",
+          "observed_time_s": 0.048202550995976395,
+          "predicted_time_s": 0.04821314191676346,
+          "residual_s": -1.0590920787062474e-05,
+          "assignment_cost": 6.309427675378051e-05
+        },
+        {
+          "microphone_id": "m3",
+          "event_id": "event-1",
+          "echo_id": "m3/event-1/echo-045",
+          "inferred_wall_id": "y_max",
+          "observed_time_s": 0.04417518117254611,
+          "predicted_time_s": 0.044174925415386576,
+          "residual_s": 2.5575715953407574e-07,
+          "assignment_cost": 3.6794095117278004e-08
+        },
+        {
+          "microphone_id": "m3",
+          "event_id": "event-1",
+          "echo_id": "m3/event-1/echo-046",
+          "inferred_wall_id": "z_min",
+          "observed_time_s": 0.04570759540510599,
+          "predicted_time_s": 0.0457120542687311,
+          "residual_s": -4.458863625114717e-06,
+          "assignment_cost": 1.1183323965396277e-05
+        },
+        {
+          "microphone_id": "m3",
+          "event_id": "event-1",
+          "echo_id": "m3/event-1/echo-047",
+          "inferred_wall_id": "z_max",
+          "observed_time_s": 0.04460413536396337,
+          "predicted_time_s": 0.04460901929862609,
+          "residual_s": -4.8839346627194136e-06,
+          "assignment_cost": 1.3417210006713109e-05
+        },
+        {
+          "microphone_id": "m3",
+          "event_id": "event-2",
+          "echo_id": "m3/event-2/echo-066",
+          "inferred_wall_id": "x_min",
+          "observed_time_s": 0.0752692644777641,
+          "predicted_time_s": 0.07527266850565437,
+          "residual_s": -3.4040278902719434e-06,
+          "assignment_cost": 6.517915806233958e-06
+        },
+        {
+          "microphone_id": "m3",
+          "event_id": "event-2",
+          "echo_id": "m3/event-2/echo-067",
+          "inferred_wall_id": "x_max",
+          "observed_time_s": 0.06431731710553969,
+          "predicted_time_s": 0.06431876478378883,
+          "residual_s": -1.4476782491390505e-06,
+          "assignment_cost": 1.1788719260795477e-06
+        },
+        {
+          "microphone_id": "m3",
+          "event_id": "event-2",
+          "echo_id": "m3/event-2/echo-068",
+          "inferred_wall_id": "y_min",
+          "observed_time_s": 0.06890669520119601,
+          "predicted_time_s": 0.0689164112109907,
+          "residual_s": -9.716009794685787e-06,
+          "assignment_cost": 5.310047606086696e-05
+        },
+        {
+          "microphone_id": "m3",
+          "event_id": "event-2",
+          "echo_id": "m3/event-2/echo-069",
+          "inferred_wall_id": "y_max",
+          "observed_time_s": 0.07004096683372678,
+          "predicted_time_s": 0.07004355214445931,
+          "residual_s": -2.5853107325363167e-06,
+          "assignment_cost": 3.7596552658692e-06
+        },
+        {
+          "microphone_id": "m3",
+          "event_id": "event-2",
+          "echo_id": "m3/event-2/echo-070",
+          "inferred_wall_id": "z_min",
+          "observed_time_s": 0.07139182414233075,
+          "predicted_time_s": 0.07139205140274735,
+          "residual_s": -2.2726041659648644e-07,
+          "assignment_cost": 2.9051604535279818e-08
+        },
+        {
+          "microphone_id": "m3",
+          "event_id": "event-2",
+          "echo_id": "m3/event-2/echo-071",
+          "inferred_wall_id": "z_max",
+          "observed_time_s": 0.0646947757611672,
+          "predicted_time_s": 0.06468775343057051,
+          "residual_s": 7.022330596684334e-06,
+          "assignment_cost": 2.7738633942635038e-05
+        }
+      ],
+      "dimension_fit_status": "converged",
+      "dimension_optimizer_success": true,
+      "dimension_optimizer_status": 3,
+      "dimension_optimizer_message": "`xtol` termination condition is satisfied.",
+      "dimension_function_evaluations": 2,
+      "dimension_fit_objective": 1.6177597493872067,
+      "toa_residual_statistics_s": {
+        "mean_signed": -1.0497633995862194e-06,
+        "mean_absolute": 3.6812213573679976e-06,
+        "rms": 4.8073749138874515e-06,
+        "maximum_absolute": 1.2791325469694442e-05
+      },
+      "jacobian_rank": 3,
+      "jacobian_singular_values": [
+        885.1013063053642,
+        747.4181358448047,
+        704.3623668061529
+      ],
+      "jacobian_condition_number": 1.2565993698935827,
+      "physical_valid": true,
+      "converged": true,
+      "association_status": "converged",
+      "iteration_count": 11,
+      "runtime_s_external_wallclock": 0.2576926000001549,
+      "runtime_s_reported": 0.25759040000048117,
+      "warnings": [],
+      "iterations": [
+        {
+          "iteration": 0,
+          "dimensions_before_m": [
+            5.2,
+            4.8,
+            4.1
+          ],
+          "dimensions_after_m": [
+            4.768231853200378,
+            4.473110247469124,
+            3.6821554051898238
+          ],
+          "matched_count": 48,
+          "unassigned_count": 11,
+          "missed_path_count": 24,
+          "ambiguous_count": 29,
+          "changed_assignments": 48,
+          "association_objective": 387.3846660077061,
+          "dimension_fit_status": "converged"
+        },
+        {
+          "iteration": 1,
+          "dimensions_before_m": [
+            4.768231853200378,
+            4.473110247469124,
+            3.6821554051898238
+          ],
+          "dimensions_after_m": [
+            4.660911312679965,
+            4.151158480628751,
+            3.3749070117373963
+          ],
+          "matched_count": 53,
+          "unassigned_count": 6,
+          "missed_path_count": 19,
+          "ambiguous_count": 40,
+          "changed_assignments": 37,
+          "association_objective": 270.504088474013,
+          "dimension_fit_status": "converged"
+        },
+        {
+          "iteration": 2,
+          "dimensions_before_m": [
+            4.660911312679965,
+            4.151158480628751,
+            3.3749070117373963
+          ],
+          "dimensions_after_m": [
+            4.037351750912761,
+            3.97241267907886,
+            3.2526462511833185
+          ],
+          "matched_count": 56,
+          "unassigned_count": 3,
+          "missed_path_count": 16,
+          "ambiguous_count": 44,
+          "changed_assignments": 53,
+          "association_objective": 206.9667376713668,
+          "dimension_fit_status": "converged"
+        },
+        {
+          "iteration": 3,
+          "dimensions_before_m": [
+            4.037351750912761,
+            3.97241267907886,
+            3.2526462511833185
+          ],
+          "dimensions_after_m": [
+            4.024145440819995,
+            3.827215370664414,
+            3.2486953450039024
+          ],
+          "matched_count": 56,
+          "unassigned_count": 3,
+          "missed_path_count": 16,
+          "ambiguous_count": 44,
+          "changed_assignments": 44,
+          "association_objective": 174.04495229280903,
+          "dimension_fit_status": "converged"
+        },
+        {
+          "iteration": 4,
+          "dimensions_before_m": [
+            4.024145440819995,
+            3.827215370664414,
+            3.2486953450039024
+          ],
+          "dimensions_after_m": [
+            4.022740283665359,
+            3.81130723289921,
+            3.2553782503990014
+          ],
+          "matched_count": 56,
+          "unassigned_count": 3,
+          "missed_path_count": 16,
+          "ambiguous_count": 42,
+          "changed_assignments": 12,
+          "association_objective": 171.31974081961522,
+          "dimension_fit_status": "converged"
+        },
+        {
+          "iteration": 5,
+          "dimensions_before_m": [
+            4.022740283665359,
+            3.81130723289921,
+            3.2553782503990014
+          ],
+          "dimensions_after_m": [
+            4.013174366764138,
+            3.8002907254450964,
+            3.2785275257748907
+          ],
+          "matched_count": 56,
+          "unassigned_count": 3,
+          "missed_path_count": 16,
+          "ambiguous_count": 42,
+          "changed_assignments": 10,
+          "association_objective": 171.21640324948788,
+          "dimension_fit_status": "converged"
+        },
+        {
+          "iteration": 6,
+          "dimensions_before_m": [
+            4.013174366764138,
+            3.8002907254450964,
+            3.2785275257748907
+          ],
+          "dimensions_after_m": [
+            4.00409817290229,
+            3.800290725445096,
+            3.293644656780704
+          ],
+          "matched_count": 56,
+          "unassigned_count": 3,
+          "missed_path_count": 16,
+          "ambiguous_count": 42,
+          "changed_assignments": 10,
+          "association_objective": 171.0718502851697,
+          "dimension_fit_status": "converged"
+        },
+        {
+          "iteration": 7,
+          "dimensions_before_m": [
+            4.00409817290229,
+            3.800290725445096,
+            3.293644656780704
+          ],
+          "dimensions_after_m": [
+            4.000252553693755,
+            3.800290725445096,
+            3.299428482819426
+          ],
+          "matched_count": 56,
+          "unassigned_count": 3,
+          "missed_path_count": 16,
+          "ambiguous_count": 41,
+          "changed_assignments": 10,
+          "association_objective": 171.00757169898077,
+          "dimension_fit_status": "converged"
+        },
+        {
+          "iteration": 8,
+          "dimensions_before_m": [
+            4.000252553693755,
+            3.800290725445096,
+            3.299428482819426
+          ],
+          "dimensions_after_m": [
+            3.999696056440556,
+            3.800290725445096,
+            3.3002350427105505
+          ],
+          "matched_count": 56,
+          "unassigned_count": 3,
+          "missed_path_count": 16,
+          "ambiguous_count": 41,
+          "changed_assignments": 4,
+          "association_objective": 171.00085649857704,
+          "dimension_fit_status": "converged"
+        },
+        {
+          "iteration": 9,
+          "dimensions_before_m": [
+            3.999696056440556,
+            3.800290725445096,
+            3.3002350427105505
+          ],
+          "dimensions_after_m": [
+            3.9996840867173327,
+            3.800290725445096,
+            3.30023504271055
+          ],
+          "matched_count": 56,
+          "unassigned_count": 3,
+          "missed_path_count": 16,
+          "ambiguous_count": 41,
+          "changed_assignments": 4,
+          "association_objective": 171.00072801714117,
+          "dimension_fit_status": "converged"
+        },
+        {
+          "iteration": 10,
+          "dimensions_before_m": [
+            3.9996840867173327,
+            3.800290725445096,
+            3.30023504271055
+          ],
+          "dimensions_after_m": [
+            3.9996840867173327,
+            3.800290725445096,
+            3.30023504271055
+          ],
+          "matched_count": 56,
+          "unassigned_count": 3,
+          "missed_path_count": 16,
+          "ambiguous_count": 41,
+          "changed_assignments": 0,
+          "association_objective": 171.0007279918872,
+          "dimension_fit_status": "converged"
+        }
+      ],
+      "labeled_phase5d2_baseline": {
+        "status": "converged",
+        "estimated_dimensions_m": [
+          3.999696056487512,
+          3.8002443062365026,
+          3.30023504271055
+        ],
+        "absolute_dimension_error_m": [
+          0.00030394351248785867,
+          0.00024430623650273375,
+          0.00023504271055019288
+        ],
+        "residual_rms_s": 4.821977840013659e-06,
+        "jacobian_rank": 3,
+        "condition_number": 1.256600771112327,
+        "used_observations": 56
+      }
+    },
+    {
+      "case": "alternate_spatial_layout",
+      "seed": 44,
+      "noise_standard_deviation_s": 2e-06,
+      "requested_missing_rate": 0.0,
+      "possible_first_order_paths": 72,
+      "input_echoes": 72,
+      "usable_echoes": 72,
+      "dimensions_truth_evaluation_only_m": [
+        6.2,
+        5.1,
+        4.3
+      ],
+      "estimated_dimensions_m": [
+        6.20000559888599,
+        5.100195800641341,
+        4.300044220873621
+      ],
+      "absolute_dimension_error_m": [
+        5.598885989499536e-06,
+        0.00019580064134139263,
+        4.4220873621547696e-05
+      ],
+      "max_absolute_dimension_error_m": 0.00019580064134139263,
+      "association_accuracy_excluding_reported_ambiguous_pairs": 1.0,
+      "association_accuracy_all_detected_true_echoes": 1.0,
+      "ambiguous_echo_count": 34,
+      "ambiguous_echo_ids": [
+        "a-mic/event-0/echo-000",
+        "a-mic/event-0/echo-002",
+        "a-mic/event-0/echo-004",
+        "a-mic/event-1/echo-024",
+        "a-mic/event-1/echo-025",
+        "a-mic/event-1/echo-027",
+        "a-mic/event-1/echo-028",
+        "a-mic/event-2/echo-049",
+        "a-mic/event-2/echo-050",
+        "a-mic/event-2/echo-051",
+        "a-mic/event-2/echo-052",
+        "b-mic/event-0/echo-008",
+        "b-mic/event-0/echo-011",
+        "b-mic/event-1/echo-031",
+        "b-mic/event-1/echo-033",
+        "b-mic/event-2/echo-054",
+        "b-mic/event-2/echo-055",
+        "b-mic/event-2/echo-059",
+        "c-mic/event-0/echo-012",
+        "c-mic/event-0/echo-015",
+        "c-mic/event-0/echo-016",
+        "c-mic/event-0/echo-017",
+        "c-mic/event-1/echo-036",
+        "c-mic/event-1/echo-038",
+        "c-mic/event-1/echo-041",
+        "c-mic/event-2/echo-060",
+        "c-mic/event-2/echo-062",
+        "c-mic/event-2/echo-063",
+        "c-mic/event-2/echo-065",
+        "d-mic/event-0/echo-020",
+        "d-mic/event-0/echo-021",
+        "d-mic/event-0/echo-022",
+        "d-mic/event-2/echo-068",
+        "d-mic/event-2/echo-070"
+      ],
+      "unassigned_echo_ids": [],
+      "false_detection_count": 0,
+      "false_detections_assigned_to_walls": 0,
+      "wrongly_assigned_true_echoes": 0,
+      "false_association_count": 0,
+      "false_association_rate_among_assignments": 0.0,
+      "omitted_true_echoes": [],
+      "unmatched_detected_true_echo_count": 0,
+      "unassigned_detected_false_echo_count": 0,
+      "missed_predicted_path_count": 0,
+      "missed_predicted_paths": [],
+      "inferred_associations": [
+        {
+          "microphone_id": "a-mic",
+          "event_id": "event-0",
+          "echo_id": "a-mic/event-0/echo-000",
+          "inferred_wall_id": "x_min",
+          "observed_time_s": 0.02824845509785103,
+          "predicted_time_s": 0.02824825048757175,
+          "residual_s": 2.0461027928214692e-07,
+          "assignment_cost": 2.3549268593203968e-08
+        },
+        {
+          "microphone_id": "a-mic",
+          "event_id": "event-0",
+          "echo_id": "a-mic/event-0/echo-001",
+          "inferred_wall_id": "x_max",
+          "observed_time_s": 0.0373683799033971,
+          "predicted_time_s": 0.03736613699645856,
+          "residual_s": 2.242906938537681e-06,
+          "assignment_cost": 2.8297302384040156e-06
+        },
+        {
+          "microphone_id": "a-mic",
+          "event_id": "event-0",
+          "echo_id": "a-mic/event-0/echo-002",
+          "inferred_wall_id": "y_min",
+          "observed_time_s": 0.02742276858991674,
+          "predicted_time_s": 0.02742161067689585,
+          "residual_s": 1.1579130208896893e-06,
+          "assignment_cost": 7.541789422195609e-07
+        },
+        {
+          "microphone_id": "a-mic",
+          "event_id": "event-0",
+          "echo_id": "a-mic/event-0/echo-003",
+          "inferred_wall_id": "y_max",
+          "observed_time_s": 0.03227660162581866,
+          "predicted_time_s": 0.03227964064039099,
+          "residual_s": -3.0390145723258044e-06,
+          "assignment_cost": 5.195030383579833e-06
+        },
+        {
+          "microphone_id": "a-mic",
+          "event_id": "event-0",
+          "echo_id": "a-mic/event-0/echo-004",
+          "inferred_wall_id": "z_min",
+          "observed_time_s": 0.027354304456798623,
+          "predicted_time_s": 0.02735532837581772,
+          "residual_s": -1.0239190190962366e-06,
+          "assignment_cost": 5.897307136876872e-07
+        },
+        {
+          "microphone_id": "a-mic",
+          "event_id": "event-0",
+          "echo_id": "a-mic/event-0/echo-005",
+          "inferred_wall_id": "z_max",
+          "observed_time_s": 0.029986657861884067,
+          "predicted_time_s": 0.02998644015127919,
+          "residual_s": 2.17710604877297e-07,
+          "assignment_cost": 2.6661322955271674e-08
+        },
+        {
+          "microphone_id": "a-mic",
+          "event_id": "event-1",
+          "echo_id": "a-mic/event-1/echo-024",
+          "inferred_wall_id": "x_min",
+          "observed_time_s": 0.047212198147992,
+          "predicted_time_s": 0.047213621029535524,
+          "residual_s": -1.4228815435265996e-06,
+          "assignment_cost": 1.1388329363861092e-06
+        },
+        {
+          "microphone_id": "a-mic",
+          "event_id": "event-1",
+          "echo_id": "a-mic/event-1/echo-025",
+          "inferred_wall_id": "x_max",
+          "observed_time_s": 0.061004721287181166,
+          "predicted_time_s": 0.0610031824863958,
+          "residual_s": 1.5388007853639474e-06,
+          "assignment_cost": 1.3319481695831445e-06
+        },
+        {
+          "microphone_id": "a-mic",
+          "event_id": "event-1",
+          "echo_id": "a-mic/event-1/echo-026",
+          "inferred_wall_id": "y_min",
+          "observed_time_s": 0.04459417431831689,
+          "predicted_time_s": 0.04459445053755355,
+          "residual_s": -2.762192366639882e-07,
+          "assignment_cost": 4.2917100020570425e-08
+        },
+        {
+          "microphone_id": "a-mic",
+          "event_id": "event-1",
+          "echo_id": "a-mic/event-1/echo-027",
+          "inferred_wall_id": "y_max",
+          "observed_time_s": 0.060435498951285714,
+          "predicted_time_s": 0.06043579330552494,
+          "residual_s": -2.9435423922613557e-07,
+          "assignment_cost": 4.873748520959834e-08
+        },
+        {
+          "microphone_id": "a-mic",
+          "event_id": "event-1",
+          "echo_id": "a-mic/event-1/echo-028",
+          "inferred_wall_id": "z_min",
+          "observed_time_s": 0.04669749681706051,
+          "predicted_time_s": 0.04670182637923585,
+          "residual_s": -4.329562175345303e-06,
+          "assignment_cost": 1.0544123604476673e-05
+        },
+        {
+          "microphone_id": "a-mic",
+          "event_id": "event-1",
+          "echo_id": "a-mic/event-1/echo-029",
+          "inferred_wall_id": "z_max",
+          "observed_time_s": 0.05093273273607329,
+          "predicted_time_s": 0.05093419212389116,
+          "residual_s": -1.4593878178703612e-06,
+          "assignment_cost": 1.1980197016584832e-06
+        },
+        {
+          "microphone_id": "a-mic",
+          "event_id": "event-2",
+          "echo_id": "a-mic/event-2/echo-048",
+          "inferred_wall_id": "x_min",
+          "observed_time_s": 0.07348115820339589,
+          "predicted_time_s": 0.07348212017183878,
+          "residual_s": -9.61968442889094e-07,
+          "assignment_cost": 5.205280978768883e-07
+        },
+        {
+          "microphone_id": "a-mic",
+          "event_id": "event-2",
+          "echo_id": "a-mic/event-2/echo-049",
+          "inferred_wall_id": "x_max",
+          "observed_time_s": 0.08019368252592293,
+          "predicted_time_s": 0.08019579419398329,
+          "residual_s": -2.11166806035612e-06,
+          "assignment_cost": 2.5082673733846003e-06
+        },
+        {
+          "microphone_id": "a-mic",
+          "event_id": "event-2",
+          "echo_id": "a-mic/event-2/echo-050",
+          "inferred_wall_id": "y_min",
+          "observed_time_s": 0.07099901799441335,
+          "predicted_time_s": 0.07099912350414457,
+          "residual_s": -1.0550973121581375e-07,
+          "assignment_cost": 6.26192065194371e-09
+        },
+        {
+          "microphone_id": "a-mic",
+          "event_id": "event-2",
+          "echo_id": "a-mic/event-2/echo-051",
+          "inferred_wall_id": "y_max",
+          "observed_time_s": 0.0810898827433351,
+          "predicted_time_s": 0.08109023898045972,
+          "residual_s": -3.562371246185192e-07,
+          "assignment_cost": 7.138400003801459e-08
+        },
+        {
+          "microphone_id": "a-mic",
+          "event_id": "event-2",
+          "echo_id": "a-mic/event-2/echo-052",
+          "inferred_wall_id": "z_min",
+          "observed_time_s": 0.07055762131974197,
+          "predicted_time_s": 0.07056015115366648,
+          "residual_s": -2.5298339245138912e-06,
+          "assignment_cost": 3.6000335731620132e-06
+        },
+        {
+          "microphone_id": "a-mic",
+          "event_id": "event-2",
+          "echo_id": "a-mic/event-2/echo-053",
+          "inferred_wall_id": "z_max",
+          "observed_time_s": 0.07886543274663198,
+          "predicted_time_s": 0.07886964626871792,
+          "residual_s": -4.21352208594683e-06,
+          "assignment_cost": 9.986494707428472e-06
+        },
+        {
+          "microphone_id": "b-mic",
+          "event_id": "event-0",
+          "echo_id": "b-mic/event-0/echo-006",
+          "inferred_wall_id": "x_min",
+          "observed_time_s": 0.030377135461393815,
+          "predicted_time_s": 0.030376600010868133,
+          "residual_s": 5.354505256821573e-07,
+          "assignment_cost": 1.6127283681748048e-07
+        },
+        {
+          "microphone_id": "b-mic",
+          "event_id": "event-0",
+          "echo_id": "b-mic/event-0/echo-007",
+          "inferred_wall_id": "x_max",
+          "observed_time_s": 0.033050240761730756,
+          "predicted_time_s": 0.033049916016326134,
+          "residual_s": 3.247454046229059e-07,
+          "assignment_cost": 5.932101252582837e-08
+        },
+        {
+          "microphone_id": "b-mic",
+          "event_id": "event-0",
+          "echo_id": "b-mic/event-0/echo-008",
+          "inferred_wall_id": "y_min",
+          "observed_time_s": 0.02741937926112162,
+          "predicted_time_s": 0.027418854603122274,
+          "residual_s": 5.246579993477274e-07,
+          "assignment_cost": 1.5483713415725244e-07
+        },
+        {
+          "microphone_id": "b-mic",
+          "event_id": "event-0",
+          "echo_id": "b-mic/event-0/echo-009",
+          "inferred_wall_id": "y_max",
+          "observed_time_s": 0.02902399327095603,
+          "predicted_time_s": 0.02902340061986604,
+          "residual_s": 5.926510899881277e-07,
+          "assignment_cost": 1.9756986438606512e-07
+        },
+        {
+          "microphone_id": "b-mic",
+          "event_id": "event-0",
+          "echo_id": "b-mic/event-0/echo-010",
+          "inferred_wall_id": "z_min",
+          "observed_time_s": 0.025576178846134435,
+          "predicted_time_s": 0.02557799536116037,
+          "residual_s": -1.816515025936799e-06,
+          "assignment_cost": 1.8560963471929705e-06
+        },
+        {
+          "microphone_id": "b-mic",
+          "event_id": "event-0",
+          "echo_id": "b-mic/event-0/echo-011",
+          "inferred_wall_id": "z_max",
+          "observed_time_s": 0.0271082043219196,
+          "predicted_time_s": 0.027107221797757472,
+          "residual_s": 9.825241621269631e-07,
+          "assignment_cost": 5.430114726543512e-07
+        },
+        {
+          "microphone_id": "b-mic",
+          "event_id": "event-1",
+          "echo_id": "b-mic/event-1/echo-030",
+          "inferred_wall_id": "x_min",
+          "observed_time_s": 0.05031829972249979,
+          "predicted_time_s": 0.050316531237975165,
+          "residual_s": 1.7684845246279668e-06,
+          "assignment_cost": 1.7592398515398406e-06
+        },
+        {
+          "microphone_id": "b-mic",
+          "event_id": "event-1",
+          "echo_id": "b-mic/event-1/echo-031",
+          "inferred_wall_id": "x_max",
+          "observed_time_s": 0.05707587358581475,
+          "predicted_time_s": 0.057080610590522045,
+          "residual_s": -4.737004707294767e-06,
+          "assignment_cost": 1.2622057648274692e-05
+        },
+        {
+          "microphone_id": "b-mic",
+          "event_id": "event-1",
+          "echo_id": "b-mic/event-1/echo-032",
+          "inferred_wall_id": "y_min",
+          "observed_time_s": 0.0440708917091363,
+          "predicted_time_s": 0.04407075754291781,
+          "residual_s": 1.3416621848921784e-07,
+          "assignment_cost": 1.0125322978329302e-08
+        },
+        {
+          "microphone_id": "b-mic",
+          "event_id": "event-1",
+          "echo_id": "b-mic/event-1/echo-033",
+          "inferred_wall_id": "y_max",
+          "observed_time_s": 0.057711267492400395,
+          "predicted_time_s": 0.05771171691274807,
+          "residual_s": -4.4942034767292416e-07,
+          "assignment_cost": 1.1361299000762927e-07
+        },
+        {
+          "microphone_id": "b-mic",
+          "event_id": "event-1",
+          "echo_id": "b-mic/event-1/echo-034",
+          "inferred_wall_id": "z_min",
+          "observed_time_s": 0.0462280292406483,
+          "predicted_time_s": 0.04623111386837214,
+          "residual_s": -3.0846277238455455e-06,
+          "assignment_cost": 5.35214710952806e-06
+        },
+        {
+          "microphone_id": "b-mic",
+          "event_id": "event-1",
+          "echo_id": "b-mic/event-1/echo-035",
+          "inferred_wall_id": "z_max",
+          "observed_time_s": 0.04911453516600472,
+          "predicted_time_s": 0.04911537917975379,
+          "residual_s": -8.440137490711708e-07,
+          "assignment_cost": 4.0070205484940995e-07
+        },
+        {
+          "microphone_id": "b-mic",
+          "event_id": "event-2",
+          "echo_id": "b-mic/event-2/echo-054",
+          "inferred_wall_id": "x_min",
+          "observed_time_s": 0.07661512881668904,
+          "predicted_time_s": 0.07661099903032609,
+          "residual_s": 4.12978636295247e-06,
+          "assignment_cost": 9.593513664540857e-06
+        },
+        {
+          "microphone_id": "b-mic",
+          "event_id": "event-2",
+          "echo_id": "b-mic/event-2/echo-055",
+          "inferred_wall_id": "x_max",
+          "observed_time_s": 0.07603831143259461,
+          "predicted_time_s": 0.07603581974604759,
+          "residual_s": 2.4916865470209215e-06,
+          "assignment_cost": 3.4922822898403368e-06
+        },
+        {
+          "microphone_id": "b-mic",
+          "event_id": "event-2",
+          "echo_id": "b-mic/event-2/echo-056",
+          "inferred_wall_id": "y_min",
+          "observed_time_s": 0.07021284620343773,
+          "predicted_time_s": 0.07021362102953552,
+          "residual_s": -7.74826097782455e-07,
+          "assignment_cost": 3.3769995851519246e-07
+        },
+        {
+          "microphone_id": "b-mic",
+          "event_id": "event-2",
+          "echo_id": "b-mic/event-2/echo-057",
+          "inferred_wall_id": "y_max",
+          "observed_time_s": 0.07779967002566565,
+          "predicted_time_s": 0.07779827784708636,
+          "residual_s": 1.3921785792930796e-06,
+          "assignment_cost": 1.090215673111405e-06
+        },
+        {
+          "microphone_id": "b-mic",
+          "event_id": "event-2",
+          "echo_id": "b-mic/event-2/echo-058",
+          "inferred_wall_id": "z_min",
+          "observed_time_s": 0.06797991851797684,
+          "predicted_time_s": 0.06797664060190593,
+          "residual_s": 3.277916070909548e-06,
+          "assignment_cost": 6.043912744458987e-06
+        },
+        {
+          "microphone_id": "b-mic",
+          "event_id": "event-2",
+          "echo_id": "b-mic/event-2/echo-059",
+          "inferred_wall_id": "z_max",
+          "observed_time_s": 0.07626313418159274,
+          "predicted_time_s": 0.07626084249728504,
+          "residual_s": 2.2916843076953297e-06,
+          "assignment_cost": 2.9541470434520753e-06
+        },
+        {
+          "microphone_id": "c-mic",
+          "event_id": "event-0",
+          "echo_id": "c-mic/event-0/echo-012",
+          "inferred_wall_id": "x_min",
+          "observed_time_s": 0.0265028140674714,
+          "predicted_time_s": 0.026501259609849434,
+          "residual_s": 1.5544576219654604e-06,
+          "assignment_cost": 1.3591904053986644e-06
+        },
+        {
+          "microphone_id": "c-mic",
+          "event_id": "event-0",
+          "echo_id": "c-mic/event-0/echo-013",
+          "inferred_wall_id": "x_max",
+          "observed_time_s": 0.03448029656376413,
+          "predicted_time_s": 0.034481172291540546,
+          "residual_s": -8.757277764129268e-07,
+          "assignment_cost": 4.313807653393851e-07
+        },
+        {
+          "microphone_id": "c-mic",
+          "event_id": "event-0",
+          "echo_id": "c-mic/event-0/echo-014",
+          "inferred_wall_id": "y_min",
+          "observed_time_s": 0.03117547879213146,
+          "predicted_time_s": 0.031175607757907113,
+          "residual_s": -1.2896577565243983e-07,
+          "assignment_cost": 9.355596350419936e-09
+        },
+        {
+          "microphone_id": "c-mic",
+          "event_id": "event-0",
+          "echo_id": "c-mic/event-0/echo-015",
+          "inferred_wall_id": "y_max",
+          "observed_time_s": 0.025939960013240664,
+          "predicted_time_s": 0.025940376228797274,
+          "residual_s": -4.1621555661036647e-07,
+          "assignment_cost": 9.744490663001841e-08
+        },
+        {
+          "microphone_id": "c-mic",
+          "event_id": "event-0",
+          "echo_id": "c-mic/event-0/echo-016",
+          "inferred_wall_id": "z_min",
+          "observed_time_s": 0.02726525251033824,
+          "predicted_time_s": 0.02726650432838023,
+          "residual_s": -1.251818041989039e-06,
+          "assignment_cost": 8.814647307652152e-07
+        },
+        {
+          "microphone_id": "c-mic",
+          "event_id": "event-0",
+          "echo_id": "c-mic/event-0/echo-017",
+          "inferred_wall_id": "z_max",
+          "observed_time_s": 0.025217415576431312,
+          "predicted_time_s": 0.025213363802231048,
+          "residual_s": 4.051774200264369e-06,
+          "assignment_cost": 9.23449172058448e-06
+        },
+        {
+          "microphone_id": "c-mic",
+          "event_id": "event-1",
+          "echo_id": "c-mic/event-1/echo-036",
+          "inferred_wall_id": "x_min",
+          "observed_time_s": 0.04799507385632041,
+          "predicted_time_s": 0.047995853695640044,
+          "residual_s": -7.798393196339903e-07,
+          "assignment_cost": 3.420840175015528e-07
+        },
+        {
+          "microphone_id": "c-mic",
+          "event_id": "event-1",
+          "echo_id": "c-mic/event-1/echo-037",
+          "inferred_wall_id": "x_max",
+          "observed_time_s": 0.05973027710419868,
+          "predicted_time_s": 0.05972987038299273,
+          "residual_s": 4.067212059505332e-07,
+          "assignment_cost": 9.304995339554402e-08
+        },
+        {
+          "microphone_id": "c-mic",
+          "event_id": "event-1",
+          "echo_id": "c-mic/event-1/echo-038",
+          "inferred_wall_id": "y_min",
+          "observed_time_s": 0.047463720200490035,
+          "predicted_time_s": 0.047461638643243445,
+          "residual_s": 2.081557246590149e-06,
+          "assignment_cost": 2.4372453210929785e-06
+        },
+        {
+          "microphone_id": "c-mic",
+          "event_id": "event-1",
+          "echo_id": "c-mic/event-1/echo-039",
+          "inferred_wall_id": "y_max",
+          "observed_time_s": 0.05406165524468207,
+          "predicted_time_s": 0.05406334035577875,
+          "residual_s": -1.6851110966747962e-06,
+          "assignment_cost": 1.5972746670768005e-06
+        },
+        {
+          "microphone_id": "c-mic",
+          "event_id": "event-1",
+          "echo_id": "c-mic/event-1/echo-040",
+          "inferred_wall_id": "z_min",
+          "observed_time_s": 0.049501960560438804,
+          "predicted_time_s": 0.04950419004528601,
+          "residual_s": -2.229484847203478e-06,
+          "assignment_cost": 2.795964009699327e-06
+        },
+        {
+          "microphone_id": "c-mic",
+          "event_id": "event-1",
+          "echo_id": "c-mic/event-1/echo-041",
+          "inferred_wall_id": "z_max",
+          "observed_time_s": 0.048456425391080665,
+          "predicted_time_s": 0.048458758325951576,
+          "residual_s": -2.3329348709105746e-06,
+          "assignment_cost": 3.0614541254496785e-06
+        },
+        {
+          "microphone_id": "c-mic",
+          "event_id": "event-2",
+          "echo_id": "c-mic/event-2/echo-060",
+          "inferred_wall_id": "x_min",
+          "observed_time_s": 0.07379441556256022,
+          "predicted_time_s": 0.07379733782407472,
+          "residual_s": -2.922261514493041e-06,
+          "assignment_cost": 4.803531951986528e-06
+        },
+        {
+          "microphone_id": "c-mic",
+          "event_id": "event-2",
+          "echo_id": "c-mic/event-2/echo-061",
+          "inferred_wall_id": "x_max",
+          "observed_time_s": 0.07844776794759911,
+          "predicted_time_s": 0.0784498027454496,
+          "residual_s": -2.0347978504919872e-06,
+          "assignment_cost": 2.3289762894563317e-06
+        },
+        {
+          "microphone_id": "c-mic",
+          "event_id": "event-2",
+          "echo_id": "c-mic/event-2/echo-062",
+          "inferred_wall_id": "y_min",
+          "observed_time_s": 0.07471776643928771,
+          "predicted_time_s": 0.07471751741904542,
+          "residual_s": 2.4902024228778963e-07,
+          "assignment_cost": 3.4881233101351566e-08
+        },
+        {
+          "microphone_id": "c-mic",
+          "event_id": "event-2",
+          "echo_id": "c-mic/event-2/echo-063",
+          "inferred_wall_id": "y_max",
+          "observed_time_s": 0.0752309848692014,
+          "predicted_time_s": 0.07522932734718576,
+          "residual_s": 1.6575220156411774e-06,
+          "assignment_cost": 1.5454008181885452e-06
+        },
+        {
+          "microphone_id": "c-mic",
+          "event_id": "event-2",
+          "echo_id": "c-mic/event-2/echo-064",
+          "inferred_wall_id": "z_min",
+          "observed_time_s": 0.0708960353067552,
+          "predicted_time_s": 0.07089407836005596,
+          "residual_s": 1.9569466992441775e-06,
+          "assignment_cost": 2.1541727158215083e-06
+        },
+        {
+          "microphone_id": "c-mic",
+          "event_id": "event-2",
+          "echo_id": "c-mic/event-2/echo-065",
+          "inferred_wall_id": "z_max",
+          "observed_time_s": 0.07525788405867369,
+          "predicted_time_s": 0.07525812573569413,
+          "residual_s": -2.416770204377583e-07,
+          "assignment_cost": 3.285437749181586e-08
+        },
+        {
+          "microphone_id": "d-mic",
+          "event_id": "event-0",
+          "echo_id": "d-mic/event-0/echo-018",
+          "inferred_wall_id": "x_min",
+          "observed_time_s": 0.03157135563285314,
+          "predicted_time_s": 0.0315704798213859,
+          "residual_s": 8.758114672380302e-07,
+          "assignment_cost": 4.3146322095691753e-07
+        },
+        {
+          "microphone_id": "d-mic",
+          "event_id": "event-0",
+          "echo_id": "d-mic/event-0/echo-019",
+          "inferred_wall_id": "x_max",
+          "observed_time_s": 0.029883562021516416,
+          "predicted_time_s": 0.029881997847028163,
+          "residual_s": 1.5641744882527453e-06,
+          "assignment_cost": 1.376236029206665e-06
+        },
+        {
+          "microphone_id": "d-mic",
+          "event_id": "event-0",
+          "echo_id": "d-mic/event-0/echo-020",
+          "inferred_wall_id": "y_min",
+          "observed_time_s": 0.02729816030536775,
+          "predicted_time_s": 0.02729987377656201,
+          "residual_s": -1.7134711942611014e-06,
+          "assignment_cost": 1.6514907376289429e-06
+        },
+        {
+          "microphone_id": "d-mic",
+          "event_id": "event-0",
+          "echo_id": "d-mic/event-0/echo-021",
+          "inferred_wall_id": "y_max",
+          "observed_time_s": 0.026722414881618604,
+          "predicted_time_s": 0.02672344085284728,
+          "residual_s": -1.0259712286755929e-06,
+          "assignment_cost": 5.920970411644345e-07
+        },
+        {
+          "microphone_id": "d-mic",
+          "event_id": "event-0",
+          "echo_id": "d-mic/event-0/echo-022",
+          "inferred_wall_id": "z_min",
+          "observed_time_s": 0.028205924331534644,
+          "predicted_time_s": 0.028206346483600344,
+          "residual_s": -4.22152065700232e-07,
+          "assignment_cost": 1.002444561984223e-07
+        },
+        {
+          "microphone_id": "d-mic",
+          "event_id": "event-0",
+          "echo_id": "d-mic/event-0/echo-023",
+          "inferred_wall_id": "z_max",
+          "observed_time_s": 0.022788799722633545,
+          "predicted_time_s": 0.022791340981237872,
+          "residual_s": -2.54125860432719e-06,
+          "assignment_cost": 3.632622352912675e-06
+        },
+        {
+          "microphone_id": "d-mic",
+          "event_id": "event-1",
+          "echo_id": "d-mic/event-1/echo-042",
+          "inferred_wall_id": "x_min",
+          "observed_time_s": 0.05202356320290338,
+          "predicted_time_s": 0.052022344696204086,
+          "residual_s": 1.21850669929785e-06,
+          "assignment_cost": 8.351766991314792e-07
+        },
+        {
+          "microphone_id": "d-mic",
+          "event_id": "event-1",
+          "echo_id": "d-mic/event-1/echo-043",
+          "inferred_wall_id": "x_max",
+          "observed_time_s": 0.05434210973321387,
+          "predicted_time_s": 0.0543411500193162,
+          "residual_s": 9.5971389767191e-07,
+          "assignment_cost": 5.180910555288427e-07
+        },
+        {
+          "microphone_id": "d-mic",
+          "event_id": "event-1",
+          "echo_id": "d-mic/event-1/echo-044",
+          "inferred_wall_id": "y_min",
+          "observed_time_s": 0.043807945343619606,
+          "predicted_time_s": 0.04380929733512427,
+          "residual_s": -1.3519915046666942e-06,
+          "assignment_cost": 1.0281830786386378e-06
+        },
+        {
+          "microphone_id": "d-mic",
+          "event_id": "event-1",
+          "echo_id": "d-mic/event-1/echo-045",
+          "inferred_wall_id": "y_max",
+          "observed_time_s": 0.05602050903317869,
+          "predicted_time_s": 0.0560186974819413,
+          "residual_s": 1.811551237393405e-06,
+          "assignment_cost": 1.8459663107071372e-06
+        },
+        {
+          "microphone_id": "d-mic",
+          "event_id": "event-1",
+          "echo_id": "d-mic/event-1/echo-046",
+          "inferred_wall_id": "z_min",
+          "observed_time_s": 0.04998579203674921,
+          "predicted_time_s": 0.049982699892162794,
+          "residual_s": 3.092144586415435e-06,
+          "assignment_cost": 5.3782639556052834e-06
+        },
+        {
+          "microphone_id": "d-mic",
+          "event_id": "event-1",
+          "echo_id": "d-mic/event-1/echo-047",
+          "inferred_wall_id": "z_max",
+          "observed_time_s": 0.04537376342584501,
+          "predicted_time_s": 0.04536959440529828,
+          "residual_s": 4.169020546729296e-06,
+          "assignment_cost": 9.77666192946621e-06
+        },
+        {
+          "microphone_id": "d-mic",
+          "event_id": "event-2",
+          "echo_id": "d-mic/event-2/echo-066",
+          "inferred_wall_id": "x_min",
+          "observed_time_s": 0.07888172072012002,
+          "predicted_time_s": 0.078881637993551,
+          "residual_s": 8.272656902563735e-08,
+          "assignment_cost": 3.849572937798867e-09
+        },
+        {
+          "microphone_id": "d-mic",
+          "event_id": "event-2",
+          "echo_id": "d-mic/event-2/echo-067",
+          "inferred_wall_id": "x_max",
+          "observed_time_s": 0.07369520824003499,
+          "predicted_time_s": 0.0736948062914372,
+          "residual_s": 4.0194859779463243e-07,
+          "assignment_cost": 9.087900483885255e-08
+        },
+        {
+          "microphone_id": "d-mic",
+          "event_id": "event-2",
+          "echo_id": "d-mic/event-2/echo-068",
+          "inferred_wall_id": "y_min",
+          "observed_time_s": 0.07059360534244725,
+          "predicted_time_s": 0.07059394231280185,
+          "residual_s": -3.369703545919034e-07,
+          "assignment_cost": 6.387132367900862e-08
+        },
+        {
+          "microphone_id": "d-mic",
+          "event_id": "event-2",
+          "echo_id": "d-mic/event-2/echo-069",
+          "inferred_wall_id": "y_max",
+          "observed_time_s": 0.07622369923344323,
+          "predicted_time_s": 0.07622210557569653,
+          "residual_s": 1.593657746698507e-06,
+          "assignment_cost": 1.4286065701568414e-06
+        },
+        {
+          "microphone_id": "d-mic",
+          "event_id": "event-2",
+          "echo_id": "d-mic/event-2/echo-070",
+          "inferred_wall_id": "z_min",
+          "observed_time_s": 0.07018490228739198,
+          "predicted_time_s": 0.0701822637992864,
+          "residual_s": 2.638488105582981e-06,
+          "assignment_cost": 3.9159109593578635e-06
+        },
+        {
+          "microphone_id": "d-mic",
+          "event_id": "event-2",
+          "echo_id": "d-mic/event-2/echo-071",
+          "inferred_wall_id": "z_max",
+          "observed_time_s": 0.07186587244883637,
+          "predicted_time_s": 0.07186628081694402,
+          "residual_s": -4.083681076488821e-07,
+          "assignment_cost": 9.380503763141004e-08
+        }
+      ],
+      "dimension_fit_status": "converged",
+      "dimension_optimizer_success": true,
+      "dimension_optimizer_status": 3,
+      "dimension_optimizer_message": "`xtol` termination condition is satisfied.",
+      "dimension_function_evaluations": 2,
+      "dimension_fit_objective": 0.340359625553832,
+      "toa_residual_statistics_s": {
+        "mean_signed": -3.272063555318181e-08,
+        "mean_absolute": 1.5375433187684947e-06,
+        "rms": 1.9446782811726982e-06,
+        "maximum_absolute": 4.737004707294767e-06
+      },
+      "jacobian_rank": 3,
+      "jacobian_singular_values": [
+        981.7321142775304,
+        948.8947636934524,
+        917.7876657012575
+      ],
+      "jacobian_condition_number": 1.0696723773547496,
+      "physical_valid": true,
+      "converged": true,
+      "association_status": "converged",
+      "iteration_count": 6,
+      "runtime_s_external_wallclock": 0.1316264000015508,
+      "runtime_s_reported": 0.1315457000018796,
+      "warnings": [],
+      "iterations": [
+        {
+          "iteration": 0,
+          "dimensions_before_m": [
+            5.2,
+            4.8,
+            4.1
+          ],
+          "dimensions_after_m": [
+            5.476751267753769,
+            4.988748387119416,
+            4.312505826091515
+          ],
+          "matched_count": 66,
+          "unassigned_count": 6,
+          "missed_path_count": 6,
+          "ambiguous_count": 38,
+          "changed_assignments": 66,
+          "association_objective": 173.31753154912002,
+          "dimension_fit_status": "converged"
+        },
+        {
+          "iteration": 1,
+          "dimensions_before_m": [
+            5.476751267753769,
+            4.988748387119416,
+            4.312505826091515
+          ],
+          "dimensions_after_m": [
+            5.790122467755027,
+            5.1081539305264,
+            4.398708975641241
+          ],
+          "matched_count": 69,
+          "unassigned_count": 3,
+          "missed_path_count": 3,
+          "ambiguous_count": 31,
+          "changed_assignments": 43,
+          "association_objective": 105.31081693076975,
+          "dimension_fit_status": "converged"
+        },
+        {
+          "iteration": 2,
+          "dimensions_before_m": [
+            5.790122467755027,
+            5.1081539305264,
+            4.398708975641241
+          ],
+          "dimensions_after_m": [
+            6.085410392745828,
+            5.108960732222679,
+            4.36089272842033
+          ],
+          "matched_count": 72,
+          "unassigned_count": 0,
+          "missed_path_count": 0,
+          "ambiguous_count": 33,
+          "changed_assignments": 39,
+          "association_objective": 31.01457940113755,
+          "dimension_fit_status": "converged"
+        },
+        {
+          "iteration": 3,
+          "dimensions_before_m": [
+            6.085410392745828,
+            5.108960732222679,
+            4.36089272842033
+          ],
+          "dimensions_after_m": [
+            6.191606883584546,
+            5.108960732222679,
+            4.304824492869154
+          ],
+          "matched_count": 72,
+          "unassigned_count": 0,
+          "missed_path_count": 0,
+          "ambiguous_count": 35,
+          "changed_assignments": 20,
+          "association_objective": 3.476752188678159,
+          "dimension_fit_status": "converged"
+        },
+        {
+          "iteration": 4,
+          "dimensions_before_m": [
+            6.191606883584546,
+            5.108960732222679,
+            4.304824492869154
+          ],
+          "dimensions_after_m": [
+            6.20000559888599,
+            5.100195800641341,
+            4.300044220873621
+          ],
+          "matched_count": 72,
+          "unassigned_count": 0,
+          "missed_path_count": 0,
+          "ambiguous_count": 34,
+          "changed_assignments": 8,
+          "association_objective": 0.03534916244320428,
+          "dimension_fit_status": "converged"
+        },
+        {
+          "iteration": 5,
+          "dimensions_before_m": [
+            6.20000559888599,
+            5.100195800641341,
+            4.300044220873621
+          ],
+          "dimensions_after_m": [
+            6.20000559888599,
+            5.100195800641341,
+            4.300044220873621
+          ],
+          "matched_count": 72,
+          "unassigned_count": 0,
+          "missed_path_count": 0,
+          "ambiguous_count": 34,
+          "changed_assignments": 0,
+          "association_objective": 0.0001531618314992244,
+          "dimension_fit_status": "converged"
+        }
+      ],
+      "labeled_phase5d2_baseline": {
+        "status": "converged",
+        "estimated_dimensions_m": [
+          6.200005598885989,
+          5.100195800641341,
+          4.300044220873622
+        ],
+        "absolute_dimension_error_m": [
+          5.598885988611357e-06,
+          0.00019580064134139263,
+          4.4220873622435874e-05
+        ],
+        "residual_rms_s": 1.94467828117268e-06,
+        "jacobian_rank": 3,
+        "condition_number": 1.0696723773547496,
+        "used_observations": 72
+      }
+    },
+    {
+      "case": "symmetric_ambiguous_pair",
+      "seed": 55,
+      "noise_standard_deviation_s": 0.0,
+      "requested_missing_rate": 0.0,
+      "possible_first_order_paths": 6,
+      "input_echoes": 6,
+      "usable_echoes": 6,
+      "dimensions_truth_evaluation_only_m": [
+        4.0,
+        4.0,
+        3.0
+      ],
+      "estimated_dimensions_m": [
+        4.000000000160433,
+        4.000000000054475,
+        3.000000001575787
+      ],
+      "absolute_dimension_error_m": [
+        1.6043255612885332e-10,
+        5.447464701546778e-11,
+        1.5757870563959386e-09
+      ],
+      "max_absolute_dimension_error_m": 1.5757870563959386e-09,
+      "association_accuracy_excluding_reported_ambiguous_pairs": 1.0,
+      "association_accuracy_all_detected_true_echoes": 0.6666666666666666,
+      "ambiguous_echo_count": 4,
+      "ambiguous_echo_ids": [
+        "center-mic/event-0/echo-000",
+        "center-mic/event-0/echo-001",
+        "center-mic/event-0/echo-002",
+        "center-mic/event-0/echo-003"
+      ],
+      "unassigned_echo_ids": [],
+      "false_detection_count": 0,
+      "false_detections_assigned_to_walls": 0,
+      "wrongly_assigned_true_echoes": 2,
+      "false_association_count": 2,
+      "false_association_rate_among_assignments": 0.3333333333333333,
+      "omitted_true_echoes": [],
+      "unmatched_detected_true_echo_count": 0,
+      "unassigned_detected_false_echo_count": 0,
+      "missed_predicted_path_count": 0,
+      "missed_predicted_paths": [],
+      "inferred_associations": [
+        {
+          "microphone_id": "center-mic",
+          "event_id": "event-0",
+          "echo_id": "center-mic/event-0/echo-000",
+          "inferred_wall_id": "y_max",
+          "observed_time_s": 0.02459731644342175,
+          "predicted_time_s": 0.024597316443737853,
+          "residual_s": -3.161013117924938e-13,
+          "assignment_cost": 5.620502211577615e-20
+        },
+        {
+          "microphone_id": "center-mic",
+          "event_id": "event-0",
+          "echo_id": "center-mic/event-0/echo-001",
+          "inferred_wall_id": "x_max",
+          "observed_time_s": 0.022857856821886922,
+          "predicted_time_s": 0.0228578568228163,
+          "residual_s": -9.293781022545744e-13,
+          "assignment_cost": 4.858558070345517e-19
+        },
+        {
+          "microphone_id": "center-mic",
+          "event_id": "event-0",
+          "echo_id": "center-mic/event-0/echo-002",
+          "inferred_wall_id": "y_min",
+          "observed_time_s": 0.022857856821886922,
+          "predicted_time_s": 0.022857856821886922,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "center-mic",
+          "event_id": "event-0",
+          "echo_id": "center-mic/event-0/echo-003",
+          "inferred_wall_id": "x_min",
+          "observed_time_s": 0.02459731644342175,
+          "predicted_time_s": 0.02459731644342175,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "center-mic",
+          "event_id": "event-0",
+          "echo_id": "center-mic/event-0/echo-004",
+          "inferred_wall_id": "z_min",
+          "observed_time_s": 0.021700177702398907,
+          "predicted_time_s": 0.021700177702398907,
+          "residual_s": 0.0,
+          "assignment_cost": 0.0
+        },
+        {
+          "microphone_id": "center-mic",
+          "event_id": "event-0",
+          "echo_id": "center-mic/event-0/echo-005",
+          "inferred_wall_id": "z_max",
+          "observed_time_s": 0.01996830925289589,
+          "predicted_time_s": 0.019968309261972773,
+          "residual_s": -9.076885076897412e-12,
+          "assignment_cost": 4.634428651830165e-17
+        }
+      ],
+      "dimension_fit_status": "converged",
+      "dimension_optimizer_success": true,
+      "dimension_optimizer_status": 1,
+      "dimension_optimizer_message": "`gtol` termination condition is satisfied.",
+      "dimension_function_evaluations": 1,
+      "dimension_fit_objective": 4.167675319773509e-23,
+      "toa_residual_statistics_s": {
+        "mean_signed": -1.72039408182408e-12,
+        "mean_absolute": 1.72039408182408e-12,
+        "rms": 3.727231018586277e-12,
+        "maximum_absolute": 9.076885076897412e-12
+      },
+      "jacobian_rank": 3,
+      "jacobian_singular_values": [
+        0.005802727445819685,
+        0.005792944519254049,
+        0.005760223556472296
+      ],
+      "jacobian_condition_number": 1.0073788610686178,
+      "physical_valid": true,
+      "converged": true,
+      "association_status": "converged",
+      "iteration_count": 2,
+      "runtime_s_external_wallclock": 0.005544399999052985,
+      "runtime_s_reported": 0.005524000000150409,
+      "warnings": [],
+      "iterations": [
+        {
+          "iteration": 0,
+          "dimensions_before_m": [
+            4.1,
+            4.1,
+            3.1
+          ],
+          "dimensions_after_m": [
+            4.000000000160433,
+            4.000000000054475,
+            3.000000001575787
+          ],
+          "matched_count": 6,
+          "unassigned_count": 0,
+          "missed_path_count": 0,
+          "ambiguous_count": 4,
+          "changed_assignments": 6,
+          "association_objective": 0.5653241324518907,
+          "dimension_fit_status": "converged"
+        },
+        {
+          "iteration": 1,
+          "dimensions_before_m": [
+            4.000000000160433,
+            4.000000000054475,
+            3.000000001575787
+          ],
+          "dimensions_after_m": [
+            4.000000000160433,
+            4.000000000054475,
+            3.000000001575787
+          ],
+          "matched_count": 6,
+          "unassigned_count": 0,
+          "missed_path_count": 0,
+          "ambiguous_count": 4,
+          "changed_assignments": 0,
+          "association_objective": 4.6886347347451977e-17,
+          "dimension_fit_status": "converged"
+        }
+      ],
+      "labeled_phase5d2_baseline": {
+        "status": "converged",
+        "estimated_dimensions_m": [
+          4.000000000160433,
+          4.000000000054475,
+          3.000000001575787
+        ],
+        "absolute_dimension_error_m": [
+          1.6043255612885332e-10,
+          5.447464701546778e-11,
+          1.5757870563959386e-09
+        ],
+        "residual_rms_s": 3.727231018586277e-12,
+        "jacobian_rank": 3,
+        "condition_number": 1.0073788610686178,
+        "used_observations": 6
+      }
+    }
+  ]
+}

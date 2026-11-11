@@ -1,0 +1,556 @@
+{
+  "experiment_metadata": {
+    "id": 12,
+    "project_id": 3,
+    "name": "Stored synthetic fixture",
+    "kind": "synthetic_forward",
+    "status": "completed",
+    "configuration": {
+      "room_dimensions_m": [
+        4.0,
+        3.0,
+        2.5
+      ],
+      "source_position_m": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "microphone_positions_m": [
+        [
+          3.0,
+          2.0,
+          1.0
+        ]
+      ],
+      "sampling_frequency_hz": 16000.0,
+      "duration_s": 0.01,
+      "waveform": "linear_sweep",
+      "start_frequency_hz": 500.0,
+      "end_frequency_hz": 7000.0,
+      "speed_of_sound_m_s": 343.0,
+      "wall_reflection_coefficients": {},
+      "max_reflection_order": 1,
+      "snr_db": null,
+      "random_seed": 17,
+      "impulse_placement": "linear",
+      "peak_window_length_samples": null,
+      "thr1": 0.9,
+      "thr2": 0.1,
+      "matching_tolerance_seconds": null
+    },
+    "error_message": null,
+    "created_at": "2026-01-01T00:00:00Z",
+    "updated_at": "2026-01-01T00:00:01Z"
+  },
+  "result_envelope": {
+    "data_classification": "synthetic_forward_simulation",
+    "geometry_status": "known synthetic ground truth",
+    "is_room_reconstruction": false,
+    "real_world_validation": false,
+    "result": {
+      "configuration": {
+        "room_dimensions_m": [
+          4.0,
+          3.0,
+          2.5
+        ],
+        "speed_of_sound_m_s": 343.0,
+        "wall_reflection_coefficients": {
+          "x_max": 0.8,
+          "x_min": 0.8,
+          "y_max": 0.8,
+          "y_min": 0.8,
+          "z_max": 0.8,
+          "z_min": 0.8
+        },
+        "source_position_m": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "microphone_positions_m": [
+          [
+            3.0,
+            2.0,
+            1.0
+          ]
+        ],
+        "max_reflection_order": 1,
+        "sampling_frequency_hz": 16000.0,
+        "excitation_sample_count": 160,
+        "excitation_sha256": "ba1ddeae3d61e0e1a59f1e05c88b6ca1a4c81af664df30ba55181d4845a8cc20",
+        "requested_snr_db": null,
+        "random_seed": 17,
+        "impulse_placement": "linear",
+        "peak_window_length_samples": 16,
+        "thr1": 0.9,
+        "thr2": 0.1,
+        "matching_tolerance_seconds": 6.25e-05
+      },
+      "room": {
+        "dimensions_m": [
+          4.0,
+          3.0,
+          2.5
+        ],
+        "speed_of_sound_m_s": 343.0,
+        "wall_reflection_coefficients": {
+          "x_max": 0.8,
+          "x_min": 0.8,
+          "y_max": 0.8,
+          "y_min": 0.8,
+          "z_max": 0.8,
+          "z_min": 0.8
+        }
+      },
+      "microphones": [
+        {
+          "index": 0,
+          "position_m": [
+            3.0,
+            2.0,
+            1.0
+          ],
+          "channel_count": 1
+        }
+      ],
+      "microphone_results": [
+        {
+          "microphone_index": 0,
+          "microphone_position_m": [
+            3.0,
+            2.0,
+            1.0
+          ],
+          "paths": [
+            {
+              "reflection_order": 0,
+              "reflection_sequence": [],
+              "image_source_position_m": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "reflection_coefficient": 1.0,
+              "distance_m": 2.23606797749979,
+              "time_of_flight_s": 0.006519148622448367
+            },
+            {
+              "reflection_order": 1,
+              "reflection_sequence": [
+                "x_min"
+              ],
+              "image_source_position_m": [
+                -1.0,
+                1.0,
+                1.0
+              ],
+              "reflection_coefficient": 0.8,
+              "distance_m": 4.123105625617661,
+              "time_of_flight_s": 0.01202071610967248
+            },
+            {
+              "reflection_order": 1,
+              "reflection_sequence": [
+                "x_max"
+              ],
+              "image_source_position_m": [
+                7.0,
+                1.0,
+                1.0
+              ],
+              "reflection_coefficient": 0.8,
+              "distance_m": 4.123105625617661,
+              "time_of_flight_s": 0.01202071610967248
+            },
+            {
+              "reflection_order": 1,
+              "reflection_sequence": [
+                "y_min"
+              ],
+              "image_source_position_m": [
+                1.0,
+                -1.0,
+                1.0
+              ],
+              "reflection_coefficient": 0.8,
+              "distance_m": 3.605551275463989,
+              "time_of_flight_s": 0.010511811298728831
+            },
+            {
+              "reflection_order": 1,
+              "reflection_sequence": [
+                "y_max"
+              ],
+              "image_source_position_m": [
+                1.0,
+                5.0,
+                1.0
+              ],
+              "reflection_coefficient": 0.8,
+              "distance_m": 3.605551275463989,
+              "time_of_flight_s": 0.010511811298728831
+            },
+            {
+              "reflection_order": 1,
+              "reflection_sequence": [
+                "z_min"
+              ],
+              "image_source_position_m": [
+                1.0,
+                1.0,
+                -1.0
+              ],
+              "reflection_coefficient": 0.8,
+              "distance_m": 3.0,
+              "time_of_flight_s": 0.008746355685131196
+            },
+            {
+              "reflection_order": 1,
+              "reflection_sequence": [
+                "z_max"
+              ],
+              "image_source_position_m": [
+                1.0,
+                1.0,
+                4.0
+              ],
+              "reflection_coefficient": 0.8,
+              "distance_m": 3.7416573867739413,
+              "time_of_flight_s": 0.010908622118874464
+            }
+          ],
+          "toa_comparison": {
+            "tolerance_seconds": 6.25e-05,
+            "expected_arrivals": [
+              {
+                "path_index": 0,
+                "reflection_order": 0,
+                "reflection_sequence": [],
+                "image_source_position_m": [
+                  1.0,
+                  1.0,
+                  1.0
+                ],
+                "distance_m": 2.23606797749979,
+                "time_of_flight_s": 0.006519148622448367,
+                "reflection_coefficient": 1.0
+              },
+              {
+                "path_index": 5,
+                "reflection_order": 1,
+                "reflection_sequence": [
+                  "z_min"
+                ],
+                "image_source_position_m": [
+                  1.0,
+                  1.0,
+                  -1.0
+                ],
+                "distance_m": 3.0,
+                "time_of_flight_s": 0.008746355685131196,
+                "reflection_coefficient": 0.8
+              },
+              {
+                "path_index": 3,
+                "reflection_order": 1,
+                "reflection_sequence": [
+                  "y_min"
+                ],
+                "image_source_position_m": [
+                  1.0,
+                  -1.0,
+                  1.0
+                ],
+                "distance_m": 3.605551275463989,
+                "time_of_flight_s": 0.010511811298728831,
+                "reflection_coefficient": 0.8
+              },
+              {
+                "path_index": 4,
+                "reflection_order": 1,
+                "reflection_sequence": [
+                  "y_max"
+                ],
+                "image_source_position_m": [
+                  1.0,
+                  5.0,
+                  1.0
+                ],
+                "distance_m": 3.605551275463989,
+                "time_of_flight_s": 0.010511811298728831,
+                "reflection_coefficient": 0.8
+              },
+              {
+                "path_index": 6,
+                "reflection_order": 1,
+                "reflection_sequence": [
+                  "z_max"
+                ],
+                "image_source_position_m": [
+                  1.0,
+                  1.0,
+                  4.0
+                ],
+                "distance_m": 3.7416573867739413,
+                "time_of_flight_s": 0.010908622118874464,
+                "reflection_coefficient": 0.8
+              },
+              {
+                "path_index": 1,
+                "reflection_order": 1,
+                "reflection_sequence": [
+                  "x_min"
+                ],
+                "image_source_position_m": [
+                  -1.0,
+                  1.0,
+                  1.0
+                ],
+                "distance_m": 4.123105625617661,
+                "time_of_flight_s": 0.01202071610967248,
+                "reflection_coefficient": 0.8
+              },
+              {
+                "path_index": 2,
+                "reflection_order": 1,
+                "reflection_sequence": [
+                  "x_max"
+                ],
+                "image_source_position_m": [
+                  7.0,
+                  1.0,
+                  1.0
+                ],
+                "distance_m": 4.123105625617661,
+                "time_of_flight_s": 0.01202071610967248,
+                "reflection_coefficient": 0.8
+              }
+            ],
+            "detected_arrivals": [
+              {
+                "sample_index": 263,
+                "time_seconds": 0.006500000000000001,
+                "amplitude": 0.3200017837014498
+              },
+              {
+                "sample_index": 267,
+                "time_seconds": 0.006750000000000001,
+                "amplitude": -0.047638393122791375
+              },
+              {
+                "sample_index": 299,
+                "time_seconds": 0.008749999999999999,
+                "amplitude": 0.25935913452680354
+              },
+              {
+                "sample_index": 301,
+                "time_seconds": 0.008875,
+                "amplitude": -0.05407571328405178
+              },
+              {
+                "sample_index": 303,
+                "time_seconds": 0.009,
+                "amplitude": -0.04343246731088209
+              },
+              {
+                "sample_index": 327,
+                "time_seconds": 0.0105,
+                "amplitude": 0.3532825766156083
+              },
+              {
+                "sample_index": 334,
+                "time_seconds": 0.010937500000000001,
+                "amplitude": 0.10346815880639106
+              },
+              {
+                "sample_index": 351,
+                "time_seconds": 0.011999999999999999,
+                "amplitude": 0.26699845302518344
+              }
+            ],
+            "matched_arrivals": [
+              {
+                "expected": {
+                  "path_index": 0,
+                  "reflection_order": 0,
+                  "reflection_sequence": [],
+                  "image_source_position_m": [
+                    1.0,
+                    1.0,
+                    1.0
+                  ],
+                  "distance_m": 2.23606797749979,
+                  "time_of_flight_s": 0.006519148622448367,
+                  "reflection_coefficient": 1.0
+                },
+                "detected": {
+                  "sample_index": 263,
+                  "time_seconds": 0.006500000000000001,
+                  "amplitude": 0.3200017837014498
+                },
+                "absolute_error_seconds": 1.914862244836637e-05
+              },
+              {
+                "expected": {
+                  "path_index": 5,
+                  "reflection_order": 1,
+                  "reflection_sequence": [
+                    "z_min"
+                  ],
+                  "image_source_position_m": [
+                    1.0,
+                    1.0,
+                    -1.0
+                  ],
+                  "distance_m": 3.0,
+                  "time_of_flight_s": 0.008746355685131196,
+                  "reflection_coefficient": 0.8
+                },
+                "detected": {
+                  "sample_index": 299,
+                  "time_seconds": 0.008749999999999999,
+                  "amplitude": 0.25935913452680354
+                },
+                "absolute_error_seconds": 3.6443148688034693e-06
+              },
+              {
+                "expected": {
+                  "path_index": 3,
+                  "reflection_order": 1,
+                  "reflection_sequence": [
+                    "y_min"
+                  ],
+                  "image_source_position_m": [
+                    1.0,
+                    -1.0,
+                    1.0
+                  ],
+                  "distance_m": 3.605551275463989,
+                  "time_of_flight_s": 0.010511811298728831,
+                  "reflection_coefficient": 0.8
+                },
+                "detected": {
+                  "sample_index": 327,
+                  "time_seconds": 0.0105,
+                  "amplitude": 0.3532825766156083
+                },
+                "absolute_error_seconds": 1.1811298728830327e-05
+              },
+              {
+                "expected": {
+                  "path_index": 6,
+                  "reflection_order": 1,
+                  "reflection_sequence": [
+                    "z_max"
+                  ],
+                  "image_source_position_m": [
+                    1.0,
+                    1.0,
+                    4.0
+                  ],
+                  "distance_m": 3.7416573867739413,
+                  "time_of_flight_s": 0.010908622118874464,
+                  "reflection_coefficient": 0.8
+                },
+                "detected": {
+                  "sample_index": 334,
+                  "time_seconds": 0.010937500000000001,
+                  "amplitude": 0.10346815880639106
+                },
+                "absolute_error_seconds": 2.8877881125537186e-05
+              },
+              {
+                "expected": {
+                  "path_index": 1,
+                  "reflection_order": 1,
+                  "reflection_sequence": [
+                    "x_min"
+                  ],
+                  "image_source_position_m": [
+                    -1.0,
+                    1.0,
+                    1.0
+                  ],
+                  "distance_m": 4.123105625617661,
+                  "time_of_flight_s": 0.01202071610967248,
+                  "reflection_coefficient": 0.8
+                },
+                "detected": {
+                  "sample_index": 351,
+                  "time_seconds": 0.011999999999999999,
+                  "amplitude": 0.26699845302518344
+                },
+                "absolute_error_seconds": 2.071610967248165e-05
+              }
+            ],
+            "missed_expected_arrivals": [
+              {
+                "path_index": 4,
+                "reflection_order": 1,
+                "reflection_sequence": [
+                  "y_max"
+                ],
+                "image_source_position_m": [
+                  1.0,
+                  5.0,
+                  1.0
+                ],
+                "distance_m": 3.605551275463989,
+                "time_of_flight_s": 0.010511811298728831,
+                "reflection_coefficient": 0.8
+              },
+              {
+                "path_index": 2,
+                "reflection_order": 1,
+                "reflection_sequence": [
+                  "x_max"
+                ],
+                "image_source_position_m": [
+                  7.0,
+                  1.0,
+                  1.0
+                ],
+                "distance_m": 4.123105625617661,
+                "time_of_flight_s": 0.01202071610967248,
+                "reflection_coefficient": 0.8
+              }
+            ],
+            "unmatched_detected_peaks": [
+              {
+                "sample_index": 267,
+                "time_seconds": 0.006750000000000001,
+                "amplitude": -0.047638393122791375
+              },
+              {
+                "sample_index": 301,
+                "time_seconds": 0.008875,
+                "amplitude": -0.05407571328405178
+              },
+              {
+                "sample_index": 303,
+                "time_seconds": 0.009,
+                "amplitude": -0.04343246731088209
+              }
+            ],
+            "metrics": {
+              "matched_count": 5,
+              "missed_expected_count": 2,
+              "unmatched_detected_count": 3,
+              "mean_absolute_error_seconds": 1.68396453688038e-05,
+              "root_mean_square_error_seconds": 1.888145528531991e-05
+            }
+          }
+        }
+      ],
+      "overall_metrics": {
+        "matched_count": 5,
+        "missed_expected_count": 2,
+        "unmatched_detected_count": 3,
+        "mean_absolute_error_seconds": 1.68396453688038e-05,
+        "root_mean_square_error_seconds": 1.888145528531991e-05
+      }
+    }
+  }
+}

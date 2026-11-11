@@ -1,0 +1,25 @@
+completed exact_staged_reference
+completed generating_PCA_wall_start
+completed competing_PCA_wall_start
+completed perturb_1e-08_seed_1201
+completed perturb_1e-08_seed_1202
+completed perturb_1e-08_seed_1203
+completed perturb_1e-07_seed_1201
+completed perturb_1e-07_seed_1202
+completed perturb_1e-07_seed_1203
+completed perturb_1e-06_seed_1201
+completed perturb_1e-06_seed_1202
+completed perturb_1e-06_seed_1203
+completed perturb_1e-05_seed_1201
+completed perturb_1e-05_seed_1202
+completed perturb_1e-05_seed_1203
+completed perturb_0.0001_seed_1201
+completed perturb_0.0001_seed_1202
+completed perturb_0.0001_seed_1203
+completed perturb_0.001_seed_1201
+completed perturb_0.001_seed_1202
+completed perturb_0.001_seed_1203
+completed blind_observation_start_17
+completed blind_observation_start_29
+completed blind_observation_start_41
+wrote C:\Users\ch3ugy\Documents\ChatGPT\Batsight\experiments\exploratory\phase5c13_results.json; starts=24; elapsed=146.64s

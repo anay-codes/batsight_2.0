@@ -1,0 +1,1353 @@
+{
+  "phase": "5C.10 follow-up diagnostics; competing endpoint only",
+  "preservation": {
+    "C8_C9_C10_records_read_only": true,
+    "exact_endpoint_and_observation_archive_reused": true,
+    "true_wall_data_used": false
+  },
+  "selected_start_names": {
+    "best_valid": "pca_rot_55deg_seed_404_gap_0.08span",
+    "best_any": "pca_rot_10deg_seed_101_gap_0.16span"
+  },
+  "longer_budget_runs": {
+    "best_multistart_physically_complete": {
+      "name": "long_best_multistart_physically_complete",
+      "initial_reflection_residual_norm_s": 0.026300841476640188,
+      "reflection_residual_norm_s": 0.025713011507308824,
+      "reflection_max_abs_residual_s": 0.005479995390948357,
+      "reflection_residual_by_microphone_s": [
+        0.009373607814766715,
+        0.009767033426373497,
+        0.009456964225374273,
+        0.013336440420431812,
+        0.014512225188106303
+      ],
+      "reflection_residual_by_source_s": [
+        0.006080638707805628,
+        0.004857265763428309,
+        0.005035634266161623,
+        0.0036662842672618946,
+        0.0076290066902257245,
+        0.0032754265743729256,
+        0.010023740601109974,
+        0.006419892316865689,
+        0.006304076443434779,
+        0.00614097500440275,
+        0.015187009370200358,
+        0.005437066320865899,
+        0.003675875035025108
+      ],
+      "reflection_residual_by_arrival_rank_s": [
+        0.012326188669899424,
+        0.009444284449052832,
+        0.01137493010041558,
+        0.009985040229004318,
+        0.011401527865248395,
+        0.007806703790218212
+      ],
+      "echo_objective_half_squared_m2": 38.89234528810876,
+      "face_penalty_half_squared_m2": 1.3214750639115532e-07,
+      "face_penalty_weight": 10.0,
+      "convex_enclosure": {
+        "all_points_strictly_inside": true,
+        "maximum_inside_halfspace_value_m": -0.00412622623958292,
+        "minimum_endpoint_to_plane_clearance_m": 0.00412622623958292,
+        "bounded_polyhedron_from_positive_spanning_normals": true,
+        "normal_hull_minimum_origin_slack": 0.4848733734246479,
+        "normal_hull_facets": 8,
+        "normal_matrix_singular_values": [
+          1.531529808025398,
+          1.4694711800680174,
+          1.2227309181006238
+        ],
+        "normal_matrix_condition": 1.252548525070797,
+        "scaled_plane_design_singular_values": [
+          1.6408844229523663,
+          1.5052159167913801,
+          1.3019736293689737,
+          1.0159948302638067
+        ],
+        "scaled_plane_design_condition": 1.6150519412842925,
+        "minimum_support_gap_m": 0.004126226239582721,
+        "maximum_support_gap_m": 1.7633333096676207,
+        "valid_enclosure": true
+      },
+      "positive_paths": true,
+      "minimum_path_length_m": 2.4414374907254284,
+      "minimum_arrival_s": 0.002484330982467058,
+      "finite_face_bounce_validity": {
+        "valid_first_order_bounce_count": 389,
+        "expected_first_order_bounce_count": 390,
+        "valid_bounce_count_by_plane_index": [
+          64,
+          65,
+          65,
+          65,
+          65,
+          65
+        ],
+        "invalid_bounce_count": 1,
+        "all_bounces_on_finite_faces": false,
+        "tolerance_m": 6.975183117130203e-08,
+        "first_invalid_examples": [
+          [
+            2,
+            9,
+            0
+          ]
+        ]
+      },
+      "all_physical_checks_pass": false,
+      "minimum_adjacent_sorted_echo_gap_s": 1.1601547820733193e-05,
+      "assignment_changed_groups_from_start": 4,
+      "plane_normal_matrix_condition": 1.252548525070797,
+      "scaled_plane_design_condition": 1.6150519412842925,
+      "jacobian_rank_relative_1e-8": 18,
+      "jacobian_singular_values": [
+        12687.154617013572,
+        10294.45794501067,
+        45.637472005839555,
+        40.92181618015243,
+        31.744851940761954,
+        26.614056596421502,
+        23.60021740826442,
+        19.409737161859994,
+        13.684756653599957,
+        13.183190883752914,
+        11.698380665104468,
+        10.119260708763166,
+        8.958595764604901,
+        6.13561731563534,
+        5.28143229714391,
+        5.04602157354554,
+        4.7733904145648784,
+        0.018545485885578618
+      ],
+      "jacobian_condition": 684110.122284765,
+      "optimizer_success": false,
+      "optimizer_status": 0,
+      "optimizer_message": "The maximum number of function evaluations is exceeded.",
+      "nfev": 1200,
+      "runtime_s": 16.005937400041148,
+      "parameters": [
+        1.9228130508357053,
+        -0.15164192710311966,
+        0.4324744178594558,
+        0.4945881048134924,
+        0.37332471316362165,
+        -1.214781137022301,
+        -1.3730331572415888,
+        -0.1543919864507928,
+        3.43961039427177,
+        -0.5328406376696664,
+        -2.2343033107895502,
+        1.1170665654582823,
+        0.5668102974774335,
+        -0.07071102764990235,
+        -0.4226403977582994,
+        -0.3994753319828019,
+        -0.27978667935899865,
+        -5.675571786186664
+      ],
+      "normals": [
+        [
+          -0.34083486697172016,
+          0.9279073449119685,
+          -0.15106142033885117
+        ],
+        [
+          0.7991288525463743,
+          0.36889330336388215,
+          0.4746691561089659
+        ],
+        [
+          0.3245344716461354,
+          0.127117877643136,
+          -0.93729313552211
+        ],
+        [
+          0.19413954569381078,
+          -0.9688455756311846,
+          -0.153779346395019
+        ],
+        [
+          -0.8233988252406141,
+          -0.25291982564006915,
+          -0.5079822205457328
+        ],
+        [
+          -0.2699546720390028,
+          -0.3453255471083616,
+          0.898818525375743
+        ]
+      ],
+      "offsets_m": [
+        -6.541555640124018,
+        -3.7355896098540846,
+        -1.9837366515196404,
+        -1.2558013394165202,
+        -3.567245327359673,
+        -2.6502194306761626
+      ],
+      "support_gaps_m": [
+        1.7633333096676207,
+        0.9324286160659176,
+        0.6560117615288985,
+        0.6713693521146192,
+        0.7566425012370797,
+        0.004126226239582721
+      ]
+    },
+    "best_multistart_any": {
+      "name": "long_best_multistart_any",
+      "initial_reflection_residual_norm_s": 0.02609497043300838,
+      "reflection_residual_norm_s": 0.025424497940664075,
+      "reflection_max_abs_residual_s": 0.006315143100338561,
+      "reflection_residual_by_microphone_s": [
+        0.00904334170822315,
+        0.01054798502087527,
+        0.009731828223606286,
+        0.011894097129750588,
+        0.014737199570366587
+      ],
+      "reflection_residual_by_source_s": [
+        0.005190027163961355,
+        0.0047844565030691006,
+        0.005899160447962611,
+        0.004327191237236558,
+        0.004953219275898853,
+        0.004500783863108567,
+        0.009797896290957555,
+        0.006435579392985157,
+        0.0047288908682378865,
+        0.006138753962768274,
+        0.01562811538590757,
+        0.006034228534566913,
+        0.0044888202834300105
+      ],
+      "reflection_residual_by_arrival_rank_s": [
+        0.010597355061017067,
+        0.010939183527806904,
+        0.011978905540637783,
+        0.009269443690836224,
+        0.012233448739712249,
+        0.005946544596171152
+      ],
+      "echo_objective_half_squared_m2": 38.0244565422887,
+      "face_penalty_half_squared_m2": 0.0,
+      "face_penalty_weight": 10.0,
+      "convex_enclosure": {
+        "all_points_strictly_inside": true,
+        "maximum_inside_halfspace_value_m": -0.2705663447454987,
+        "minimum_endpoint_to_plane_clearance_m": 0.2705663447454987,
+        "bounded_polyhedron_from_positive_spanning_normals": true,
+        "normal_hull_minimum_origin_slack": 0.4503283472520948,
+        "normal_hull_facets": 8,
+        "normal_matrix_singular_values": [
+          1.5322394630364828,
+          1.4119894894733938,
+          1.2878384640669558
+        ],
+        "normal_matrix_condition": 1.1897761293739557,
+        "scaled_plane_design_singular_values": [
+          1.6861942443404347,
+          1.4572796181861127,
+          1.3118937045963701,
+          1.0159235150948862
+        ],
+        "scaled_plane_design_condition": 1.6597649520721507,
+        "minimum_support_gap_m": 0.2705663447454986,
+        "maximum_support_gap_m": 1.6340797152223654,
+        "valid_enclosure": true
+      },
+      "positive_paths": true,
+      "minimum_path_length_m": 2.812143019626821,
+      "minimum_arrival_s": 0.0035651051192058126,
+      "finite_face_bounce_validity": {
+        "valid_first_order_bounce_count": 390,
+        "expected_first_order_bounce_count": 390,
+        "valid_bounce_count_by_plane_index": [
+          65,
+          65,
+          65,
+          65,
+          65,
+          65
+        ],
+        "invalid_bounce_count": 0,
+        "all_bounces_on_finite_faces": true,
+        "tolerance_m": 6.975183117130203e-08,
+        "first_invalid_examples": []
+      },
+      "all_physical_checks_pass": true,
+      "minimum_adjacent_sorted_echo_gap_s": 2.1625557995914174e-05,
+      "assignment_changed_groups_from_start": 3,
+      "plane_normal_matrix_condition": 1.1897761293739557,
+      "scaled_plane_design_condition": 1.6597649520721507,
+      "jacobian_rank_relative_1e-8": 18,
+      "jacobian_singular_values": [
+        12948.805047676806,
+        8868.612931031377,
+        43.264758884668645,
+        40.15113092729509,
+        33.069178297308035,
+        31.31434627934166,
+        24.156204953431605,
+        21.47940360929724,
+        15.795080483624188,
+        13.997054954635903,
+        12.223878149782012,
+        11.07116011290193,
+        10.088516854889004,
+        6.190732514608456,
+        4.518339307611779,
+        4.411045737530887,
+        3.2003413514969217,
+        1.493789487251041
+      ],
+      "jacobian_condition": 8668.426949172039,
+      "optimizer_success": false,
+      "optimizer_status": 0,
+      "optimizer_message": "The maximum number of function evaluations is exceeded.",
+      "nfev": 1200,
+      "runtime_s": 18.14540609996766,
+      "parameters": [
+        1.9433283260250531,
+        -0.0805683558132461,
+        0.4445777169244748,
+        0.5499707023051604,
+        0.5202461557489968,
+        -1.0063015193536207,
+        -1.2570216546158814,
+        -0.14087334251612907,
+        -2.9310588487861025,
+        -0.6840891130917556,
+        -2.4532937503745615,
+        0.7011615604363621,
+        0.49065283247689195,
+        -0.2494934131928165,
+        -0.5269923639831803,
+        -0.9934725983422632,
+        -0.022129354386008715,
+        -1.3098192660594496
+      ],
+      "normals": [
+        [
+          -0.3627942333701066,
+          0.9283873747576915,
+          -0.08048121907574737
+        ],
+        [
+          0.7696664498280179,
+          0.3666575059286752,
+          0.5226622517030466
+        ],
+        [
+          0.4642083254539657,
+          0.26593971737161765,
+          -0.8448589807201727
+        ],
+        [
+          0.30559362560910697,
+          -0.9417527112277605,
+          -0.14040785904728825
+        ],
+        [
+          -0.7578827406079913,
+          -0.16195996860835346,
+          -0.6319673409733302
+        ],
+        [
+          -0.5901304854931043,
+          -0.48537067673026946,
+          0.6451056628662263
+        ]
+      ],
+      "offsets_m": [
+        -6.6145213383999,
+        -3.7696773923725226,
+        -2.297722765511374,
+        -1.2909361870972318,
+        -3.7177526604222364,
+        -2.226499236081213
+      ],
+      "support_gaps_m": [
+        1.6340797152223654,
+        0.7798929315340206,
+        0.5910754623908759,
+        0.37098611055176456,
+        0.9788112218818265,
+        0.2705663447454986
+      ]
+    },
+    "penalty_continuation_weight10": {
+      "name": "long_penalty_continuation_weight10",
+      "initial_reflection_residual_norm_s": 0.023622508600689603,
+      "reflection_residual_norm_s": 0.023622508600689603,
+      "reflection_max_abs_residual_s": 0.006014790557847878,
+      "reflection_residual_by_microphone_s": [
+        0.008776824399225102,
+        0.009558263753148673,
+        0.009121750587031973,
+        0.011144388906864004,
+        0.013499115608091288
+      ],
+      "reflection_residual_by_source_s": [
+        0.0036844246234236646,
+        0.004168919415325404,
+        0.004704498048802784,
+        0.0038657750639468805,
+        0.004023261730920062,
+        0.004141983694833262,
+        0.00896034563279849,
+        0.005893349150138809,
+        0.005041537305530744,
+        0.00495453619475299,
+        0.015400079737840295,
+        0.006155601091080912,
+        0.004075670493959148
+      ],
+      "reflection_residual_by_arrival_rank_s": [
+        0.010026964394183735,
+        0.009981060471987272,
+        0.011050953883191206,
+        0.007908393936466186,
+        0.011676043057166668,
+        0.006071661356366573
+      ],
+      "echo_objective_half_squared_m2": 32.82541882163012,
+      "face_penalty_half_squared_m2": 8.820298206421398e-07,
+      "face_penalty_weight": 10.0,
+      "convex_enclosure": {
+        "all_points_strictly_inside": true,
+        "maximum_inside_halfspace_value_m": -0.0006975183118065331,
+        "minimum_endpoint_to_plane_clearance_m": 0.0006975183118065331,
+        "bounded_polyhedron_from_positive_spanning_normals": true,
+        "normal_hull_minimum_origin_slack": 0.4531692599166787,
+        "normal_hull_facets": 8,
+        "normal_matrix_singular_values": [
+          1.5142069682223833,
+          1.4285468623346191,
+          1.2909032184872318
+        ],
+        "normal_matrix_condition": 1.1729825648717755,
+        "scaled_plane_design_singular_values": [
+          1.6721266504802117,
+          1.480205962614302,
+          1.311929761511686,
+          1.005077144197769
+        ],
+        "scaled_plane_design_condition": 1.6636799076899387,
+        "minimum_support_gap_m": 0.0006975183118065965,
+        "maximum_support_gap_m": 1.7822057382193588,
+        "valid_enclosure": true
+      },
+      "positive_paths": true,
+      "minimum_path_length_m": 2.4371438992091026,
+      "minimum_arrival_s": 0.0024718132229442427,
+      "finite_face_bounce_validity": {
+        "valid_first_order_bounce_count": 388,
+        "expected_first_order_bounce_count": 390,
+        "valid_bounce_count_by_plane_index": [
+          64,
+          65,
+          65,
+          64,
+          65,
+          65
+        ],
+        "invalid_bounce_count": 2,
+        "all_bounces_on_finite_faces": false,
+        "tolerance_m": 6.975183117130203e-08,
+        "first_invalid_examples": [
+          [
+            2,
+            9,
+            0
+          ],
+          [
+            4,
+            10,
+            3
+          ]
+        ]
+      },
+      "all_physical_checks_pass": false,
+      "minimum_adjacent_sorted_echo_gap_s": 7.591622283482924e-06,
+      "assignment_changed_groups_from_start": 0,
+      "plane_normal_matrix_condition": 1.1729825648717755,
+      "scaled_plane_design_condition": 1.6636799076899387,
+      "jacobian_rank_relative_1e-8": 17,
+      "jacobian_singular_values": [
+        14630.510341835075,
+        11505.100249844174,
+        11136.280536395023,
+        50.36617956042476,
+        42.693568569785555,
+        39.93660960882876,
+        31.17346084951096,
+        19.691297249062544,
+        19.650899392903824,
+        14.085030960160228,
+        13.792934580996155,
+        10.640027733544947,
+        9.753298671009425,
+        7.082787261998016,
+        4.506625076301097,
+        4.449951179116007,
+        4.054171378646669,
+        7.037306071084653e-17
+      ],
+      "jacobian_condition": 2.078993039957418e+20,
+      "optimizer_success": true,
+      "optimizer_status": 3,
+      "optimizer_message": "`xtol` termination condition is satisfied.",
+      "nfev": 18,
+      "runtime_s": 0.030552499927580357,
+      "parameters": [
+        1.9427605779577684,
+        -0.12377260395540637,
+        0.42398973790332795,
+        0.5784182931389193,
+        -2.586309889457993,
+        0.6653178109522982,
+        -1.303866124020233,
+        -0.10518894261626778,
+        -2.9476496497576394,
+        -0.6862024147383177,
+        0.4469775488577115,
+        -1.0117027990291934,
+        0.577460320090519,
+        -0.2935130245832716,
+        -3411.3094580918846,
+        -0.6913929609951815,
+        -0.003297888917870463,
+        -0.34217205925036287
+      ],
+      "normals": [
+        [
+          -0.36066567595141413,
+          0.9244883361703441,
+          -0.12345682028749315
+        ],
+        [
+          0.7631870211121237,
+          0.34447706424740465,
+          0.5467002131090608
+        ],
+        [
+          -0.6685169673330276,
+          -0.41474621812344353,
+          0.617309192334079
+        ],
+        [
+          0.26231366973635495,
+          -0.9592536547538214,
+          -0.10499506898365712
+        ],
+        [
+          -0.7591531639202218,
+          -0.14910664332837723,
+          -0.6336037268082163
+        ],
+        [
+          0.4783084587974539,
+          0.229268919588189,
+          -0.8477362683958195
+        ]
+      ],
+      "offsets_m": [
+        -6.573904879173344,
+        -3.7351015179535203,
+        -2.398773715673167,
+        -1.2912367662005226,
+        -3.736982098757091,
+        -2.2471937081724436
+      ],
+      "support_gaps_m": [
+        1.7822057382193588,
+        0.7463370294686643,
+        0.0006975183118065965,
+        0.5015753978657156,
+        0.9974050614564128,
+        0.7109235115553995
+      ]
+    }
+  },
+  "face_penalty_continuation_10_to_100_to_1000": [
+    {
+      "name": "continued_face_weight_100",
+      "initial_reflection_residual_norm_s": 0.023622508600689603,
+      "reflection_residual_norm_s": 0.023622509219719957,
+      "reflection_max_abs_residual_s": 0.0060147912933964185,
+      "reflection_residual_by_microphone_s": [
+        0.008776824375514856,
+        0.009558271115890244,
+        0.009121755445840284,
+        0.011144389174684438,
+        0.013499107989112477
+      ],
+      "reflection_residual_by_source_s": [
+        0.0036844223924706082,
+        0.004168925129043764,
+        0.004704495136983847,
+        0.003865762914039093,
+        0.0040232454537222915,
+        0.004141975375586926,
+        0.008960338510263765,
+        0.0058933545136721985,
+        0.005041523430692178,
+        0.004954548595427296,
+        0.015400088881982578,
+        0.0061556124090920575,
+        0.004075668007919196
+      ],
+      "reflection_residual_by_arrival_rank_s": [
+        0.010026964614722328,
+        0.009981061588078094,
+        0.011050954769754923,
+        0.007908397035356104,
+        0.011676038085201977,
+        0.006071665477179005
+      ],
+      "echo_objective_half_squared_m2": 32.82542054201734,
+      "face_penalty_half_squared_m2": 6.810607684621222e-08,
+      "face_penalty_weight": 100.0,
+      "convex_enclosure": {
+        "all_points_strictly_inside": true,
+        "maximum_inside_halfspace_value_m": -0.0006975183118065331,
+        "minimum_endpoint_to_plane_clearance_m": 0.0006975183118065331,
+        "bounded_polyhedron_from_positive_spanning_normals": true,
+        "normal_hull_minimum_origin_slack": 0.4531692284533775,
+        "normal_hull_facets": 8,
+        "normal_matrix_singular_values": [
+          1.5142069683625758,
+          1.4285468472102656,
+          1.2909032350597884
+        ],
+        "normal_matrix_condition": 1.1729825499216795,
+        "scaled_plane_design_singular_values": [
+          1.672126574637544,
+          1.480205947334358,
+          1.3119297684193345,
+          1.0050770259333597
+        ],
+        "scaled_plane_design_condition": 1.663680027990623,
+        "minimum_support_gap_m": 0.0006975183118065965,
+        "maximum_support_gap_m": 1.7822055924255833,
+        "valid_enclosure": true
+      },
+      "positive_paths": true,
+      "minimum_path_length_m": 2.437143899170189,
+      "minimum_arrival_s": 0.002471813222830792,
+      "finite_face_bounce_validity": {
+        "valid_first_order_bounce_count": 390,
+        "expected_first_order_bounce_count": 390,
+        "valid_bounce_count_by_plane_index": [
+          65,
+          65,
+          65,
+          65,
+          65,
+          65
+        ],
+        "invalid_bounce_count": 0,
+        "all_bounces_on_finite_faces": true,
+        "tolerance_m": 6.975183117130203e-08,
+        "first_invalid_examples": []
+      },
+      "all_physical_checks_pass": true,
+      "minimum_adjacent_sorted_echo_gap_s": 7.592126756585105e-06,
+      "assignment_changed_groups_from_start": 0,
+      "plane_normal_matrix_condition": 1.1729825499216795,
+      "scaled_plane_design_condition": 1.663680027990623,
+      "jacobian_rank_relative_1e-8": 17,
+      "jacobian_singular_values": [
+        135411.48477072624,
+        109959.83760239954,
+        109446.05199348969,
+        49.866137875456204,
+        42.693568298689215,
+        39.88271584572211,
+        31.225931341289105,
+        19.688452609385674,
+        19.662693170202093,
+        13.968663870581654,
+        13.81434547798841,
+        10.640027637376566,
+        9.651547259436937,
+        7.135247528827145,
+        4.449951112977322,
+        4.394696712198512,
+        4.0915376038600195,
+        3.086911967089255e-16
+      ],
+      "jacobian_condition": 4.386632538096314e+20,
+      "optimizer_success": true,
+      "optimizer_status": 3,
+      "optimizer_message": "`xtol` termination condition is satisfied.",
+      "nfev": 22,
+      "runtime_s": 0.09320769994519651,
+      "parameters": [
+        1.942760586538787,
+        -0.12377259774862336,
+        0.42398973653933686,
+        0.5784183008353825,
+        -2.5863099142165793,
+        0.665317662339652,
+        -1.3038660804249653,
+        -0.1051889903924386,
+        -2.9476495661638933,
+        -0.686202518605536,
+        0.44697754238433324,
+        -1.0117027799692195,
+        0.5774602382532421,
+        -0.2935130478340742,
+        -3411.3094580918846,
+        -0.6913947501302451,
+        -0.0033005373660152174,
+        -0.3421720241096614
+      ],
+      "normals": [
+        [
+          -0.3606656841629634,
+          0.9244883337893337,
+          -0.12345681412819236
+        ],
+        [
+          0.763187017746897,
+          0.34447706147539303,
+          0.5467002195535281
+        ],
+        [
+          -0.6685170555577049,
+          -0.4147462499357005,
+          0.6173090754174363
+        ],
+        [
+          0.2623137102321264,
+          -0.9592536384795725,
+          -0.10499511649575663
+        ],
+        [
+          -0.7591530868789993,
+          -0.14910669410517485,
+          -0.6336038071658916
+        ],
+        [
+          0.47830847485204603,
+          0.2292689234760104,
+          -0.8477362582860668
+        ]
+      ],
+      "offsets_m": [
+        -6.573904769780673,
+        -3.7351015148299522,
+        -2.398773376236234,
+        -1.2912359919704286,
+        -3.7369793594375866,
+        -2.2471937832692186
+      ],
+      "support_gaps_m": [
+        1.7822055924255833,
+        0.7463370121319474,
+        0.0006975183118065965,
+        0.5015745017283404,
+        0.9974024217316649,
+        0.7109235365132396
+      ]
+    },
+    {
+      "name": "continued_face_weight_1000",
+      "initial_reflection_residual_norm_s": 0.023622509219719957,
+      "reflection_residual_norm_s": 0.023622509219719957,
+      "reflection_max_abs_residual_s": 0.0060147912933964185,
+      "reflection_residual_by_microphone_s": [
+        0.008776824375514856,
+        0.009558271115890244,
+        0.009121755445840284,
+        0.011144389174684438,
+        0.013499107989112477
+      ],
+      "reflection_residual_by_source_s": [
+        0.0036844223924706082,
+        0.004168925129043764,
+        0.004704495136983847,
+        0.003865762914039093,
+        0.0040232454537222915,
+        0.004141975375586926,
+        0.008960338510263765,
+        0.0058933545136721985,
+        0.005041523430692178,
+        0.004954548595427296,
+        0.015400088881982578,
+        0.0061556124090920575,
+        0.004075668007919196
+      ],
+      "reflection_residual_by_arrival_rank_s": [
+        0.010026964614722328,
+        0.009981061588078094,
+        0.011050954769754923,
+        0.007908397035356104,
+        0.011676038085201977,
+        0.006071665477179005
+      ],
+      "echo_objective_half_squared_m2": 32.82542054201734,
+      "face_penalty_half_squared_m2": 6.810607684621222e-06,
+      "face_penalty_weight": 1000.0,
+      "convex_enclosure": {
+        "all_points_strictly_inside": true,
+        "maximum_inside_halfspace_value_m": -0.0006975183118065331,
+        "minimum_endpoint_to_plane_clearance_m": 0.0006975183118065331,
+        "bounded_polyhedron_from_positive_spanning_normals": true,
+        "normal_hull_minimum_origin_slack": 0.4531692284533775,
+        "normal_hull_facets": 8,
+        "normal_matrix_singular_values": [
+          1.5142069683625758,
+          1.4285468472102656,
+          1.2909032350597884
+        ],
+        "normal_matrix_condition": 1.1729825499216795,
+        "scaled_plane_design_singular_values": [
+          1.672126574637544,
+          1.480205947334358,
+          1.3119297684193345,
+          1.0050770259333597
+        ],
+        "scaled_plane_design_condition": 1.663680027990623,
+        "minimum_support_gap_m": 0.0006975183118065965,
+        "maximum_support_gap_m": 1.7822055924255833,
+        "valid_enclosure": true
+      },
+      "positive_paths": true,
+      "minimum_path_length_m": 2.437143899170189,
+      "minimum_arrival_s": 0.002471813222830792,
+      "finite_face_bounce_validity": {
+        "valid_first_order_bounce_count": 390,
+        "expected_first_order_bounce_count": 390,
+        "valid_bounce_count_by_plane_index": [
+          65,
+          65,
+          65,
+          65,
+          65,
+          65
+        ],
+        "invalid_bounce_count": 0,
+        "all_bounces_on_finite_faces": true,
+        "tolerance_m": 6.975183117130203e-08,
+        "first_invalid_examples": []
+      },
+      "all_physical_checks_pass": true,
+      "minimum_adjacent_sorted_echo_gap_s": 7.592126756585105e-06,
+      "assignment_changed_groups_from_start": 0,
+      "plane_normal_matrix_condition": 1.1729825499216795,
+      "scaled_plane_design_condition": 1.663680027990623,
+      "jacobian_rank_relative_1e-8": 17,
+      "jacobian_singular_values": [
+        1354114.7923032928,
+        1099598.2848408406,
+        1094460.5056843618,
+        49.86613975360757,
+        42.69356829868923,
+        39.88271597579282,
+        31.225931386116628,
+        19.688453055761265,
+        19.66269376355608,
+        13.9686638967405,
+        13.81434549954647,
+        10.640027637376559,
+        9.651547271169111,
+        7.135247543231246,
+        4.449951112977324,
+        4.394696731401238,
+        4.091537605177506,
+        2.223187543309647e-17
+      ],
+      "jacobian_condition": 6.090870724686724e+22,
+      "optimizer_success": true,
+      "optimizer_status": 3,
+      "optimizer_message": "`xtol` termination condition is satisfied.",
+      "nfev": 17,
+      "runtime_s": 0.033018700079992414,
+      "parameters": [
+        1.942760586538787,
+        -0.12377259774862336,
+        0.42398973653933686,
+        0.5784183008353825,
+        -2.5863099142165793,
+        0.665317662339652,
+        -1.3038660804249653,
+        -0.1051889903924386,
+        -2.9476495661638933,
+        -0.686202518605536,
+        0.44697754238433324,
+        -1.0117027799692195,
+        0.5774602382532421,
+        -0.2935130478340742,
+        -3411.3094580918846,
+        -0.6913947501302451,
+        -0.0033005373660152174,
+        -0.3421720241096614
+      ],
+      "normals": [
+        [
+          -0.3606656841629634,
+          0.9244883337893337,
+          -0.12345681412819236
+        ],
+        [
+          0.763187017746897,
+          0.34447706147539303,
+          0.5467002195535281
+        ],
+        [
+          -0.6685170555577049,
+          -0.4147462499357005,
+          0.6173090754174363
+        ],
+        [
+          0.2623137102321264,
+          -0.9592536384795725,
+          -0.10499511649575663
+        ],
+        [
+          -0.7591530868789993,
+          -0.14910669410517485,
+          -0.6336038071658916
+        ],
+        [
+          0.47830847485204603,
+          0.2292689234760104,
+          -0.8477362582860668
+        ]
+      ],
+      "offsets_m": [
+        -6.573904769780673,
+        -3.7351015148299522,
+        -2.398773376236234,
+        -1.2912359919704286,
+        -3.7369793594375866,
+        -2.2471937832692186
+      ],
+      "support_gaps_m": [
+        1.7822055924255833,
+        0.7463370121319474,
+        0.0006975183118065965,
+        0.5015745017283404,
+        0.9974024217316649,
+        0.7109235365132396
+      ]
+    }
+  ],
+  "parameter_block_diagnostics": {
+    "offsets_only": {
+      "name": "freeze_orientations_optimize_offsets",
+      "initial_reflection_residual_norm_s": 0.026300841476640188,
+      "reflection_residual_norm_s": 0.02621422144859788,
+      "reflection_max_abs_residual_s": 0.005479995456783489,
+      "reflection_residual_by_microphone_s": [
+        0.009621536083616144,
+        0.00993520860235749,
+        0.009649010705245618,
+        0.01361786299262346,
+        0.014742912856679143
+      ],
+      "reflection_residual_by_source_s": [
+        0.006202330213090682,
+        0.00532992428762037,
+        0.005051207046257306,
+        0.003797683218574673,
+        0.007605032158283256,
+        0.003056007750388719,
+        0.010029542091215265,
+        0.006538344866381591,
+        0.0066313897653598195,
+        0.006174899813759863,
+        0.01554190224924765,
+        0.005519272205667452,
+        0.003966881386388343
+      ],
+      "reflection_residual_by_arrival_rank_s": [
+        0.012318648987506254,
+        0.009507405256583548,
+        0.01148223076960101,
+        0.010408669966404325,
+        0.011554631655218037,
+        0.008447129214245595
+      ],
+      "echo_objective_half_squared_m2": 40.423337924431216,
+      "face_penalty_half_squared_m2": 7.937395244049757e-08,
+      "face_penalty_weight": 10.0,
+      "convex_enclosure": {
+        "all_points_strictly_inside": true,
+        "maximum_inside_halfspace_value_m": -0.000697518316286061,
+        "minimum_endpoint_to_plane_clearance_m": 0.000697518316286061,
+        "bounded_polyhedron_from_positive_spanning_normals": true,
+        "normal_hull_minimum_origin_slack": 0.4910728868249217,
+        "normal_hull_facets": 8,
+        "normal_matrix_singular_values": [
+          1.513692544805469,
+          1.478225427702035,
+          1.2343356369705443
+        ],
+        "normal_matrix_condition": 1.226321674160325,
+        "scaled_plane_design_singular_values": [
+          1.629796114986125,
+          1.5021293745582174,
+          1.3211496551173345,
+          1.0137095896877026
+        ],
+        "scaled_plane_design_condition": 1.6077544610071437,
+        "minimum_support_gap_m": 0.0006975183162862715,
+        "maximum_support_gap_m": 1.7615057743583604,
+        "valid_enclosure": true
+      },
+      "positive_paths": true,
+      "minimum_path_length_m": 2.4370595056007383,
+      "minimum_arrival_s": 0.0024715671774388076,
+      "finite_face_bounce_validity": {
+        "valid_first_order_bounce_count": 389,
+        "expected_first_order_bounce_count": 390,
+        "valid_bounce_count_by_plane_index": [
+          64,
+          65,
+          65,
+          65,
+          65,
+          65
+        ],
+        "invalid_bounce_count": 1,
+        "all_bounces_on_finite_faces": false,
+        "tolerance_m": 6.975183117130203e-08,
+        "first_invalid_examples": [
+          [
+            2,
+            9,
+            0
+          ]
+        ]
+      },
+      "all_physical_checks_pass": false,
+      "minimum_adjacent_sorted_echo_gap_s": 1.924992087415367e-05,
+      "assignment_changed_groups_from_start": 2,
+      "plane_normal_matrix_condition": 1.226321674160325,
+      "scaled_plane_design_condition": 1.6077544610071437,
+      "jacobian_rank_relative_1e-8": 17,
+      "jacobian_singular_values": [
+        10194.43864879924,
+        45.63747181786425,
+        41.89713562688075,
+        32.71291446799603,
+        30.40751124177546,
+        26.62764384089813,
+        19.422959742303814,
+        13.689958663399738,
+        12.51525511997298,
+        11.698380586689154,
+        10.6198246410655,
+        10.068122108133137,
+        8.829912510388084,
+        6.390462566344543,
+        5.20736357652431,
+        5.046021539546216,
+        4.678958780193722,
+        0.0
+      ],
+      "jacobian_condition": Infinity,
+      "optimizer_success": true,
+      "optimizer_status": 3,
+      "optimizer_message": "`xtol` termination condition is satisfied.",
+      "nfev": 44,
+      "runtime_s": 0.1713729000184685,
+      "parameters": [
+        1.9217804281724082,
+        -0.15216338335974733,
+        0.43247441707131073,
+        0.49458811067297404,
+        0.3691724263892035,
+        -1.2169961019838216,
+        -1.3776684379035504,
+        -0.17697176414223162,
+        3.45559707439324,
+        -0.47890078542181164,
+        -2.2300972996866317,
+        1.1242997130951775,
+        0.5657729400234428,
+        -0.070711041428714,
+        -0.42300632933596377,
+        -0.391734159138326,
+        -0.29234034459844355,
+        -26.11079674275794
+      ],
+      "normals": [
+        [
+          -0.33984937753640515,
+          0.9281847081604793,
+          -0.1515768719995371
+        ],
+        [
+          0.7991288503118722,
+          0.3688933015683516,
+          0.4746691612662724
+        ],
+        [
+          0.323122507671399,
+          0.1250197801831867,
+          -0.938062844162956
+        ],
+        [
+          0.1889318806647762,
+          -0.9660803987786524,
+          -0.17604944636138653
+        ],
+        [
+          -0.8441069989522693,
+          -0.27412249264996674,
+          -0.4608038990103737
+        ],
+        [
+          -0.2645103989083035,
+          -0.3413101519996575,
+          0.9019654256185993
+        ]
+      ],
+      "offsets_m": [
+        -6.540551173770042,
+        -3.735589609887187,
+        -1.9762992123207597,
+        -1.2453362713403342,
+        -3.569248622930084,
+        -2.6615194444629022
+      ],
+      "support_gaps_m": [
+        1.7615057743583604,
+        0.9324286032277704,
+        0.655772005223889,
+        0.6765812859148126,
+        0.7472119388934174,
+        0.0006975183162862715
+      ],
+      "free_parameter_block": "freeze_orientations_optimize_offsets",
+      "free_parameter_count": 6,
+      "fixed_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ]
+    },
+    "orientations_only": {
+      "name": "optimize_orientations_freeze_support_gaps",
+      "initial_reflection_residual_norm_s": 0.026300841476640188,
+      "reflection_residual_norm_s": 0.025810007414687326,
+      "reflection_max_abs_residual_s": 0.005479995455394076,
+      "reflection_residual_by_microphone_s": [
+        0.009420335852627583,
+        0.009711493798022441,
+        0.009412967221216505,
+        0.013437272483863802,
+        0.014626564862180932
+      ],
+      "reflection_residual_by_source_s": [
+        0.006210764275339838,
+        0.004959628334813288,
+        0.0050369552067134815,
+        0.0037449594507682976,
+        0.00775167001136272,
+        0.0033395067646239526,
+        0.010122194642274011,
+        0.006432715691890082,
+        0.00627458135406878,
+        0.006139337479613345,
+        0.015113550384118829,
+        0.005437589577519678,
+        0.003668973585554505
+      ],
+      "reflection_residual_by_arrival_rank_s": [
+        0.012400306567227777,
+        0.009514438845723243,
+        0.011446101764121606,
+        0.00997855651806191,
+        0.011405140149510348,
+        0.007823188328758186
+      ],
+      "echo_objective_half_squared_m2": 39.186322019304704,
+      "face_penalty_half_squared_m2": 1.9087268604183833e-05,
+      "face_penalty_weight": 10.0,
+      "convex_enclosure": {
+        "all_points_strictly_inside": true,
+        "maximum_inside_halfspace_value_m": -0.020256236262441885,
+        "minimum_endpoint_to_plane_clearance_m": 0.020256236262441885,
+        "bounded_polyhedron_from_positive_spanning_normals": true,
+        "normal_hull_minimum_origin_slack": 0.4837104272391658,
+        "normal_hull_facets": 8,
+        "normal_matrix_singular_values": [
+          1.530771131602253,
+          1.4725643626731646,
+          1.2199565321920838
+        ],
+        "normal_matrix_condition": 1.2547751425632196,
+        "scaled_plane_design_singular_values": [
+          1.6392998630713698,
+          1.506882171639345,
+          1.3019366119606441,
+          1.0153690053895343
+        ],
+        "scaled_plane_design_condition": 1.6144868066388058,
+        "minimum_support_gap_m": 0.02025623626244173,
+        "maximum_support_gap_m": 1.7632698622380667,
+        "valid_enclosure": true
+      },
+      "positive_paths": true,
+      "minimum_path_length_m": 2.46214622240767,
+      "minimum_arrival_s": 0.0025447062934940015,
+      "finite_face_bounce_validity": {
+        "valid_first_order_bounce_count": 388,
+        "expected_first_order_bounce_count": 390,
+        "valid_bounce_count_by_plane_index": [
+          64,
+          65,
+          65,
+          64,
+          65,
+          65
+        ],
+        "invalid_bounce_count": 2,
+        "all_bounces_on_finite_faces": false,
+        "tolerance_m": 6.975183117130203e-08,
+        "first_invalid_examples": [
+          [
+            2,
+            9,
+            0
+          ],
+          [
+            4,
+            10,
+            3
+          ]
+        ]
+      },
+      "all_physical_checks_pass": false,
+      "minimum_adjacent_sorted_echo_gap_s": 1.2617198869413482e-05,
+      "assignment_changed_groups_from_start": 5,
+      "plane_normal_matrix_condition": 1.2547751425632196,
+      "scaled_plane_design_condition": 1.6144868066388058,
+      "jacobian_rank_relative_1e-8": 18,
+      "jacobian_singular_values": [
+        18196.31520896562,
+        10281.52631456589,
+        45.637471812716015,
+        40.638735645228024,
+        31.529519494868048,
+        26.615919330447355,
+        22.135351204226332,
+        19.41630606586944,
+        13.684433817018144,
+        13.131364405655196,
+        11.698380560512588,
+        10.084910561927035,
+        8.921940357943589,
+        6.096556311933434,
+        5.268658724540937,
+        5.046021542576082,
+        4.879372692217589,
+        0.10543246902331539
+      ],
+      "jacobian_condition": 172587.3953017422,
+      "optimizer_success": false,
+      "optimizer_status": 0,
+      "optimizer_message": "The maximum number of function evaluations is exceeded.",
+      "nfev": 300,
+      "runtime_s": 3.540147100109607,
+      "parameters": [
+        1.9219249777660823,
+        -0.15209295991566316,
+        0.4324744151541304,
+        0.4945881120083993,
+        0.36977555099013165,
+        -1.216708072533082,
+        -1.376372456320159,
+        -0.15377786676786065,
+        3.4461127408329935,
+        -0.5313011881260591,
+        -2.2314741513693996,
+        1.1170060476862491,
+        0.566774301061264,
+        -0.07071104195593628,
+        -0.4225969414308488,
+        -0.3907594428648274,
+        -0.2961519112849447,
+        -3.934334160964869
+      ],
+      "normals": [
+        [
+          -0.3399872134649371,
+          0.9281455943305249,
+          -0.15150726188927016
+        ],
+        [
+          0.7991288504435828,
+          0.36889329977060425,
+          0.474669162441666
+        ],
+        [
+          0.32329896019112997,
+          0.1253122836030413,
+          -0.9379630130860839
+        ],
+        [
+          0.19092141387442435,
+          -0.9695809394678057,
+          -0.15317250257444404
+        ],
+        [
+          -0.8224819169853933,
+          -0.2585026346944126,
+          -0.5066555872464841
+        ],
+        [
+          -0.2690099907485413,
+          -0.346130856855268,
+          0.8987919975222898
+        ]
+      ],
+      "offsets_m": [
+        -6.542201568961392,
+        -3.7355896060384834,
+        -1.9776012175541688,
+        -1.2519846197711875,
+        -3.55307180217507,
+        -2.659844161640716
+      ],
+      "support_gaps_m": [
+        1.7632698622380667,
+        0.932428602736541,
+        0.6560402396980087,
+        0.67724040199549,
+        0.7443719652097474,
+        0.02025623626244173
+      ],
+      "free_parameter_block": "optimize_orientations_freeze_support_gaps",
+      "free_parameter_count": 12,
+      "fixed_indices": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ]
+    }
+  },
+  "conclusion_scope": "Diagnostic optimizer trials; nonconvergence and invalid face counts do not prove incompatibility."
+}

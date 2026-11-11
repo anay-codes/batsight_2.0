@@ -1,0 +1,17 @@
+C18 factorial OAT study; starts/method/case=8; direct max_nfev=500; seed protocol fixed
+01/12 base_M5_N13_uniform_mid_timing_clean M=5 N=13 dist=uniform timing=0.0005/0.0005s noise=0s A_zero_timing_SVD_Crocco: fit=1/8, recovered=1/8, rejected=0; B_Gaubitch_SVD_Crocco: fit=0/8, recovered=0/8, rejected=0; C_direct_TOA: fit=3/7, recovered=2/7, rejected=1
+02/12 microphones_below_M4 M=4 N=13 dist=uniform timing=0.0005/0.0005s noise=0s A_zero_timing_SVD_Crocco: fit=8/8, recovered=0/8, rejected=0; B_Gaubitch_SVD_Crocco: fit=8/8, recovered=0/8, rejected=0; C_direct_TOA: fit=6/8, recovered=0/8, rejected=0
+03/12 microphones_above_M7 M=7 N=13 dist=uniform timing=0.0005/0.0005s noise=0s A_zero_timing_SVD_Crocco: fit=0/8, recovered=0/8, rejected=0; B_Gaubitch_SVD_Crocco: fit=0/8, recovered=0/8, rejected=0; C_direct_TOA: fit=4/8, recovered=4/8, rejected=0
+04/12 sources_below_N10 M=5 N=10 dist=uniform timing=0.0005/0.0005s noise=0s A_zero_timing_SVD_Crocco: fit=0/8, recovered=0/8, rejected=0; B_Gaubitch_SVD_Crocco: fit=0/8, recovered=0/8, rejected=0; C_direct_TOA: fit=4/8, recovered=0/8, rejected=0
+05/12 sources_above_N17 M=5 N=17 dist=uniform timing=0.0005/0.0005s noise=0s A_zero_timing_SVD_Crocco: fit=0/8, recovered=0/8, rejected=0; B_Gaubitch_SVD_Crocco: fit=0/7, recovered=0/7, rejected=1; C_direct_TOA: fit=3/8, recovered=3/8, rejected=0
+06/12 clustered_3d_sigma_0p30m M=5 N=13 dist=clustered timing=0.0005/0.0005s noise=0s A_zero_timing_SVD_Crocco: fit=0/0, recovered=0/0, rejected=8; B_Gaubitch_SVD_Crocco: fit=0/0, recovered=0/0, rejected=8; C_direct_TOA: fit=0/6, recovered=0/6, rejected=2
+07/12 planar_3d_layout M=5 N=13 dist=planar timing=0.0005/0.0005s noise=0s A_zero_timing_SVD_Crocco: fit=0/7, recovered=0/7, rejected=1; B_Gaubitch_SVD_Crocco: fit=0/8, recovered=0/8, rejected=0; C_direct_TOA: fit=0/8, recovered=0/8, rejected=0
+08/12 timing_zero M=5 N=13 dist=uniform timing=0/0s noise=0s A_zero_timing_SVD_Crocco: fit=0/8, recovered=0/8, rejected=0; B_Gaubitch_SVD_Crocco: fit=0/8, recovered=0/8, rejected=0; C_direct_TOA: fit=3/8, recovered=2/8, rejected=0
+09/12 timing_low_0p10ms M=5 N=13 dist=uniform timing=0.0001/0.0001s noise=0s A_zero_timing_SVD_Crocco: fit=0/8, recovered=0/8, rejected=0; B_Gaubitch_SVD_Crocco: fit=0/8, recovered=0/8, rejected=0; C_direct_TOA: fit=3/8, recovered=2/8, rejected=0
+10/12 timing_high_4ms M=5 N=13 dist=uniform timing=0.004/0.004s noise=0s A_zero_timing_SVD_Crocco: fit=0/0, recovered=0/0, rejected=8; B_Gaubitch_SVD_Crocco: fit=0/0, recovered=0/0, rejected=8; C_direct_TOA: fit=4/8, recovered=3/8, rejected=0
+11/12 noise_20us M=5 N=13 dist=uniform timing=0.0005/0.0005s noise=2e-05s A_zero_timing_SVD_Crocco: fit=0/8, recovered=0/8, rejected=0; B_Gaubitch_SVD_Crocco: fit=0/8, recovered=0/8, rejected=0; C_direct_TOA: fit=5/7, recovered=0/7, rejected=1
+12/12 noise_100us M=5 N=13 dist=uniform timing=0.0005/0.0005s noise=0.0001s A_zero_timing_SVD_Crocco: fit=7/8, recovered=0/8, rejected=0; B_Gaubitch_SVD_Crocco: fit=0/8, recovered=0/8, rejected=0; C_direct_TOA: fit=7/8, recovered=0/8, rejected=0
+Runtime warnings observed during optimizer trial evaluations:
+WARNING RuntimeWarning: overflow encountered in exp during invalid trial coordinate unpacking (phase5c6_blind_initialization.py:128/130).
+WARNING RuntimeWarning: overflow encountered in multiply during trial Jacobian singular-value calculations (numpy.linalg).
+WARNING RuntimeWarning: divide by zero encountered in log while packing a degenerate trial coordinate state (phase5c6_blind_initialization.py:115).
