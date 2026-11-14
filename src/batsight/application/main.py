@@ -7,7 +7,7 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from batsight.application.api.routes import experiments, projects, recordings, recording_sessions, signals, simulation, system
+from batsight.application.api.routes import experiments, measurements, projects, recordings, recording_sessions, rooms, signals, simulation, system
 from batsight.application.config import Settings
 from batsight.application.database import Base, create_database
 from batsight.application.models import entities as _entities  # noqa: F401 - register tables
@@ -40,13 +40,13 @@ def create_app(settings: Settings | None = None) -> FastAPI:
     application.state.experiment_service = SyntheticExperimentService(session_factory)
     application.add_middleware(
         CORSMiddleware,
-        allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],
+        allow_origins=["*"],
         allow_credentials=False,
         allow_methods=["GET", "POST", "PUT", "DELETE"],
-        allow_headers=["Content-Type"],
+        allow_headers=["*"],
         expose_headers=["X-Audio-Sample-Rate-Hz", "X-Audio-Sample-Count", "X-Audio-Duration-S", "X-Waveform-Convention"],
     )
-    for route_module in (system, projects, recordings, recording_sessions, experiments, signals, simulation):
+    for route_module in (system, projects, recordings, recording_sessions, experiments, signals, simulation, measurements, rooms):
         application.include_router(route_module.router)
     return application
 

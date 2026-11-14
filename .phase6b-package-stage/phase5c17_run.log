@@ -1,9 +1,0 @@
-Phase 5C.17 direct-path initializer comparison; deterministic synthetic blind starts only
-DirectFit max_nfev=500; input observations are complete except explicit missing-data rejection
-minimum_well_spread M=5 N=13 noise=0s; A_zero_timing_Crocco: recovered=0/1, measurement-fit=0/1; B_Gaubitch100_Crocco: recovered=0/1, measurement-fit=0/1; C_C6_direct_multistart: recovered=0/5, measurement-fit=1/5
-below_reference_count M=4 N=10 noise=0s; A_zero_timing_Crocco: recovered=0/1, measurement-fit=1/1; B_Gaubitch100_Crocco: recovered=0/1, measurement-fit=1/1; C_C6_direct_multistart: recovered=0/5, measurement-fit=4/5
-larger_high_timing M=8 N=20 noise=0s; A_zero_timing_Crocco: recovered=0/1, measurement-fit=0/1; B_Gaubitch100_Crocco: recovered=1/1, measurement-fit=1/1; C_C6_direct_multistart: recovered=2/5, measurement-fit=2/5
-planar_minimum_count M=5 N=13 noise=0s; A_zero_timing_Crocco: recovered=0/1, measurement-fit=0/1; B_Gaubitch100_Crocco: recovered=0/1, measurement-fit=0/1; C_C6_direct_multistart: recovered=0/5, measurement-fit=2/5
-clustered_noisy_minimum M=5 N=13 noise=2e-05s; A_zero_timing_Crocco: recovered=0/1, measurement-fit=0/1; B_Gaubitch100_Crocco: recovered=0/1, measurement-fit=0/1; C_C6_direct_multistart: recovered=0/5, measurement-fit=5/5
-larger_noisy_spread M=8 N=20 noise=5e-05s; A_zero_timing_Crocco: recovered=0/1, measurement-fit=0/1; B_Gaubitch100_Crocco: recovered=0/1, measurement-fit=0/1; C_C6_direct_multistart: recovered=0/5, measurement-fit=3/5
-missing data: {"handling": "reject; no imputation", "mask_seed": 51799, "missing_count": 7, "name": "minimum_well_spread_with_10pct_missing_TOAs", "reason": "archived methods require a dense finite TOA matrix", "supported": {"A_zero_timing_Crocco": false, "B_Gaubitch_Crocco": false, "C_C6_DirectFit": false}}

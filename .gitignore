@@ -3,13 +3,15 @@ __pycache__/
 *.egg-info/
 .pytest_cache/
 .pytest-tmp/
-.pytest-tmp-phase6b*/
+.pytest-tmp*
+*.sqlite3
 .venv/
 venv/
 frontend/node_modules/
 frontend/dist/
 frontend/tsconfig.tsbuildinfo
 .phase6b-preview-data/
+.phase6b-package-stage-v2/
 
 # Keep data directories empty in version control; record dataset provenance separately.
 data/raw/*

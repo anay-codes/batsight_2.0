@@ -33,6 +33,6 @@ def generate_waveform(payload: WaveformRequest):
             "X-Audio-Sample-Count": str(sample_count),
             "X-Audio-Duration-S": str(duration),
             "X-Waveform-Convention": "generic_engineering_signal_not_paper_equation_10",
-            "Content-Disposition": 'attachment; filename="batsight-test-waveform.wav"',
+            "Content-Disposition": "inline",
         },
     )

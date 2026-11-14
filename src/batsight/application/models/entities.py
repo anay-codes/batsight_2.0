@@ -27,6 +27,8 @@ class Project(Base):
     recordings: Mapped[list["Recording"]] = relationship(back_populates="project", cascade="all, delete-orphan")
     experiments: Mapped[list["Experiment"]] = relationship(back_populates="project", cascade="all, delete-orphan")
     recording_sessions: Mapped[list["RecordingSession"]] = relationship(back_populates="project", cascade="all, delete-orphan")
+    measurements: Mapped[list["Measurement"]] = relationship(back_populates="project", cascade="all, delete-orphan")
+    rooms: Mapped[list["Room"]] = relationship(back_populates="project", cascade="all, delete-orphan")
 
 
 class Recording(Base):
@@ -125,3 +127,47 @@ class ExperimentResult(Base):
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utc_now, nullable=False)
 
     experiment: Mapped[Experiment] = relationship(back_populates="result")
+
+
+class Measurement(Base):
+    __tablename__ = "measurements"
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    project_id: Mapped[int | None] = mapped_column(ForeignKey("projects.id", ondelete="CASCADE"), index=True)
+    name: Mapped[str] = mapped_column(String(200), nullable=False)
+    description: Mapped[str | None] = mapped_column(Text)
+    chirp_config: Mapped[dict] = mapped_column(JSON, nullable=False, default=dict)
+    speed_of_sound_m_s: Mapped[float] = mapped_column(Float, nullable=False, default=343.0)
+    direct_lag_s: Mapped[float | None] = mapped_column(Float)
+    direct_distance_m: Mapped[float | None] = mapped_column(Float)
+    echo_candidates: Mapped[list[dict]] = mapped_column(JSON, nullable=False, default=list)
+    echo_count: Mapped[int] = mapped_column(Integer, nullable=False, default=0)
+    closest_reflector_m: Mapped[float | None] = mapped_column(Float)
+    farthest_reflector_m: Mapped[float | None] = mapped_column(Float)
+    scan_angle_deg: Mapped[float | None] = mapped_column(Float)
+    raw_wav_path: Mapped[str | None] = mapped_column(Text)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utc_now, nullable=False)
+
+    project: Mapped[Project | None] = relationship(back_populates="measurements")
+
+
+class Room(Base):
+    __tablename__ = "rooms"
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    project_id: Mapped[int | None] = mapped_column(ForeignKey("projects.id", ondelete="CASCADE"), index=True)
+    name: Mapped[str] = mapped_column(String(200), nullable=False)
+    description: Mapped[str | None] = mapped_column(Text)
+    length_x_m: Mapped[float] = mapped_column(Float, nullable=False)
+    width_y_m: Mapped[float] = mapped_column(Float, nullable=False)
+    height_z_m: Mapped[float] = mapped_column(Float, nullable=False, default=2.8)
+    floor_area_m2: Mapped[float] = mapped_column(Float, nullable=False)
+    room_volume_m3: Mapped[float] = mapped_column(Float, nullable=False)
+    device_position_m: Mapped[list] = mapped_column(JSON, nullable=False, default=list)
+    wall_distances: Mapped[dict] = mapped_column(JSON, nullable=False, default=dict)
+    obstacles: Mapped[list] = mapped_column(JSON, nullable=False, default=list)
+    scan_metadata: Mapped[dict] = mapped_column(JSON, nullable=False, default=dict)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utc_now, nullable=False)
+    updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utc_now, onupdate=utc_now, nullable=False)
+
+    project: Mapped[Project | None] = relationship(back_populates="rooms")

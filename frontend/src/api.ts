@@ -1,4 +1,4 @@
-export const API_BASE = (import.meta.env.VITE_API_BASE_URL ?? 'http://127.0.0.1:8000').replace(/\/$/, '')
+export const API_BASE = (import.meta.env.VITE_API_BASE_URL ?? (typeof window !== 'undefined' ? `http://${window.location.hostname}:8000` : 'http://127.0.0.1:8000')).replace(/\/$/, '')
 
 export interface Project { id: number; name: string; description: string | null; metadata: Record<string, unknown>; created_at: string; updated_at: string }
 export interface Recording { id: number; project_id: number | null; name: string; description: string | null; original_filename: string; file_size_bytes: number; sample_rate_hz: number; channel_count: number; sample_count: number; duration_s: number; metadata: Record<string, unknown>; created_at: string }
@@ -17,6 +17,11 @@ export interface RecordingSession { session_id:string; project_id:number; name:s
 export interface SessionRecordingFile { recording_id:number; filename:string; sample_rate_hz:number; channel_count:number; duration_s:number; recording_start_time_s:number|null; channel_mapping:{channel_index:number;microphone_id:string}[]; event_ids:string[]|null }
 export interface SessionValidation { session_id:string; valid:boolean; errors:{code:string;message:string;field:string|null}[]; warnings:{code:string;message:string;field:string|null}[]; synchronization_interpretation:string }
 export interface SessionExtraction { session_id:string; extraction_id:string; status:'queued'|'running'|'completed'|'failed'; error_message:string|null; result:Record<string,any>|null; created_at:string; completed_at:string|null }
+export interface EchoPeak { correlation_sample_index:number; lag_samples:number; lag_seconds:number; amplitude:number; delay_from_direct_s:number; distance_m:number; path_length_m:number; classification:'direct_path'|'echo'|'pre_trigger' }
+export interface MeasurementProcessResult { sample_rate_hz:number; duration_s:number; speed_of_sound_m_s:number; direct_lag_s:number|null; direct_distance_m:number|null; peaks:EchoPeak[]; echo_count:number; closest_reflector_m:number|null; farthest_reflector_m:number|null; provenance:string }
+export interface MeasurementRecord { id:number; project_id:number|null; name:string; description:string|null; chirp_config:Record<string,any>; speed_of_sound_m_s:number; direct_lag_s:number|null; direct_distance_m:number|null; echo_candidates:EchoPeak[]; echo_count:number; closest_reflector_m:number|null; farthest_reflector_m:number|null; scan_angle_deg:number|null; created_at:string }
+export interface RoomReconstruction { estimated_dimensions_m:[number,number,number]; length_x_m:number; width_y_m:number; height_z_m:number; floor_area_m2:number; room_volume_m3:number; device_position_m:[number,number,number]; wall_distances:{x_min:number;x_max:number;y_min:number;y_max:number;z_min:number;z_max:number}; echo_distances_used:number[]; method:string; confidence:string }
+export interface SavedRoom { id:number; project_id:number|null; name:string; description:string|null; length_x_m:number; width_y_m:number; height_z_m:number; floor_area_m2:number; room_volume_m3:number; device_position_m:[number,number,number]; wall_distances:Record<string,number>; obstacles:Array<{direction:string;distance_m:number;label?:string}>; scan_metadata:Record<string,any>; created_at:string; updated_at:string }
 
 async function request<T>(path: string, init?: RequestInit): Promise<T> {
   const response = await fetch(`${API_BASE}${path}`, init)
@@ -57,6 +62,18 @@ export const api = {
   runSessionExtraction: (id:string) => request<{session_id:string;extraction_id:string;status:'queued';message:string}>(`/api/v1/recording-sessions/${id}/extractions`,{method:'POST'}),
   sessionExtraction: (id:string,extractionId:string) => request<SessionExtraction>(`/api/v1/recording-sessions/${id}/extractions/${extractionId}`),
   latestSessionResult: (id:string) => request<SessionExtraction|null>(`/api/v1/recording-sessions/${id}/results`),
+  processMeasurement: (body:Record<string,unknown>) => request<MeasurementProcessResult>('/api/measurements/process',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)}),
+  processMeasurementUpload: (file:File|Blob,options?:Record<string,string|number>) => { const data=new FormData(); data.append('file',file,'measurement.wav'); if(options){for(const [k,v] of Object.entries(options)){data.append(k,String(v))}} return request<MeasurementProcessResult>('/api/measurements/process-upload',{method:'POST',body:data}) },
+  measurements: (projectId?:number) => request<MeasurementRecord[]>(`/api/measurements${projectId?`?project_id=${projectId}`:''}`),
+  measurement: (id:number) => request<MeasurementRecord>(`/api/measurements/${id}`),
+  createMeasurement: (body:Record<string,unknown>) => request<MeasurementRecord>('/api/measurements',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)}),
+  deleteMeasurement: (id:number) => request<void>(`/api/measurements/${id}`,{method:'DELETE'}),
+  reconstructRoom: (body:{measurement_id?:number;distances_m?:number[];default_ceiling_height_m?:number;centered_assumption?:boolean}) => request<RoomReconstruction>('/api/measurements/reconstruct-room',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)}),
+  rooms: (projectId?:number) => request<SavedRoom[]>(`/api/rooms${projectId?`?project_id=${projectId}`:''}`),
+  room: (id:number) => request<SavedRoom>(`/api/rooms/${id}`),
+  createRoom: (body:Record<string,unknown>) => request<SavedRoom>('/api/rooms',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)}),
+  updateRoom: (id:number,body:Record<string,unknown>) => request<SavedRoom>(`/api/rooms/${id}`,{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)}),
+  deleteRoom: (id:number) => request<void>(`/api/rooms/${id}`,{method:'DELETE'}),
 }
 
 export function formatDuration(seconds:number) { if (!Number.isFinite(seconds)) return '—'; const m=Math.floor(seconds/60); const s=seconds%60; return `${m}:${s.toFixed(1).padStart(4,'0')}` }
