@@ -17,6 +17,11 @@ export interface RecordingSession { session_id:string; project_id:number; name:s
 export interface SessionRecordingFile { recording_id:number; filename:string; sample_rate_hz:number; channel_count:number; duration_s:number; recording_start_time_s:number|null; channel_mapping:{channel_index:number;microphone_id:string}[]; event_ids:string[]|null }
 export interface SessionValidation { session_id:string; valid:boolean; errors:{code:string;message:string;field:string|null}[]; warnings:{code:string;message:string;field:string|null}[]; synchronization_interpretation:string }
 export interface SessionExtraction { session_id:string; extraction_id:string; status:'queued'|'running'|'completed'|'failed'; error_message:string|null; result:Record<string,any>|null; created_at:string; completed_at:string|null }
+export interface SmardDeviceNode { channel: number; name: string; axis: string | null; position_m: [number, number, number] }
+export interface SmardTimingProvenance { calibrated_loopback_offset_ms: number; speed_of_sound_mps: number; temperature_celsius: number }
+export interface SmardDiagnostics { residual_rms_ms: number; jacobian_rank: number; jacobian_condition_number: number; optimizer_status: string; function_evaluations: number; per_wall_counts: Record<string, number>; total_reflections_used: number; timing_provenance: SmardTimingProvenance }
+export interface Smard0001ReconstructionResponse { dataset: string; configuration: string; room_id: string; method: string; provenance_badge: string; estimated_dimensions_m: [number, number, number]; ground_truth_dimensions_m: [number, number, number]; absolute_error_cm: { Lx: number; Ly: number; Lz: number }; relative_error_percent: { Lx: number; Ly: number; Lz: number }; loudspeaker: SmardDeviceNode; microphones: SmardDeviceNode[]; diagnostics: SmardDiagnostics }
+
 export interface EchoPeak { correlation_sample_index:number; lag_samples:number; lag_seconds:number; amplitude:number; delay_from_direct_s:number; distance_m:number; path_length_m:number; classification:'direct_path'|'echo'|'pre_trigger' }
 export interface MeasurementProcessResult { sample_rate_hz:number; duration_s:number; speed_of_sound_m_s:number; direct_lag_s:number|null; direct_distance_m:number|null; peaks:EchoPeak[]; echo_count:number; closest_reflector_m:number|null; farthest_reflector_m:number|null; provenance:string }
 export interface MeasurementRecord { id:number; project_id:number|null; name:string; description:string|null; chirp_config:Record<string,any>; speed_of_sound_m_s:number; direct_lag_s:number|null; direct_distance_m:number|null; echo_candidates:EchoPeak[]; echo_count:number; closest_reflector_m:number|null; farthest_reflector_m:number|null; scan_angle_deg:number|null; created_at:string }
@@ -74,6 +79,7 @@ export const api = {
   createRoom: (body:Record<string,unknown>) => request<SavedRoom>('/api/rooms',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)}),
   updateRoom: (id:number,body:Record<string,unknown>) => request<SavedRoom>(`/api/rooms/${id}`,{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)}),
   deleteRoom: (id:number) => request<void>(`/api/rooms/${id}`,{method:'DELETE'}),
+  smard0001: () => request<Smard0001ReconstructionResponse>('/api/reconstructions/smard-0001'),
 }
 
 export function formatDuration(seconds:number) { if (!Number.isFinite(seconds)) return '—'; const m=Math.floor(seconds/60); const s=seconds%60; return `${m}:${s.toFixed(1).padStart(4,'0')}` }

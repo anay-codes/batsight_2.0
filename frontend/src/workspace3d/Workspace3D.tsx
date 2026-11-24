@@ -2,9 +2,9 @@ import { useEffect, useRef, useState } from 'react'
 import { Canvas, useThree } from '@react-three/fiber'
 import { GizmoHelper, GizmoViewport, Html, OrbitControls, TransformControls } from '@react-three/drei'
 import type { Group } from 'three'
-import { Camera, Cuboid, Grid3X3, LayoutDashboard, Maximize2, RotateCcw, Save } from 'lucide-react'
+import { Camera, Cuboid, Grid3X3, LayoutDashboard, Maximize2, RotateCcw, Save, Layers, CheckCircle2 } from 'lucide-react'
 import { RoomPlan2D } from './RoomPlan2D'
-import { api, type MeasurementRecord, type SavedRoom } from '../api'
+import { api, type MeasurementRecord, type SavedRoom, type Smard0001ReconstructionResponse } from '../api'
 import { cameraOrientation, type CameraView } from './cameraOrientation'
 import { clampInside, createDefaultScene, parseSceneDocument, serializeScene, type Equipment, type SceneDocument, type Vec3 } from './sceneModel'
 
@@ -26,6 +26,9 @@ export function Workspace3D({selectedProject,setToast}:Props) {
   const [displaySpheres,setDisplaySpheres]=useState(true)
   const [selectedEchoIndex,setSelectedEchoIndex]=useState<number|null>(null)
   const [view,setView]=useState<View>('iso')
+  const [smardData, setSmardData] = useState<Smard0001ReconstructionResponse | null>(null)
+  const [showGroundTruth, setShowGroundTruth] = useState<boolean>(true)
+  const [loadingSmard, setLoadingSmard] = useState<boolean>(false)
 
   const selected=scene.equipment.find(item=>item.id===selectedId)??null
 
@@ -42,7 +45,50 @@ export function Workspace3D({selectedProject,setToast}:Props) {
 
   const selectedRoom = rooms.find(r=>r.id===roomId)??null
 
+  async function loadSmardPreset() {
+    setLoadingSmard(true)
+    try {
+      const res = await api.smard0001()
+      setSmardData(res)
+      setRoomId('')
+      setMeasurementId('')
+      const dims: Vec3 = [res.estimated_dimensions_m[0], res.estimated_dimensions_m[1], res.estimated_dimensions_m[2]]
+      const equip: Equipment[] = [
+        {
+          id: 'smard-speaker',
+          name: `${res.loudspeaker.name} (Ch 08)`,
+          kind: 'speaker',
+          position_m: res.loudspeaker.position_m,
+          orientation_yaw_deg: 0,
+          visible: true,
+        },
+        ...res.microphones.map(m => ({
+          id: `smard-mic-${m.channel}`,
+          name: `Ch ${m.channel.toString().padStart(2, '0')} (${m.name})`,
+          kind: 'microphone' as const,
+          position_m: m.position_m,
+          orientation_yaw_deg: 0,
+          visible: true,
+        }))
+      ]
+      setScene({
+        schema_version: 1,
+        coordinate_convention: 'corner_origin_x_length_y_width_z_height',
+        unit: 'm',
+        room_dimensions_m: dims,
+        speed_of_sound_m_s: res.diagnostics.timing_provenance.speed_of_sound_mps,
+        equipment: equip,
+      })
+      setToast({ kind: 'success', text: 'Loaded SMARD 0001 real calibrated room reconstruction.' })
+    } catch (e) {
+      setToast({ kind: 'error', text: `Failed to load SMARD 0001: ${(e as Error).message}` })
+    } finally {
+      setLoadingSmard(false)
+    }
+  }
+
   function selectRoom(id: number | '') {
+    setSmardData(null)
     setRoomId(id)
     if (!id) return
     const r = rooms.find(item => item.id === id)
@@ -89,6 +135,15 @@ export function Workspace3D({selectedProject,setToast}:Props) {
         <p>Inspect room geometry, device placement, and interior obstacles in 3D wireframe or 2D architectural blueprint.</p>
       </div>
       <div className="ws-head-actions">
+        <button
+          className={`ws-button ${smardData ? 'on' : ''}`}
+          onClick={loadSmardPreset}
+          disabled={loadingSmard}
+          style={smardData ? { borderColor: '#a855f7', color: '#d8b4fe', background: '#2e1065', fontWeight: 600 } : {}}
+          title="Load SMARD 0001 real measured acoustic room benchmark"
+        >
+          <Layers size={14} /> {loadingSmard ? 'Loading SMARD…' : 'SMARD 0001 (Real Room)'}
+        </button>
         <label className="ws-select">
           <span>Saved Room</span>
           <select value={roomId} onChange={e=>selectRoom(e.target.value?Number(e.target.value):'')}>
@@ -103,7 +158,7 @@ export function Workspace3D({selectedProject,setToast}:Props) {
             {measurements.map(item=><option key={item.id} value={item.id}>📡 {item.name} ({item.echo_count} echoes)</option>)}
           </select>
         </label>
-        <button className="ws-button" onClick={()=>{setScene(createDefaultScene());setSelectedId(null);setRoomId('')}} title="Reset to default room box">
+        <button className="ws-button" onClick={()=>{setScene(createDefaultScene());setSelectedId(null);setRoomId('');setSmardData(null)}} title="Reset to default room box">
           <RotateCcw size={14}/> Reset
         </button>
       </div>
@@ -139,6 +194,32 @@ export function Workspace3D({selectedProject,setToast}:Props) {
         Dismiss
       </button>
     </div>}
+
+    {smardData && (
+      <div className="ws-provenance" style={{background:'#1e1035',borderColor:'#a855f7',color:'#f3e8ff',display:'flex',justifyContent:'space-between',alignItems:'center',padding:'8px 16px',borderRadius:6,margin:'0 0 12px 0',flexWrap:'wrap',gap:8}}>
+        <div style={{display:'flex',alignItems:'center',gap:12,flexWrap:'wrap'}}>
+          <b style={{color:'#c084fc',display:'inline-flex',alignItems:'center',gap:6}}>
+            <span style={{width:8,height:8,borderRadius:'50%',background:'#a855f7',display:'inline-block'}}/>
+            SMARD 0001 (Real Measured Room Benchmark)
+          </b>
+          <span style={{color:'#d8b4fe',fontSize:11,background:'#3b0764',padding:'2px 8px',borderRadius:4,border:'1px solid #7e22ce',fontWeight:600}}>
+            ESTIMATED (CALIBRATED REAL DATA)
+          </span>
+          <span style={{color:'#e9d5ff',fontSize:12}}>
+            Loopback delay: {smardData.diagnostics.timing_provenance.calibrated_loopback_offset_ms.toFixed(3)} ms applied · 132/132 reflections converged
+          </span>
+        </div>
+        <div style={{display:'flex',alignItems:'center',gap:12}}>
+          <label style={{display:'flex',alignItems:'center',gap:6,fontSize:12,cursor:'pointer',color:'#f3e8ff',userSelect:'none'}}>
+            <input type="checkbox" checked={showGroundTruth} onChange={e=>setShowGroundTruth(e.target.checked)} style={{accentColor:'#f59e0b'}} />
+            Show Ground Truth Box
+          </label>
+          <button style={{background:'#4c1d95',color:'#e9d5ff',border:'1px solid #a855f7',borderRadius:4,padding:'3px 10px',cursor:'pointer',fontSize:12}} onClick={()=>setSmardData(null)}>
+            Dismiss
+          </button>
+        </div>
+      </div>
+    )}
 
     {/* Toolbar */}
     <div className="ws-toolbar" style={{display:'flex',justifyContent:'space-between',alignItems:'center',flexWrap:'wrap',gap:8}}>
@@ -199,6 +280,9 @@ export function Workspace3D({selectedProject,setToast}:Props) {
               <ambientLight intensity={1.5}/>
               <directionalLight position={[6,-5,9]} intensity={2.4}/>
               <Room dimensions={dimensions} visible={display.walls} labels={display.labels}/>
+              {smardData && showGroundTruth && (
+                <GroundTruthRoomOverlay dimensions={smardData.ground_truth_dimensions_m} labels={display.labels}/>
+              )}
               <Axes dimensions={dimensions} visible={display.axes}/>
               <FloorGrid dimensions={dimensions} visible={display.grid}/>
               <EquipmentLayer items={equipment} selectedId={selectedId} editable={true} onSelect={setSelectedId} onMove={patchPosition} labels={display.labels}/>
@@ -208,10 +292,18 @@ export function Workspace3D({selectedProject,setToast}:Props) {
               <GizmoHelper alignment="bottom-right" margin={[65,65]}><GizmoViewport axisColors={['#f57474','#6bd58a','#58cbe0']} labelColor="white"/></GizmoHelper>
             </Canvas>
             <div className="ws-corner-label">X LENGTH · Y WIDTH · Z HEIGHT</div>
-            <div className="ws-legend" style={{position:'absolute',bottom:12,left:12,display:'flex',gap:12,fontSize:11,background:'rgba(14,20,24,0.85)',padding:'6px 12px',borderRadius:6,border:'1px solid #1e2830'}}>
-              <span style={{display:'flex',alignItems:'center',gap:5}}><span style={{width:12,height:2,background:'#00f5d4',display:'inline-block'}}/>Room Boundary</span>
-              <span style={{display:'flex',alignItems:'center',gap:5}}><span style={{width:8,height:8,borderRadius:'50%',background:'#50d5df',display:'inline-block'}}/>BatSight Device</span>
-              <span style={{display:'flex',alignItems:'center',gap:5}}><span style={{width:8,height:8,borderRadius:2,background:'#f59e0b',display:'inline-block'}}/>Obstacles</span>
+            <div className="ws-legend" style={{position:'absolute',bottom:12,left:12,display:'flex',gap:12,fontSize:11,background:'rgba(14,20,24,0.85)',padding:'6px 12px',borderRadius:6,border:'1px solid #1e2830',flexWrap:'wrap'}}>
+              <span style={{display:'flex',alignItems:'center',gap:5}}><span style={{width:12,height:2,background:'#00f5d4',display:'inline-block'}}/>{smardData ? 'Estimated Room' : 'Room Boundary'}</span>
+              {smardData && showGroundTruth && (
+                <span style={{display:'flex',alignItems:'center',gap:5}}><span style={{width:12,height:2,background:'#f59e0b',display:'inline-block'}}/>Ground Truth Box</span>
+              )}
+              <span style={{display:'flex',alignItems:'center',gap:5}}><span style={{width:8,height:8,borderRadius:'50%',background:smardData?'#f3a75c':'#50d5df',display:'inline-block'}}/>{smardData ? 'Loudspeaker (Ch 08)' : 'BatSight Device'}</span>
+              {smardData && (
+                <span style={{display:'flex',alignItems:'center',gap:5}}><span style={{width:8,height:8,borderRadius:'50%',background:'#50d5df',display:'inline-block'}}/>22 Microphones</span>
+              )}
+              {!smardData && (
+                <span style={{display:'flex',alignItems:'center',gap:5}}><span style={{width:8,height:8,borderRadius:2,background:'#f59e0b',display:'inline-block'}}/>Obstacles</span>
+              )}
             </div>
           </div>
         )}
@@ -225,11 +317,102 @@ export function Workspace3D({selectedProject,setToast}:Props) {
       {/* Clean Right Inspector Panel */}
       <aside className="ws-panel ws-inspector" style={{background:'#0e1418',border:'1px solid #202b32',borderRadius:8,padding:16,display:'flex',flexDirection:'column',gap:14}}>
         <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',borderBottom:'1px solid #1e2830',paddingBottom:10}}>
-          <b style={{fontSize:14,color:'#f0f6fc'}}>{selectedRoom ? 'Room Details' : 'Scene Properties'}</b>
-          <span style={{fontSize:11,color:'#00f5d4',fontWeight:600}}>{selectedRoom ? 'SAVED ROOM' : 'EDITABLE'}</span>
+          <b style={{fontSize:14,color:'#f0f6fc'}}>{smardData ? 'SMARD Benchmark' : selectedRoom ? 'Room Details' : 'Scene Properties'}</b>
+          <span style={{fontSize:11,color: smardData ? '#c084fc' : selectedRoom ? '#00f5d4' : '#00f5d4',fontWeight:600}}>
+            {smardData ? 'CALIBRATED ESTIMATE' : selectedRoom ? 'SAVED ROOM' : 'EDITABLE'}
+          </span>
         </div>
 
-        {selectedRoom ? (
+        {smardData ? (
+          <>
+            <div>
+              <div style={{display:'flex',alignItems:'center',gap:8,background:'#2e1065',border:'1px solid #7e22ce',padding:'8px 10px',borderRadius:6,marginBottom:12}}>
+                <CheckCircle2 size={16} color="#c084fc" style={{flexShrink:0}} />
+                <div>
+                  <div style={{fontSize:11,fontWeight:700,color:'#f3e8ff'}}>ESTIMATED (CALIBRATED REAL DATA)</div>
+                  <div style={{fontSize:10,color:'#d8b4fe'}}>SMARD Config 0001 · 22 Mics Acoustic Array</div>
+                </div>
+              </div>
+
+              <div style={{fontSize:11,color:'#c084fc',fontWeight:600,marginBottom:6}}>ESTIMATED VS GROUND TRUTH</div>
+              <table style={{width:'100%',borderCollapse:'collapse',fontSize:11,marginBottom:12}}>
+                <thead>
+                  <tr style={{color:'#94a3b8',borderBottom:'1px solid #1e2830',textAlign:'left'}}>
+                    <th style={{padding:'4px 2px'}}>Dim</th>
+                    <th style={{padding:'4px 2px',textAlign:'right'}}>Actual</th>
+                    <th style={{padding:'4px 2px',textAlign:'right'}}>Est</th>
+                    <th style={{padding:'4px 2px',textAlign:'right'}}>Error</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    { axis: 'Lx', name: 'Length (X)', gt: smardData.ground_truth_dimensions_m[0], est: smardData.estimated_dimensions_m[0] },
+                    { axis: 'Ly', name: 'Width (Y)', gt: smardData.ground_truth_dimensions_m[1], est: smardData.estimated_dimensions_m[1] },
+                    { axis: 'Lz', name: 'Height (Z)', gt: smardData.ground_truth_dimensions_m[2], est: smardData.estimated_dimensions_m[2] },
+                  ].map(row => {
+                    const diffM = row.est - row.gt
+                    const diffCm = diffM * 100
+                    const relPct = (diffM / row.gt) * 100
+                    return (
+                      <tr key={row.axis} style={{borderBottom:'1px solid #182228'}}>
+                        <td style={{padding:'5px 2px',color:'#cbd5e1',fontWeight:600}}>{row.name}</td>
+                        <td style={{padding:'5px 2px',textAlign:'right',color:'#94a3b8'}}>{row.gt.toFixed(3)} m</td>
+                        <td style={{padding:'5px 2px',textAlign:'right',color:'#00f5d4',fontWeight:700}}>{row.est.toFixed(3)} m</td>
+                        <td style={{padding:'5px 2px',textAlign:'right',color: Math.abs(diffCm) < 8 ? '#4ade80' : '#f59e0b',fontWeight:600}}>
+                          {diffCm >= 0 ? `+${diffCm.toFixed(1)}` : diffCm.toFixed(1)} cm ({relPct >= 0 ? `+${relPct.toFixed(2)}` : relPct.toFixed(2)}%)
+                        </td>
+                      </tr>
+                    )
+                  })}
+                </tbody>
+              </table>
+            </div>
+
+            <div>
+              <div style={{fontSize:11,color:'#38bdf8',fontWeight:600,marginBottom:6}}>SOLVER DIAGNOSTICS</div>
+              <div style={{display:'flex',flexDirection:'column',gap:5,fontSize:11}}>
+                <div style={{display:'flex',justifyContent:'space-between',borderBottom:'1px solid #182228',paddingBottom:4}}>
+                  <span style={{color:'#8b949e'}}>Residual RMS</span>
+                  <b style={{color:'#38bdf8'}}>{smardData.diagnostics.residual_rms_ms.toFixed(3)} ms</b>
+                </div>
+                <div style={{display:'flex',justifyContent:'space-between',borderBottom:'1px solid #182228',paddingBottom:4}}>
+                  <span style={{color:'#8b949e'}}>Jacobian Rank / Cond</span>
+                  <b style={{color:'#f0f6fc'}}>{smardData.diagnostics.jacobian_rank} / 3 (cond {smardData.diagnostics.jacobian_condition_number.toFixed(2)})</b>
+                </div>
+                <div style={{display:'flex',justifyContent:'space-between',borderBottom:'1px solid #182228',paddingBottom:4}}>
+                  <span style={{color:'#8b949e'}}>Optimizer Status</span>
+                  <b style={{color:'#4ade80'}}>{smardData.diagnostics.optimizer_status}</b>
+                </div>
+                <div style={{display:'flex',justifyContent:'space-between',borderBottom:'1px solid #182228',paddingBottom:4}}>
+                  <span style={{color:'#8b949e'}}>Reflections Used</span>
+                  <b style={{color:'#f0f6fc'}}>{smardData.diagnostics.total_reflections_used} (22 per wall)</b>
+                </div>
+                <div style={{display:'flex',justifyContent:'space-between',borderBottom:'1px solid #182228',paddingBottom:4}}>
+                  <span style={{color:'#8b949e'}}>Hardware Timing Offset</span>
+                  <b style={{color:'#e879f9'}}>{smardData.diagnostics.timing_provenance.calibrated_loopback_offset_ms.toFixed(3)} ms</b>
+                </div>
+                <div style={{display:'flex',justifyContent:'space-between',paddingBottom:4}}>
+                  <span style={{color:'#8b949e'}}>Speed of Sound (c)</span>
+                  <b style={{color:'#f0f6fc'}}>{smardData.diagnostics.timing_provenance.speed_of_sound_mps.toFixed(1)} m/s (21.6 °C)</b>
+                </div>
+              </div>
+            </div>
+
+            <div style={{marginTop:'auto',display:'flex',flexDirection:'column',gap:8}}>
+              <label style={{display:'flex',alignItems:'center',gap:6,fontSize:11,cursor:'pointer',color:'#f3e8ff'}}>
+                <input type="checkbox" checked={showGroundTruth} onChange={e=>setShowGroundTruth(e.target.checked)} style={{accentColor:'#f59e0b'}} />
+                <span>Show Ground Truth Box (Amber)</span>
+              </label>
+              <button
+                className="button primary small"
+                style={{width:'100%',display:'flex',alignItems:'center',justifyContent:'center',gap:6}}
+                onClick={()=>setViewMode(viewMode==='3d'?'2d':'3d')}
+              >
+                {viewMode==='3d' ? <><LayoutDashboard size={14}/> Switch to 2D Floor Plan</> : <><Cuboid size={14}/> Switch to 3D View</>}
+              </button>
+            </div>
+          </>
+        ) : selectedRoom ? (
           <>
             <div>
               <div style={{fontSize:11,color:'#70808b',fontWeight:600,marginBottom:6}}>DIMENSIONS & VOLUME</div>
@@ -397,6 +580,24 @@ function RoomEdges({dimensions}:{dimensions:Vec3}){
   const vertices:Vec3[]=[[0,0,0],[x,0,0],[x,y,0],[0,y,0],[0,0,z],[x,0,z],[x,y,z],[0,y,z]]
   const edges=[[0,1],[1,2],[2,3],[3,0],[4,5],[5,6],[6,7],[7,4],[0,4],[1,5],[2,6],[3,7]]
   return <>{edges.map(([a,b],i)=><Line3 key={i} start={vertices[a]} end={vertices[b]} color="#00f5d4" opacity={0.85}/>)}</>
+}
+
+function GroundTruthRoomOverlay({dimensions,labels}:{dimensions:Vec3;labels:boolean}){
+  const [x,y,z]=dimensions
+  const vertices:Vec3[]=[[0,0,0],[x,0,0],[x,y,0],[0,y,0],[0,0,z],[x,0,z],[x,y,z],[0,y,z]]
+  const edges=[[0,1],[1,2],[2,3],[3,0],[4,5],[5,6],[6,7],[7,4],[0,4],[1,5],[2,6],[3,7]]
+  return <group>
+    <mesh position={[x/2,y/2,z/2]}>
+      <boxGeometry args={[x,y,z]}/>
+      <meshBasicMaterial color="#f59e0b" transparent opacity={.04} side={2}/>
+    </mesh>
+    {edges.map(([a,b],i)=><Line3 key={i} start={vertices[a]} end={vertices[b]} color="#f59e0b" opacity={0.85}/>)}
+    {labels&&<Html position={[x/2,y/2,z+.28]} center distanceFactor={18}>
+      <span className="ws-3d-label" style={{background:'#2e1904',borderColor:'#f59e0b',color:'#f59e0b',fontWeight:700,fontSize:11,padding:'3px 8px',borderRadius:4}}>
+        GROUND TRUTH · {x.toFixed(2)} × {y.toFixed(2)} × {z.toFixed(2)} m
+      </span>
+    </Html>}
+  </group>
 }
 
 function Line3({start,end,color='#53aeb8',opacity=1,dashed=false}:{start:Vec3;end:Vec3;color?:string;opacity?:number;dashed?:boolean}){
