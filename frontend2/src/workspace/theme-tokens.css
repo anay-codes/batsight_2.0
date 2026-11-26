@@ -1,0 +1,474 @@
+/* ==========================================================================
+   BatSight Color Consistency Tokens (Non-Excluded Workspace Pages Only)
+   Scoped strictly to .ws-themed-page so Homepage, Room Scanner, and 3D Rooms
+   remain 100% visually and code-wise untouched.
+   ========================================================================== */
+
+.ws-themed-page {
+  --bg: #6f9a98;
+  --surface: rgba(214, 228, 232, 0.68);
+  --surface-strong: rgba(235, 243, 245, 0.90);
+  --text: #0a1213;
+  --text-muted: #263b3c;
+  --border: rgba(12, 28, 30, 0.22);
+  --accent: #0c1718;
+  --accent-hover: #1a3536;
+  --input-bg: rgba(244, 248, 249, 0.90);
+  --input-text: #0a1213;
+  --placeholder: #465c5e;
+  --danger: #9f1d2c;
+  --success: #0f5c3a;
+  --warning: #7a4b06;
+  --focus-ring: rgba(16, 79, 82, 0.45);
+  --mic-color: #14504f;
+  --speaker-color: #c8651b;
+
+  color: var(--text);
+}
+
+/* ---- Page Headings & Typography ---- */
+.ws-themed-page .eyebrow {
+  color: #13484a !important;
+}
+.ws-themed-page .page-intro h1,
+.ws-themed-page .section-title h2,
+.ws-themed-page .table-toolbar h2,
+.ws-themed-page .panel h2,
+.ws-themed-page .panel h3,
+.ws-themed-page .metric-card h3,
+.ws-themed-page .empty-state h3,
+.ws-themed-page .modal-heading h2 {
+  color: var(--text) !important;
+}
+.ws-themed-page .page-intro p,
+.ws-themed-page .section-title p,
+.ws-themed-page .table-toolbar p,
+.ws-themed-page .empty-state p,
+.ws-themed-page .footnote,
+.ws-themed-page .form-note {
+  color: var(--text-muted) !important;
+}
+.ws-themed-page .form-note code {
+  background: rgba(12, 28, 30, 0.10) !important;
+  color: var(--text) !important;
+}
+.ws-themed-page .text-link,
+.ws-themed-page .settings-list a {
+  color: #0d4a4d !important;
+  font-weight: 600;
+}
+.ws-themed-page .text-link:hover,
+.ws-themed-page .settings-list a:hover {
+  text-decoration: underline;
+}
+
+/* ---- Panels & Cards ---- */
+.ws-themed-page .panel,
+.ws-themed-page .metric-card,
+.ws-themed-page .project-card,
+.ws-themed-page .quick-card,
+.ws-themed-page .chart-panel,
+.ws-themed-page .recording-panel,
+.ws-themed-page .upload-panel,
+.ws-themed-page .studio-generator,
+.ws-themed-page .settings-grid > *,
+.ws-themed-page .table-panel,
+.ws-themed-page .experiment-layout > * {
+  background: var(--surface) !important;
+  border: 1px solid rgba(255, 255, 255, 0.55) !important;
+  color: var(--text) !important;
+  box-shadow: 0 10px 28px rgba(10, 27, 28, 0.08), inset 0 1px rgba(255, 255, 255, 0.5) !important;
+}
+.ws-themed-page .metric-label,
+.ws-themed-page .metric-card > b small,
+.ws-themed-page .project-date,
+.ws-themed-page .project-card p,
+.ws-themed-page .quick-card small,
+.ws-themed-page .recording-metadata span,
+.ws-themed-page .generated-player span,
+.ws-themed-page .record-visual span,
+.ws-themed-page .record-details span,
+.ws-themed-page .conversion p,
+.ws-themed-page .analysis-result-note,
+.ws-themed-page .spec-axes,
+.ws-themed-page .spec-frequency-labels,
+.ws-themed-page .capability-list small {
+  color: var(--text-muted) !important;
+}
+.ws-themed-page .metric-card > b,
+.ws-themed-page .quick-card b,
+.ws-themed-page .recording-metadata b,
+.ws-themed-page .record-visual b,
+.ws-themed-page .record-details b,
+.ws-themed-page .capability-list b {
+  color: var(--text) !important;
+}
+.ws-themed-page .project-card-footer {
+  border-top-color: var(--border) !important;
+  color: #0d4a4d !important;
+  font-weight: 600;
+}
+
+/* ---- Icons & Badges ---- */
+.ws-themed-page .metric-icon,
+.ws-themed-page .empty-icon,
+.ws-themed-page .row-icon,
+.ws-themed-page .project-symbol,
+.ws-themed-page .quick-icon {
+  background: rgba(15, 58, 60, 0.12) !important;
+  border: 1px solid rgba(15, 58, 60, 0.22) !important;
+  color: #0e4446 !important;
+}
+.ws-themed-page .quick-card > svg {
+  color: var(--text-muted) !important;
+}
+
+/* ---- List Rows & Experiment Items ---- */
+.ws-themed-page .list-row {
+  border-top-color: var(--border) !important;
+  color: var(--text) !important;
+}
+.ws-themed-page .list-row:hover {
+  background: rgba(255, 255, 255, 0.42) !important;
+}
+.ws-themed-page .row-main b,
+.ws-themed-page .experiment-item {
+  color: var(--text) !important;
+}
+.ws-themed-page .row-main small,
+.ws-themed-page .file-size {
+  color: var(--text-muted) !important;
+}
+.ws-themed-page .experiment-item:hover,
+.ws-themed-page .experiment-item.selected {
+  background: rgba(15, 58, 60, 0.12) !important;
+  border-color: #13484a !important;
+}
+.ws-themed-page .experiment-detail {
+  border-top-color: var(--border) !important;
+}
+
+/* ---- Buttons ---- */
+.ws-themed-page .button {
+  border-radius: 8px !important;
+  transition: background 0.15s, border-color 0.15s, opacity 0.15s;
+}
+.ws-themed-page .button.primary {
+  background: var(--accent) !important;
+  color: #f2f7f7 !important;
+  border-color: var(--accent) !important;
+}
+.ws-themed-page .button.primary:hover:not(:disabled) {
+  background: var(--accent-hover) !important;
+  border-color: var(--accent-hover) !important;
+}
+.ws-themed-page .button.secondary,
+.ws-themed-page .button.subtle {
+  background: rgba(244, 248, 249, 0.62) !important;
+  color: var(--text) !important;
+  border: 1px solid rgba(12, 28, 30, 0.32) !important;
+}
+.ws-themed-page .button.secondary:hover:not(:disabled),
+.ws-themed-page .button.subtle:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.85) !important;
+  border-color: var(--text) !important;
+}
+.ws-themed-page .button.danger {
+  background: var(--danger) !important;
+  color: #ffffff !important;
+  border-color: var(--danger) !important;
+}
+.ws-themed-page .button.danger.subtle {
+  background: rgba(159, 29, 44, 0.10) !important;
+  color: var(--danger) !important;
+  border-color: rgba(159, 29, 44, 0.35) !important;
+}
+.ws-themed-page .button:disabled {
+  opacity: 0.48 !important;
+}
+.ws-themed-page .icon-button {
+  color: var(--text-muted) !important;
+}
+.ws-themed-page .icon-button:hover {
+  background: rgba(12, 28, 30, 0.10) !important;
+  color: var(--text) !important;
+}
+.ws-themed-page .danger-icon:hover {
+  background: rgba(159, 29, 44, 0.14) !important;
+  color: var(--danger) !important;
+}
+
+/* ---- Inputs, Selects, Textareas ---- */
+.ws-themed-page .field > span {
+  color: var(--text-muted) !important;
+  font-weight: 600;
+}
+.ws-themed-page .field input,
+.ws-themed-page .field select,
+.ws-themed-page .field textarea,
+.ws-themed-page .search-input {
+  background: var(--input-bg) !important;
+  color: var(--input-text) !important;
+  border: 1px solid var(--border) !important;
+}
+.ws-themed-page .field input::placeholder,
+.ws-themed-page .field textarea::placeholder,
+.ws-themed-page .search-input::placeholder {
+  color: var(--placeholder) !important;
+  opacity: 1;
+}
+.ws-themed-page .field input:focus,
+.ws-themed-page .field select:focus,
+.ws-themed-page .field textarea:focus,
+.ws-themed-page .search-input:focus {
+  border-color: #104f52 !important;
+  box-shadow: 0 0 0 3px var(--focus-ring) !important;
+}
+.ws-themed-page .field select option {
+  background: #eef4f5 !important;
+  color: var(--text) !important;
+}
+
+/* ---- Notices, Alerts, Loading ---- */
+.ws-themed-page .notice.info {
+  background: rgba(212, 232, 235, 0.88) !important;
+  border-color: rgba(15, 75, 78, 0.32) !important;
+  color: var(--text) !important;
+}
+.ws-themed-page .notice.info .notice-mark {
+  background: rgba(15, 75, 78, 0.15) !important;
+  color: #0e4446 !important;
+}
+.ws-themed-page .notice.warning {
+  background: rgba(251, 240, 217, 0.92) !important;
+  border-color: rgba(122, 75, 6, 0.35) !important;
+  color: #4a2e03 !important;
+}
+.ws-themed-page .notice.warning .notice-mark {
+  background: rgba(122, 75, 6, 0.15) !important;
+  color: var(--warning) !important;
+}
+.ws-themed-page .notice.muted {
+  background: rgba(226, 235, 237, 0.88) !important;
+  border-color: var(--border) !important;
+  color: var(--text) !important;
+}
+.ws-themed-page .notice.muted .notice-mark {
+  background: rgba(12, 28, 30, 0.12) !important;
+  color: var(--text-muted) !important;
+}
+.ws-themed-page .notice > a {
+  color: #0d4a4d !important;
+  font-weight: 600;
+}
+.ws-themed-page .error-box {
+  background: #fce8ea !important;
+  border-color: rgba(159, 29, 44, 0.42) !important;
+  color: #7c1320 !important;
+}
+.ws-themed-page .loading-line {
+  color: var(--text-muted) !important;
+}
+.ws-themed-page .loading-line span {
+  background: #0e4446 !important;
+  box-shadow: 0 0 0 5px rgba(14, 68, 70, 0.16) !important;
+}
+.ws-themed-page .upload-success {
+  background: #dff3e8 !important;
+  border-color: rgba(15, 92, 58, 0.35) !important;
+}
+.ws-themed-page .upload-success b,
+.ws-themed-page .upload-success span {
+  color: #0b442b !important;
+}
+
+/* ---- Tables & Pills ---- */
+.ws-themed-page .table-scroll th {
+  color: var(--text-muted) !important;
+  border-bottom-color: var(--border) !important;
+}
+.ws-themed-page .table-scroll td {
+  color: var(--text) !important;
+  border-bottom-color: rgba(12, 28, 30, 0.12) !important;
+}
+.ws-themed-page .table-scroll tr:hover td {
+  background: rgba(255, 255, 255, 0.35);
+}
+.ws-themed-page .table-empty {
+  color: var(--text-muted) !important;
+}
+.ws-themed-page .pill {
+  background: rgba(12, 28, 30, 0.12) !important;
+  color: var(--text) !important;
+  font-weight: 600;
+}
+.ws-themed-page .pill.completed,
+.ws-themed-page .pill.success {
+  background: #d5efe0 !important;
+  color: var(--success) !important;
+}
+.ws-themed-page .pill.running,
+.ws-themed-page .warning-pill {
+  background: #faeccb !important;
+  color: var(--warning) !important;
+}
+.ws-themed-page .pill.failed {
+  background: #fadadd !important;
+  color: var(--danger) !important;
+}
+.ws-themed-page .pill.cyan {
+  background: #d0ebed !important;
+  color: #0c4b4e !important;
+}
+
+/* ---- Studio, Dropzone, Config JSON, Settings, Modals ---- */
+.ws-themed-page .drop-zone {
+  background: rgba(240, 246, 247, 0.65) !important;
+  border: 1.5px dashed rgba(12, 28, 30, 0.36) !important;
+  color: #0e4446 !important;
+}
+.ws-themed-page .drop-zone:hover {
+  background: rgba(255, 255, 255, 0.78) !important;
+  border-color: #0e4446 !important;
+}
+.ws-themed-page .drop-zone b {
+  color: var(--text) !important;
+}
+.ws-themed-page .drop-zone span {
+  color: var(--text-muted) !important;
+}
+.ws-themed-page .record-orb {
+  background: rgba(15, 58, 60, 0.12) !important;
+  border-color: rgba(15, 58, 60, 0.28) !important;
+  color: #0e4446 !important;
+}
+.ws-themed-page .record-details,
+.ws-themed-page .analysis-result-note {
+  border-top-color: var(--border) !important;
+}
+.ws-themed-page .conversion {
+  background: var(--surface-strong) !important;
+  border-color: var(--border) !important;
+}
+.ws-themed-page .config-json {
+  background: var(--surface-strong) !important;
+  border-color: var(--border) !important;
+}
+.ws-themed-page .config-json > b,
+.ws-themed-page .config-json pre {
+  color: var(--text) !important;
+}
+.ws-themed-page .settings-list > div {
+  border-bottom-color: var(--border) !important;
+}
+.ws-themed-page .settings-list span {
+  color: var(--text-muted) !important;
+}
+.ws-themed-page .settings-list b {
+  color: var(--text) !important;
+}
+.ws-themed-page .value-online {
+  color: var(--success) !important;
+}
+.ws-themed-page .value-offline {
+  color: var(--danger) !important;
+}
+.ws-themed-page .modal-backdrop {
+  background: rgba(8, 18, 19, 0.55) !important;
+  backdrop-filter: blur(4px);
+}
+.ws-themed-page .modal {
+  background: #e5eff1 !important;
+  border: 1px solid rgba(255, 255, 255, 0.75) !important;
+  color: var(--text) !important;
+}
+
+/* ---- Saved Rooms Cards (replaced inline dark styles) ---- */
+.ws-themed-page .saved-room-card {
+  background: var(--surface-strong);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 12px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 6px 20px rgba(10, 27, 28, 0.08);
+}
+.ws-themed-page .saved-room-id {
+  font-size: 11px;
+  color: #0e4c4f;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+.ws-themed-page .saved-room-title {
+  margin: 3px 0 0 0;
+  font-size: 18px;
+  color: var(--text);
+}
+.ws-themed-page .saved-room-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px;
+  background: rgba(12, 28, 30, 0.06);
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+.ws-themed-page .saved-room-stat-label {
+  font-size: 10px;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+.ws-themed-page .saved-room-stat-value {
+  font-size: 12px;
+  color: var(--text);
+}
+.ws-themed-page .saved-room-stat-value.accent {
+  color: #0d4a4d;
+}
+.ws-themed-page .obstacle-badge {
+  background: #faeccb;
+  border: 1px solid rgba(122, 75, 6, 0.35);
+  color: var(--warning);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+/* ---- Scoped Toast for Non-Excluded Pages ---- */
+.toast.ws-themed-toast {
+  background: #e5eff1 !important;
+  border: 1px solid rgba(12, 28, 30, 0.25) !important;
+  color: #0a1213 !important;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18) !important;
+}
+.toast.ws-themed-toast.error {
+  background: #fce8ea !important;
+  border-color: rgba(159, 29, 44, 0.45) !important;
+  color: #7c1320 !important;
+}
+.toast.ws-themed-toast.success {
+  background: #dff3e8 !important;
+  border-color: rgba(15, 92, 58, 0.4) !important;
+  color: #0b442b !important;
+}
+.toast.ws-themed-toast.info {
+  background: #d8ecef !important;
+  border-color: rgba(14, 68, 70, 0.35) !important;
+  color: #0a1213 !important;
+}
+
+/* ---- 3D Rooms Mic & Speaker Badges ---- */
+.ws-themed-page .ws-3d-label.microphone {
+  background: rgba(242, 248, 248, 0.94) !important;
+  border: 1.5px solid var(--mic-color) !important;
+  color: var(--mic-color) !important;
+  box-shadow: 0 2px 6px rgba(10, 18, 19, 0.14);
+}
+.ws-themed-page .ws-3d-label.speaker {
+  background: rgba(254, 246, 238, 0.96) !important;
+  border: 1.5px solid var(--speaker-color) !important;
+  color: #8f4109 !important;
+  box-shadow: 0 2px 6px rgba(10, 18, 19, 0.14);
+}

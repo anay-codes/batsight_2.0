@@ -314,40 +314,38 @@ export function RoomScanner({ selectedProject, setToast }: RoomScannerProps) {
   ]
 
   return (
-    <div className="room-scanner-layout" style={{ maxWidth: 880, margin: '0 auto', padding: '24px 16px' }}>
+    <div className="room-scanner-layout ws-themed-page" style={{ maxWidth: 960, margin: '0 auto', padding: '4px 0' }}>
       {/* Intro Header */}
-      <div style={{ marginBottom: 24, textAlign: 'center' }}>
-        <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6, color: '#00f5d4', fontSize: 11, fontWeight: 700, letterSpacing: 1 }}>
+      <div style={{ marginBottom: 18, textAlign: 'center' }}>
+        <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6, color: '#13484a', fontSize: 11, fontWeight: 700, letterSpacing: 1.5 }}>
           <Compass size={15} /> GUIDED ACOUSTIC SCANNER
         </div>
-        <h1 style={{ fontSize: 26, color: '#f0f6fc', margin: '6px 0 8px 0' }}>
-          Step-by-Step Room Calibration
-        </h1>
-        <p style={{ color: '#8b949e', maxWidth: 540, margin: '0 auto', fontSize: 14 }}>
-          Scan each wall one-by-one just like FaceID or fingerprint calibration. Point your device, tap scan, and lock in the room boundary.
+        <p style={{ color: '#263b3c', maxWidth: 560, margin: '6px auto 0', fontSize: 13 }}>
+          Scan each wall one-by-one. Point your device, tap scan, and lock in the room boundary.
         </p>
       </div>
 
       {/* Main Scanner Card */}
-      <div style={{ background: '#12181d', border: '1px solid #27343d', borderRadius: 16, padding: 28, boxShadow: '0 16px 48px rgba(0,0,0,0.4)' }}>
+      <div className="panel" style={{ background: 'rgba(235, 243, 245, 0.82)', border: '1px solid rgba(255, 255, 255, 0.65)', borderRadius: 16, padding: 24, boxShadow: '0 14px 36px rgba(10, 27, 28, 0.08)' }}>
         {/* Room Name & Setup Row */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 220px', gap: 16, marginBottom: 28, borderBottom: '1px solid #1f2a32', paddingBottom: 20 }}>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 220px', gap: 16, marginBottom: 24, borderBottom: '1px solid rgba(12, 28, 30, 0.16)', paddingBottom: 18 }}>
           <div>
-            <label style={{ display: 'block', fontSize: 11, fontWeight: 600, color: '#8b949e', marginBottom: 6 }}>ROOM NAME</label>
+            <label style={{ display: 'block', fontSize: 11, fontWeight: 700, color: '#263b3c', marginBottom: 6 }}>ROOM NAME</label>
             <input
               value={roomName}
               onChange={e => setRoomName(e.target.value)}
               placeholder="e.g. Master Bedroom"
-              style={{ width: '100%', background: '#090e11', border: '1px solid #283741', color: '#f0f6fc', padding: '8px 12px', borderRadius: 6, fontSize: 14, fontWeight: 600 }}
+              style={{ width: '100%', background: 'rgba(244, 248, 249, 0.92)', border: '1px solid rgba(12, 28, 30, 0.24)', color: '#0a1213', padding: '8px 12px', borderRadius: 8, fontSize: 14, fontWeight: 600 }}
             />
           </div>
           <div>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 6 }}>
-              <label style={{ fontSize: 11, fontWeight: 600, color: '#8b949e' }}>AUDIO HARDWARE</label>
+              <label style={{ fontSize: 11, fontWeight: 700, color: '#263b3c' }}>AUDIO HARDWARE</label>
               <button
                 type="button"
                 onClick={() => playChirp()}
-                style={{ background: '#0c2220', border: '1px solid #00f5d4', color: '#00f5d4', padding: '2px 8px', borderRadius: 4, fontSize: 11, cursor: 'pointer', display: 'inline-flex', alignItems: 'center', gap: 4 }}
+                className="button secondary small"
+                style={{ padding: '2px 8px', height: 24, fontSize: 11, display: 'inline-flex', alignItems: 'center', gap: 4 }}
                 title="Play a test chirp pulse through your speakers"
               >
                 <Volume2 size={12} /> Test Sound
@@ -356,7 +354,7 @@ export function RoomScanner({ selectedProject, setToast }: RoomScannerProps) {
             <select
               value={selectedInput}
               onChange={e => setSelectedInput(e.target.value)}
-              style={{ width: '100%', background: '#090e11', border: '1px solid #283741', color: '#f0f6fc', padding: '8px 10px', borderRadius: 6, fontSize: 13 }}
+              style={{ width: '100%', background: 'rgba(244, 248, 249, 0.92)', border: '1px solid rgba(12, 28, 30, 0.24)', color: '#0a1213', padding: '8px 10px', borderRadius: 8, fontSize: 13 }}
             >
               <option value="">Default Microphone</option>
               {audioInputs.map(d => (
@@ -369,7 +367,7 @@ export function RoomScanner({ selectedProject, setToast }: RoomScannerProps) {
         </div>
 
         {/* 4-Direction Compass Cards */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 14, marginBottom: 28 }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 14, marginBottom: 24 }}>
           {directions.map(dir => {
             const scan = scans[dir.key]
             const isDone = scan.confirmed
@@ -377,8 +375,8 @@ export function RoomScanner({ selectedProject, setToast }: RoomScannerProps) {
               <div
                 key={dir.key}
                 style={{
-                  background: isDone ? '#062d27' : '#0c1216',
-                  border: `1.5px solid ${isDone ? '#00f5d4' : '#22303a'}`,
+                  background: isDone ? 'rgba(213, 239, 224, 0.85)' : 'rgba(244, 248, 249, 0.72)',
+                  border: `1.5px solid ${isDone ? '#0f5c3a' : 'rgba(12, 28, 30, 0.2)'}`,
                   borderRadius: 12,
                   padding: 16,
                   textAlign: 'center',
@@ -389,12 +387,12 @@ export function RoomScanner({ selectedProject, setToast }: RoomScannerProps) {
                   transition: 'all 0.2s ease',
                 }}
               >
-                <div style={{ width: 32, height: 32, borderRadius: '50%', background: isDone ? '#00f5d4' : '#1c262e', color: isDone ? '#042f2e' : '#8b949e', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, fontSize: 16 }}>
+                <div style={{ width: 32, height: 32, borderRadius: '50%', background: isDone ? '#0f5c3a' : 'rgba(12, 28, 30, 0.12)', color: isDone ? '#ffffff' : '#0a1213', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, fontSize: 16 }}>
                   {isDone ? <Check size={18} strokeWidth={3} /> : dir.icon}
                 </div>
                 <div>
-                  <b style={{ color: isDone ? '#00f5d4' : '#f0f6fc', fontSize: 13, display: 'block' }}>{dir.label}</b>
-                  <small style={{ color: '#70808b' }}>{dir.angle}</small>
+                  <b style={{ color: isDone ? '#0b442b' : '#0a1213', fontSize: 13, display: 'block' }}>{dir.label}</b>
+                  <small style={{ color: '#263b3c' }}>{dir.angle}</small>
                 </div>
                 <div style={{ marginTop: 'auto', width: '100%' }}>
                   {isDone ? (
@@ -415,30 +413,30 @@ export function RoomScanner({ selectedProject, setToast }: RoomScannerProps) {
                           }}
                           style={{
                             width: 68,
-                            background: '#04221e',
-                            border: '1px solid #00f5d4',
-                            borderRadius: 4,
-                            color: '#00f5d4',
+                            background: 'rgba(255, 255, 255, 0.92)',
+                            border: '1px solid #0f5c3a',
+                            borderRadius: 6,
+                            color: '#0b442b',
                             fontSize: 16,
                             fontWeight: 700,
                             textAlign: 'center',
                             padding: '2px 4px'
                           }}
                         />
-                        <span style={{ color: '#00f5d4', fontSize: 13, fontWeight: 700 }}>m</span>
+                        <span style={{ color: '#0b442b', fontSize: 13, fontWeight: 700 }}>m</span>
                       </div>
                       {scan.obstacleDistance && (
-                        <div style={{ fontSize: 10, color: '#f59e0b', marginTop: 4 }}>
+                        <div className="obstacle-badge" style={{ marginTop: 6, display: 'inline-block' }}>
                           📦 Obstacle: {scan.obstacleDistance.toFixed(2)}m
                         </div>
                       )}
                     </div>
                   ) : (
-                    <span style={{ fontSize: 12, color: '#556570' }}>Awaiting scan</span>
+                    <span style={{ fontSize: 12, color: '#465c5e' }}>Awaiting scan</span>
                   )}
                 </div>
                 <button
-                  className={`button ${isDone ? 'subtle small' : 'primary small'} full-button`}
+                  className={`button ${isDone ? 'secondary small' : 'primary small'} full-button`}
                   onClick={() => performDirectionScan(dir.key as any)}
                   disabled={busy}
                   style={{ marginTop: 6, fontSize: 11 }}
@@ -452,47 +450,47 @@ export function RoomScanner({ selectedProject, setToast }: RoomScannerProps) {
 
         {/* Live Status indicator */}
         {busy && (
-          <div style={{ padding: '12px 16px', background: '#0a1d1a', border: '1px solid #00f5d4', borderRadius: 8, color: '#00f5d4', display: 'flex', alignItems: 'center', gap: 10, marginBottom: 20 }}>
+          <div className="notice info" style={{ padding: '12px 16px', marginBottom: 20, display: 'flex', alignItems: 'center', gap: 10 }}>
             <RefreshCw size={16} className="spinner" />
             <span style={{ fontSize: 13, fontWeight: 600 }}>{scanningStatus}</span>
           </div>
         )}
 
         {error && (
-          <div style={{ padding: '10px 14px', background: '#3b1111', border: '1px solid #f87171', borderRadius: 8, color: '#fca5a5', fontSize: 13, marginBottom: 20 }}>
-            {error}
+          <div className="error-box" style={{ marginBottom: 20 }}>
+            <span>{error}</span>
           </div>
         )}
 
         {/* Calculated Room Blueprint Preview */}
-        <div style={{ background: '#090e11', border: '1px solid #1a242c', borderRadius: 12, padding: 20, marginBottom: 24 }}>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 14 }}>
-            <b style={{ color: '#00f5d4', fontSize: 13, display: 'inline-flex', alignItems: 'center', gap: 6 }}>
+        <div style={{ background: 'rgba(244, 248, 249, 0.72)', border: '1px solid rgba(12, 28, 30, 0.18)', borderRadius: 12, padding: 18, marginBottom: 20 }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 14, flexWrap: 'wrap', gap: 8 }}>
+            <b style={{ color: '#13484a', fontSize: 13, display: 'inline-flex', alignItems: 'center', gap: 6 }}>
               <Layers size={15} /> CALCULATED ROOM GEOMETRY
             </b>
-            <span style={{ fontSize: 11, color: '#70808b' }}>
+            <span style={{ fontSize: 11, color: '#263b3c' }}>
               Bandpass noise filter active (1500–4500 Hz)
             </span>
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 14 }}>
-            <div style={{ background: '#12181d', padding: 12, borderRadius: 8 }}>
-              <span style={{ color: '#8b949e', fontSize: 11 }}>Length (X)</span>
-              <div style={{ fontSize: 20, fontWeight: 700, color: '#f0f6fc', marginTop: 2 }}>{lengthX} m</div>
-              <small style={{ color: '#556570', fontSize: 10 }}>Front + Back</small>
+            <div style={{ background: 'rgba(255, 255, 255, 0.75)', border: '1px solid rgba(12, 28, 30, 0.12)', padding: 12, borderRadius: 8 }}>
+              <span style={{ color: '#263b3c', fontSize: 11, fontWeight: 600 }}>Length (X)</span>
+              <div style={{ fontSize: 20, fontWeight: 700, color: '#0a1213', marginTop: 2 }}>{lengthX} m</div>
+              <small style={{ color: '#465c5e', fontSize: 10 }}>Front + Back</small>
             </div>
-            <div style={{ background: '#12181d', padding: 12, borderRadius: 8 }}>
-              <span style={{ color: '#8b949e', fontSize: 11 }}>Width (Y)</span>
-              <div style={{ fontSize: 20, fontWeight: 700, color: '#f0f6fc', marginTop: 2 }}>{widthY} m</div>
-              <small style={{ color: '#556570', fontSize: 10 }}>Left + Right</small>
+            <div style={{ background: 'rgba(255, 255, 255, 0.75)', border: '1px solid rgba(12, 28, 30, 0.12)', padding: 12, borderRadius: 8 }}>
+              <span style={{ color: '#263b3c', fontSize: 11, fontWeight: 600 }}>Width (Y)</span>
+              <div style={{ fontSize: 20, fontWeight: 700, color: '#0a1213', marginTop: 2 }}>{widthY} m</div>
+              <small style={{ color: '#465c5e', fontSize: 10 }}>Left + Right</small>
             </div>
-            <div style={{ background: '#12181d', padding: 12, borderRadius: 8 }}>
-              <span style={{ color: '#8b949e', fontSize: 11 }}>Floor Area</span>
-              <div style={{ fontSize: 20, fontWeight: 700, color: '#00f5d4', marginTop: 2 }}>{floorArea} m²</div>
-              <small style={{ color: '#556570', fontSize: 10 }}>Footprint</small>
+            <div style={{ background: 'rgba(255, 255, 255, 0.75)', border: '1px solid rgba(12, 28, 30, 0.12)', padding: 12, borderRadius: 8 }}>
+              <span style={{ color: '#263b3c', fontSize: 11, fontWeight: 600 }}>Floor Area</span>
+              <div style={{ fontSize: 20, fontWeight: 700, color: '#0d4a4d', marginTop: 2 }}>{floorArea} m²</div>
+              <small style={{ color: '#465c5e', fontSize: 10 }}>Footprint</small>
             </div>
-            <div style={{ background: '#12181d', padding: 12, borderRadius: 8 }}>
-              <span style={{ color: '#8b949e', fontSize: 11 }}>Ceiling Height</span>
+            <div style={{ background: 'rgba(255, 255, 255, 0.75)', border: '1px solid rgba(12, 28, 30, 0.12)', padding: 12, borderRadius: 8 }}>
+              <span style={{ color: '#263b3c', fontSize: 11, fontWeight: 600 }}>Ceiling Height</span>
               <input
                 type="number"
                 step="0.1"
@@ -500,9 +498,9 @@ export function RoomScanner({ selectedProject, setToast }: RoomScannerProps) {
                 max="10"
                 value={ceilingHeight}
                 onChange={e => setCeilingHeight(Number(e.target.value))}
-                style={{ width: '100%', background: 'transparent', border: 'none', borderBottom: '1px solid #283741', color: '#f0f6fc', fontSize: 18, fontWeight: 700, padding: 0 }}
+                style={{ width: '100%', background: 'transparent', border: 'none', borderBottom: '1px solid rgba(12, 28, 30, 0.25)', color: '#0a1213', fontSize: 18, fontWeight: 700, padding: 0 }}
               />
-              <small style={{ color: '#556570', fontSize: 10 }}>Vol: {roomVolume} m³</small>
+              <small style={{ color: '#465c5e', fontSize: 10 }}>Vol: {roomVolume} m³</small>
             </div>
           </div>
         </div>

@@ -1,53 +1,122 @@
 import { useEffect, useRef, useState, type ChangeEvent, type ReactNode } from 'react'
-import { Link, NavLink, Route, Routes, useLocation, useNavigate, useParams } from 'react-router-dom'
-import { Activity, AudioLines, Box, ChevronLeft, ChevronRight, CircleHelp, Compass, Cuboid, Database, FolderKanban, LayoutDashboard, Mic, Play, Plus, Settings as SettingsIcon, Signal, Square, Trash2, Upload, Volume2, X } from 'lucide-react'
+import { Link, Route, Routes, useLocation, useNavigate, useParams } from 'react-router-dom'
+import { Activity, AudioLines, Box, ChevronRight, Compass, Cuboid, Database, FolderKanban, LayoutDashboard, Mic, Play, Plus, Signal, Square, Trash2, Upload, Volume2, X } from 'lucide-react'
 import { Area, AreaChart, Bar, BarChart, CartesianGrid, Line, LineChart, ReferenceLine, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
 import { API_BASE, api, formatBytes, formatDuration, type Experiment, type Health, type Project, type Recording, type RecordingAnalysis, type MeasurementRecord, type SavedRoom } from './api'
 import { Workspace3D } from './workspace3d/Workspace3D'
 import { RoomPlan2D } from './workspace3d/RoomPlan2D'
 import { RoomScanner } from './scanner/RoomScanner'
+import { WorkspaceShell } from './workspace/WorkspaceShell'
+import './workspace/theme-tokens.css'
 
-const navItems = [
-  {to:'/workspace/3d', label:'3D & 2D Rooms', icon:Cuboid},
-  {to:'/scanner', label:'Room Scanner', icon:Compass},
-  {to:'/recordings', label:'Saved Rooms', icon:Database},
-  {to:'/studio', label:'Sound & Devices', icon:AudioLines},
-  {to:'/settings', label:'Settings', icon:SettingsIcon},
-]
-const titles:Record<string,string> = {'/':'Overview','/scanner':'Room Scanner','/projects':'Projects','/studio':'Sound Studio','/analysis':'Signal Analysis (Lab)','/experiments':'Synthetic Simulation (Lab)','/recordings':'Saved Rooms & Data','/settings':'Settings','/workspace/3d':'3D & 2D Rooms'}
+const titles:Record<string,string> = {
+  '/':'OVERVIEW',
+  '/workspace':'ROOM SCANNER',
+  '/scanner':'ROOM SCANNER',
+  '/projects':'PROJECTS',
+  '/studio':'SOUND & DEVICES',
+  '/analysis':'SIGNAL ANALYSIS',
+  '/experiments':'SYNTHETIC SIMULATION',
+  '/recordings':'SAVED ROOMS',
+  '/settings':'SETTINGS',
+  '/workspace/3d':'3D ROOMS',
+}
 type Toast = {kind:'error'|'success'|'info'; text:string}
 
 export default function App() {
-  const [collapsed,setCollapsed]=useState(false), [health,setHealth]=useState<Health|null>(null), [projects,setProjects]=useState<Project[]>([]), [selectedProject,setSelectedProject]=useState<number|undefined>(()=>{const n=Number(localStorage.getItem('batsight-project'));return n||undefined}), [toast,setToast]=useState<Toast|null>(null)
-  const [reload,setReload]=useState(0), location=useLocation(), title=titles[location.pathname]??'Project workspace'
+  const [health,setHealth]=useState<Health|null>(null), [projects,setProjects]=useState<Project[]>([]), [selectedProject,setSelectedProject]=useState<number|undefined>(()=>{const n=Number(localStorage.getItem('batsight-project'));return n||undefined}), [toast,setToast]=useState<Toast|null>(null)
+  const [reload,setReload]=useState(0), location=useLocation(), title=titles[location.pathname]??(location.pathname.startsWith('/projects/')?'PROJECT WORKSPACE':'WORKSPACE')
   const refresh=()=>setReload(n=>n+1)
   useEffect(()=>{api.health().then(setHealth).catch(()=>setHealth(null));api.projects().then(rows=>{setProjects(rows);if(selectedProject&&!rows.some(p=>p.id===selectedProject)){setSelectedProject(undefined);localStorage.removeItem('batsight-project')}}).catch(()=>setProjects([]))},[reload])
   useEffect(()=>{if(selectedProject)localStorage.setItem('batsight-project',String(selectedProject));else localStorage.removeItem('batsight-project')},[selectedProject])
   useEffect(()=>{if(!toast)return;const id=setTimeout(()=>setToast(null),5000);return()=>clearTimeout(id)},[toast])
-  return <div className="app-shell">
-    <aside className={`sidebar ${collapsed?'collapsed':''}`}>
-      <div className="brand"><div className="brand-mark"><AudioLines size={20}/></div><div className="brand-copy"><b>BatSight</b><span>ACOUSTIC RESEARCH</span></div><button className="icon-button collapse" onClick={()=>setCollapsed(!collapsed)} aria-label="Toggle sidebar">{collapsed?<ChevronRight size={16}/>:<ChevronLeft size={16}/>}</button></div>
-      <div className="workspace-label">WORKSPACE</div>
-      <nav>{navItems.map(item=><NavLink key={item.to} to={item.to} end={item.to==='/'} title={collapsed?item.label:undefined} className={({isActive})=>`nav-link ${isActive?'active':''}`}><item.icon size={18}/><span>{item.label}</span>{item.to==='/studio'&&<i className="nav-dot"/>}</NavLink>)}</nav>
-      <div className="sidebar-bottom"><div className="backend-status"><span className={`status-dot ${health?'online':'offline'}`}/><div><b>{health?'Backend connected':'Backend unavailable'}</b><small>{health?`v${health.version} · ${health.database_status}`:'Check API settings'}</small></div></div><div className="sidebar-footer"><span>BatSight {health?.version??'0.1.0'}</span><a href="http://127.0.0.1:8000/docs" target="_blank" rel="noreferrer" title="Backend API documentation"><CircleHelp size={15}/></a></div></div>
-    </aside>
-    <main className="main-area">
-      <header className="topbar"><div className="crumb"><span>BatSight</span><ChevronRight size={14}/><strong>{title}</strong></div><div className="top-actions"><span className={`top-status ${health?'':'is-down'}`}><i/>{health?'ACOUSTIC ENGINE ONLINE':'API OFFLINE'}</span></div></header>
-      <div className="page-content"><Routes>
-        <Route path="/" element={<Overview projects={projects} refresh={refresh}/>}/>
-        <Route path="/projects" element={<Projects projects={projects} refresh={refresh} setToast={setToast}/>}/>
-        <Route path="/projects/:id" element={<ProjectDetail refresh={refresh} setToast={setToast}/>}/>
-        <Route path="/scanner" element={<RoomScanner selectedProject={selectedProject} setToast={setToast}/>}/>
-        <Route path="/studio" element={<Studio projects={projects} selectedProject={selectedProject} refresh={refresh} setToast={setToast}/>}/>
-        <Route path="/analysis" element={<Analysis setToast={setToast}/>}/>
-        <Route path="/workspace/3d" element={<Workspace3D selectedProject={selectedProject} setToast={setToast}/>}/>
-        <Route path="/experiments" element={<Experiments projects={projects} selectedProject={selectedProject} refresh={refresh} setToast={setToast}/>}/>
-        <Route path="/recordings" element={<Recordings selectedProject={selectedProject} refresh={refresh} setToast={setToast}/>}/>
-        <Route path="/settings" element={<Settings health={health} refresh={refresh} setToast={setToast}/>}/>
-      </Routes></div>
-    </main>
-    {toast&&<div className={`toast ${toast.kind}`}><span>{toast.text}</span><button className="icon-button" onClick={()=>setToast(null)}><X size={15}/></button></div>}
-  </div>
+  if (location.pathname === '/') return <LandingPage />
+  const isExcludedPage = ['/workspace', '/scanner', '/workspace/3d'].includes(location.pathname)
+  return <>
+    <WorkspaceShell title={title} health={health}>
+      <div className={isExcludedPage ? undefined : 'ws-themed-page'}>
+        <Routes>
+          <Route path="/" element={<Overview projects={projects} refresh={refresh}/>}/>
+          <Route path="/workspace" element={<RoomScanner selectedProject={selectedProject} setToast={setToast}/>}/>
+          <Route path="/projects" element={<Projects projects={projects} refresh={refresh} setToast={setToast}/>}/>
+          <Route path="/projects/:id" element={<ProjectDetail refresh={refresh} setToast={setToast}/>}/>
+          <Route path="/scanner" element={<RoomScanner selectedProject={selectedProject} setToast={setToast}/>}/>
+          <Route path="/studio" element={<Studio projects={projects} selectedProject={selectedProject} refresh={refresh} setToast={setToast}/>}/>
+          <Route path="/analysis" element={<Analysis setToast={setToast}/>}/>
+          <Route path="/workspace/3d" element={<Workspace3D selectedProject={selectedProject} setToast={setToast}/>}/>
+          <Route path="/experiments" element={<Experiments projects={projects} selectedProject={selectedProject} refresh={refresh} setToast={setToast}/>}/>
+          <Route path="/recordings" element={<Recordings selectedProject={selectedProject} refresh={refresh} setToast={setToast}/>}/>
+          <Route path="/settings" element={<Settings health={health} refresh={refresh} setToast={setToast}/>}/>
+        </Routes>
+      </div>
+    </WorkspaceShell>
+    {toast&&<div className={`toast ${isExcludedPage ? '' : 'ws-themed-toast'} ${toast.kind}`}><span>{toast.text}</span><button className="icon-button" onClick={()=>setToast(null)}><X size={15}/></button></div>}
+  </>
+}
+
+
+function LandingPage(){
+  const [scrollY,setScrollY]=useState(0)
+  const [active,setActive]=useState<'home'|'explore'|'about'>('home')
+  useEffect(()=>{
+    const update=()=>{
+      const y=window.scrollY
+      setScrollY(y)
+      const explore=document.getElementById('explore-section')
+      const about=document.getElementById('about-section')
+      if(about && y+window.innerHeight*.55>=about.offsetTop)setActive('about')
+      else if(explore && y+window.innerHeight*.55>=explore.offsetTop)setActive('explore')
+      else setActive('home')
+    }
+    window.addEventListener('scroll',update,{passive:true});update()
+    return()=>window.removeEventListener('scroll',update)
+  },[])
+  const scrollTo=(id:string)=>document.getElementById(id)?.scrollIntoView({behavior:'smooth'})
+  return <main className="landing-site" style={{'--landing-scroll':Math.min(1,scrollY/520)} as React.CSSProperties}>
+    <nav className="landing-nav" aria-label="Main navigation">
+      <div className="landing-nav-links">
+        <button className={active==='home'?'active':''} onClick={()=>window.scrollTo({top:0,behavior:'smooth'})}>HOME</button>
+        <button className={active==='explore'?'active':''} onClick={()=>scrollTo('explore-section')}>EXPLORE</button>
+        <Link to="/workspace">WORKSPACE</Link>
+        <button className={active==='about'?'active':''} onClick={()=>scrollTo('about-section')}>ABOUT</button>
+      </div>
+    </nav>
+    <section className="landing-hero" aria-label="BatSight introduction">
+      <img className="hero-decor" src="/bat-decorations.png" alt="" />
+      <div className="hero-copy" style={{transform:`translate3d(-50%,${-Math.min(scrollY*.72,390)}px,0) scale(${1-Math.min(scrollY/2600,.08)})`,opacity:Math.max(0,1-scrollY/440)}}>
+        <svg className="hero-wave" viewBox="0 0 900 180" aria-hidden="true">
+          <path d="M0,90 Q30,90 45,75 T90,90 T135,55 T180,90 T225,130 T270,90 T315,20 T360,90 T405,160 T450,90 T495,20 T540,90 T585,155 T630,90 T675,45 T720,90 T765,120 T810,90 T855,75 T900,90" />
+        </svg>
+        <img src="/assets/home-logo.svg" className="hero-bat-mark-img" alt="" aria-hidden="true" />
+        <h1 className="hero-anton-title">BATSIGHT</h1>
+        <div className="hero-subtitle"><i /><span>ACOUSTIC SPATIAL MAPPING</span><i /></div>
+      </div>
+      <div className="hero-scroll-cue" style={{opacity:Math.max(0,1-scrollY/120)}}>SCROLL TO EXPLORE <span>↓</span></div>
+    </section>
+    <section className="explore-section" id="explore-section">
+      <div className="explore-heading" style={{transform:`translateY(${-Math.min(Math.max(scrollY-300,0)*.12,70)}px)`}}>
+        <div className="section-kicker">THE CITY HAS A SOUND</div>
+        <h2>EXPLORE<span>.</span></h2>
+        <p>SEE THE SPACE. WITHOUT SEEING IT.</p>
+      </div>
+      <div className="explore-grid">
+        <article className="glass-card card-intro"><span className="card-index">01 / THE IDEA</span><h3>Sound becomes space.</h3><p>BatSight turns microphone recordings and acoustic reflections into spatial information — helping estimate the geometry of a room without relying on a camera.</p><div className="card-rule"/></article>
+        <article className="glass-card card-process"><span className="card-index">02 / THE PROCESS</span><h3>One chirp. One map.</h3><div className="process-list">
+          <div><b>EMIT</b><span>Send a frequency sweep into the room.</span></div>
+          <div><b>REFLECT</b><span>Sound bounces from walls, ceilings and surfaces.</span></div>
+          <div><b>CAPTURE</b><span>A microphone records the direct sound and returning echoes.</span></div>
+          <div><b>DECODE</b><span>Signal processing reads the acoustic signature.</span></div>
+          <div><b>REVEAL</b><span>Explore the estimated geometry as an interactive spatial model.</span></div>
+        </div></article>
+        <article className="glass-card card-problem"><span className="card-index">03 / WHY IT MATTERS</span><h3>Beyond the visible.</h3><p>Traditional mapping often depends on cameras or visual sensors. Acoustic mapping offers another way to investigate a space, including environments where visibility is limited.</p></article>
+        <article className="glass-card card-flow"><span className="card-index">04 / FROM ECHO TO DATA</span><h3>Hear it. Map it.</h3><div className="flow-chain"><b>CHIRP</b><i>↓</i><b>REFLECTIONS</b><i>↓</i><b>RIR</b><i>↓</i><b>SPECTROGRAM</b><i>↓</i><b>SPATIAL MODEL</b></div></article>
+        <article className="glass-card card-cta"><span className="card-index">05 / ENTER THE SYSTEM</span><h3>Step inside BatSight.</h3><p>Record, inspect acoustic signals, manage sessions and explore the available 2D and 3D room views.</p><Link to="/workspace">ENTER WORKSPACE <ChevronRight size={16}/></Link></article>
+      </div>
+      <div className="explore-bottom"><span>FROM SOUND TO SPACE</span><Link to="/workspace">OPEN THE WORKSPACE <ChevronRight size={16}/></Link></div>
+    </section>
+    <section className="about-section" id="about-section"><div><span className="section-kicker">ABOUT BATSIGHT</span><h2>THE SHAPE<br/>OF SOUND.</h2></div><p>BatSight is an acoustic spatial-mapping research interface for capturing recordings, inspecting acoustic signals, organising measurements and exploring spatial models.</p><Link to="/workspace">OPEN BATSIGHT <ChevronRight size={15}/></Link></section>
+    <footer className="landing-footer"><span>BATSIGHT</span><span>ACOUSTIC SPATIAL MAPPING</span><button onClick={()=>window.scrollTo({top:0,behavior:'smooth'})}>BACK TO TOP ↑</button></footer>
+  </main>
 }
 
 function PageIntro({eyebrow,title,description,action}:{eyebrow:string;title:string;description:string;action?:ReactNode}){return <div className="page-intro"><div><div className="eyebrow">{eyebrow}</div><h1>{title}</h1><p>{description}</p></div>{action&&<div className="intro-action">{action}</div>}</div>}
@@ -114,7 +183,7 @@ function Studio({projects,selectedProject,refresh,setToast}:{projects:Project[];
  return <><PageIntro eyebrow="AUDIO CAPTURE & TEST SIGNALS" title="Sound Studio" description="Generate generic test signals, capture a single-device recording, and import WAV data into the local workspace."/>
   <div className="panel device-panel"><SectionTitle title="Audio devices" sub="Select your speaker and microphone for playback and measurement."/><div className="form-grid two"><Field label="Microphone (input)"><select value={selectedInput} onChange={e=>setSelectedInput(e.target.value)}><option value="">Default microphone</option>{audioInputs.map(d=><option key={d.deviceId} value={d.deviceId}>{d.label||`Microphone ${d.deviceId.slice(0,8)}`}</option>)}</select></Field><Field label="Speaker (output)"><select value={selectedOutput} onChange={e=>setSelectedOutput(e.target.value)}><option value="">Default speaker</option>{audioOutputs.map(d=><option key={d.deviceId} value={d.deviceId}>{d.label||`Speaker ${d.deviceId.slice(0,8)}`}</option>)}</select></Field></div>{!devicesLoaded&&<p className="form-note">Loading devices…</p>}{devicesLoaded&&audioInputs.length===0&&<p className="form-note">No microphone devices found. Grant microphone permission to see device labels.</p>}</div>
 
-  <div className="studio-grid"><div className="panel studio-generator"><SectionTitle title="Signal generator" sub="Select frequency sweep and duration to generate test signals."/><div className="form-grid two"><Field label="Waveform"><select value={waveform} onChange={e=>setWaveform(e.target.value)}><option value="linear_sweep">Linear frequency sweep</option><option value="sine">Sine wave</option></select></Field><Field label="Sample rate"><select value={rate} onChange={e=>setRate(Number(e.target.value))}><option value={16000}>16 kHz</option><option value={44100}>44.1 kHz</option><option value={48000}>48 kHz</option><option value={96000}>96 kHz</option></select></Field><Field label="Duration (s)"><input type="number" min="0.001" max="10" step="0.001" value={duration} onChange={e=>setDuration(Number(e.target.value))}/></Field><Field label="Amplitude"><input type="number" min="0.01" max="1" step="0.01" value={amplitude} onChange={e=>setAmplitude(Number(e.target.value))}/></Field><Field label={waveform==='sine'?'Frequency (Hz)':'Start frequency (Hz)'}><input type="number" min="1" value={start} onChange={e=>setStart(Number(e.target.value))}/></Field>{waveform==='linear_sweep'&&<Field label="End frequency (Hz)"><input type="number" min="1" value={end} onChange={e=>setEnd(Number(e.target.value))}/></Field>}</div>{error&&<ErrorBox text={error}/>}<div className="generator-bottom"><button className="button primary" disabled={busy} onClick={generate}><Signal size={16}/>{busy?'Generating…':'Generate waveform'}</button>{generated&&<button className={`button ${measureState==='idle'||measureState==='done'?'accent':'neutral'} measure-btn`} disabled={measureState==='playing'||measureState==='recording'} onClick={measure} title="Measure room: plays chirp + records simultaneously"><Mic size={15}/> {measureState==='done'?'Measured ✓':measureState==='recording'?'Recording…':measureState==='playing'?'Playing…':'Measure room'}</button>}{generated&&measureProgress>0&&measureProgress<1&&<div className="measure-progress"><div className="measure-bar" style={{width:`${Math.round(measureProgress*100)}%`}}/><span>{Math.round(measureProgress*100)}%</span></div>}{generated&&<div className="generated-player transport"><audio ref={player} src={generated.url} onTimeUpdate={e=>setPlayTime(e.currentTarget.currentTime)} onLoadedMetadata={e=>{e.currentTarget.volume=volume}} onPlay={()=>{if(recPlayer.current)recPlayer.current.pause()}}/><div className="transport-controls"><button className="icon-button" aria-label="Play" onClick={()=>player.current?.play()}><Play size={15} fill="currentColor"/></button><button className="icon-button" aria-label="Pause" onClick={()=>player.current?.pause()}><span className="pause-glyph">Ⅱ</span></button><button className="icon-button" aria-label="Stop" onClick={stopPlayback}><Square size={13} fill="currentColor"/></button><span className="transport-time">{formatDuration(playTime)} / {formatDuration(generated.duration)}</span><input aria-label="Playback progress" className="progress" type="range" min="0" max={generated.duration} step="0.01" value={Math.min(playTime,generated.duration)} onChange={e=>{if(player.current)player.current.currentTime=Number(e.target.value)}}/><Volume2 size={14}/><input aria-label="Playback volume" type="range" min="0" max="1" step="0.01" value={volume} onChange={e=>{const v=Number(e.target.value);setVolume(v);if(player.current)player.current.volume=v}} className="volume-slider"/></div><a className="button secondary small" href={generated.url} download={generated.name}>Download WAV</a><span>{rate.toLocaleString()} Hz · {waveform==='sine'?`${start} Hz`:`${start}–${end} Hz`} · generic waveform</span></div>}</div>{generated&&<div className="generated-plot"><span>Generated waveform preview · time (s) · normalized amplitude</span><ResponsiveContainer width="100%" height={105}><LineChart data={generatedPoints}><CartesianGrid strokeDasharray="3 3" stroke="#27333b"/><XAxis dataKey="time" type="number" domain={['dataMin','dataMax']} tickFormatter={v=>`${Number(v).toFixed(3)}`} stroke="#70808b"/><YAxis stroke="#70808b" width={38}/><Line dataKey="amplitude" stroke="#48d6df" dot={false} isAnimationActive={false}/></LineChart></ResponsiveContainer></div>}</div>
+  <div className="studio-grid"><div className="panel studio-generator"><SectionTitle title="Signal generator" sub="Select frequency sweep and duration to generate test signals."/><div className="form-grid two"><Field label="Waveform"><select value={waveform} onChange={e=>setWaveform(e.target.value)}><option value="linear_sweep">Linear frequency sweep</option><option value="sine">Sine wave</option></select></Field><Field label="Sample rate"><select value={rate} onChange={e=>setRate(Number(e.target.value))}><option value={16000}>16 kHz</option><option value={44100}>44.1 kHz</option><option value={48000}>48 kHz</option><option value={96000}>96 kHz</option></select></Field><Field label="Duration (s)"><input type="number" min="0.001" max="10" step="0.001" value={duration} onChange={e=>setDuration(Number(e.target.value))}/></Field><Field label="Amplitude"><input type="number" min="0.01" max="1" step="0.01" value={amplitude} onChange={e=>setAmplitude(Number(e.target.value))}/></Field><Field label={waveform==='sine'?'Frequency (Hz)':'Start frequency (Hz)'}><input type="number" min="1" value={start} onChange={e=>setStart(Number(e.target.value))}/></Field>{waveform==='linear_sweep'&&<Field label="End frequency (Hz)"><input type="number" min="1" value={end} onChange={e=>setEnd(Number(e.target.value))}/></Field>}</div>{error&&<ErrorBox text={error}/>}<div className="generator-bottom"><button className="button primary" disabled={busy} onClick={generate}><Signal size={16}/>{busy?'Generating…':'Generate waveform'}</button>{generated&&<button className={`button ${measureState==='idle'||measureState==='done'?'accent':'neutral'} measure-btn`} disabled={measureState==='playing'||measureState==='recording'} onClick={measure} title="Measure room: plays chirp + records simultaneously"><Mic size={15}/> {measureState==='done'?'Measured ✓':measureState==='recording'?'Recording…':measureState==='playing'?'Playing…':'Measure room'}</button>}{generated&&measureProgress>0&&measureProgress<1&&<div className="measure-progress"><div className="measure-bar" style={{width:`${Math.round(measureProgress*100)}%`}}/><span>{Math.round(measureProgress*100)}%</span></div>}{generated&&<div className="generated-player transport"><audio ref={player} src={generated.url} onTimeUpdate={e=>setPlayTime(e.currentTarget.currentTime)} onLoadedMetadata={e=>{e.currentTarget.volume=volume}} onPlay={()=>{if(recPlayer.current)recPlayer.current.pause()}}/><div className="transport-controls"><button className="icon-button" aria-label="Play" onClick={()=>player.current?.play()}><Play size={15} fill="currentColor"/></button><button className="icon-button" aria-label="Pause" onClick={()=>player.current?.pause()}><span className="pause-glyph">Ⅱ</span></button><button className="icon-button" aria-label="Stop" onClick={stopPlayback}><Square size={13} fill="currentColor"/></button><span className="transport-time">{formatDuration(playTime)} / {formatDuration(generated.duration)}</span><input aria-label="Playback progress" className="progress" type="range" min="0" max={generated.duration} step="0.01" value={Math.min(playTime,generated.duration)} onChange={e=>{if(player.current)player.current.currentTime=Number(e.target.value)}}/><Volume2 size={14}/><input aria-label="Playback volume" type="range" min="0" max="1" step="0.01" value={volume} onChange={e=>{const v=Number(e.target.value);setVolume(v);if(player.current)player.current.volume=v}} className="volume-slider"/></div><a className="button secondary small" href={generated.url} download={generated.name}>Download WAV</a><span>{rate.toLocaleString()} Hz · {waveform==='sine'?`${start} Hz`:`${start}–${end} Hz`} · generic waveform</span></div>}</div>{generated&&<div className="generated-plot"><span>Generated waveform preview · time (s) · normalized amplitude</span><ResponsiveContainer width="100%" height={105}><LineChart data={generatedPoints}><CartesianGrid strokeDasharray="3 3" stroke="rgba(12, 28, 30, 0.16)"/><XAxis dataKey="time" type="number" domain={['dataMin','dataMax']} tickFormatter={v=>`${Number(v).toFixed(3)}`} stroke="#263b3c"/><YAxis stroke="#263b3c" width={38}/><Line dataKey="amplitude" stroke="#0d4a4d" dot={false} isAnimationActive={false}/></LineChart></ResponsiveContainer></div>}</div>
   <div className="panel recording-panel"><SectionTitle title="Microphone capture" sub="Browser MediaRecorder output is preserved in its original format."/><div className="record-visual"><div className={`record-orb ${recState==='recording'?'recording':''}`}><Mic size={25}/></div><div><b>{recState==='recording'?'Recording in progress':recState==='stopped'?'Capture ready':'Ready to record'}</b><span>{formatDuration(recSeconds)} elapsed</span></div></div><div className="button-row">{recState!=='recording'?<button className="button primary" onClick={startRecording}><span className="rec-indicator"/> Start recording</button>:<button className="button danger" onClick={stopRecording}><Square size={14} fill="currentColor"/> Stop</button>}{recBlob&&<a className="button secondary" href={recUrl} download={`batsight-recording.${recMime.includes('ogg')?'ogg':'webm'}`}>Download original</a>}</div>{recBlob&&<div className="record-details"><div><span>Original format</span><b>{recMime||'browser-defined'}</b></div><div><span>Size</span><b>{formatBytes(recBlob.size)}</b></div><audio ref={recPlayer} controls src={recUrl} onPlay={()=>{if(player.current)player.current.pause()}}/><div className="conversion"><p>Backend upload accepts WAV only. Export a decoded WAV copy explicitly; the browser may decode to a different sample rate. The original remains available.</p><button className="button secondary small" onClick={exportRecordingWav} disabled={converting}>{converting?'Converting…':'Export decoded WAV copy'}</button></div></div>}{recordingError&&<ErrorBox text={recordingError}/>}</div></div>
   <div className="panel upload-panel"><SectionTitle title="Import WAV recording" sub="Original bytes are stored unchanged by the Phase 6A recording endpoint."/><label className="drop-zone"><input type="file" accept=".wav,audio/wav" onChange={pick}/><Upload size={20}/><b>{file?file.name:'Choose a WAV file'}</b><span>{file?`${formatBytes(file.size)} · WAV is required; no resampling is performed.`:'PCM or floating-point WAV · sample rate and channel count remain as recorded'}</span></label>{file&&<div className="upload-fields"><Field label="Recording name"><input value={uploadName} onChange={e=>setUploadName(e.target.value)}/></Field><Field label="Project"><select value={uploadProject??''} onChange={e=>setUploadProject(e.target.value?Number(e.target.value):undefined)}><option value="">No project</option>{projects.map(p=><option key={p.id} value={p.id}>{p.name}</option>)}</select></Field><button className="button primary" onClick={upload} disabled={uploading}>{uploading?'Uploading…':'Upload WAV'}</button></div>}{uploaded&&<div className="upload-success"><b>Stored · {uploaded.name}</b><span>{uploaded.original_filename} · {uploaded.sample_rate_hz.toLocaleString()} Hz · {uploaded.channel_count} channel(s) · {formatDuration(uploaded.duration_s)} · {formatBytes(uploaded.file_size_bytes)}</span></div>}</div>
  </>
@@ -134,10 +203,10 @@ function Analysis({setToast}:{setToast:(t:Toast)=>void}){
  return <><PageIntro eyebrow="SIGNAL INSPECTION" title="Signal Analysis" description="Inspect stored WAV channels and run BatSight’s existing matched-filter and two-stage peak detector."/><div className="notice warning"><span className="notice-mark"><Activity size={15}/></span><div><b>Candidate peaks are not classified</b><span>Correlation peaks are reported as unclassified. This workspace does not infer direct-path versus echo identity, device synchronization, or room geometry.</span></div></div>
   {error&&<ErrorBox text={error}/>}{recordings?.length===0&&<div className="panel"><Empty icon={Database} title="No stored recordings" body="Import a WAV recording in Sound Studio to begin signal analysis." action={<Link to="/studio" className="button primary small">Open Sound Studio</Link>}/></div>}
   {recordings&&recordings.length>0&&<><div className="panel analysis-controls"><div className="analysis-selects"><Field label="Recording"><select value={selected??''} onChange={e=>setSelected(Number(e.target.value))}>{recordings.map(r=><option key={r.id} value={r.id}>{r.name} · {r.original_filename}</option>)}</select></Field>{item&&item.channel_count>1&&<Field label="Channel"><select value={channel} onChange={e=>setChannel(Number(e.target.value))}>{Array.from({length:item.channel_count},(_,i)=><option value={i} key={i}>Channel {i+1}</option>)}</select></Field>}</div>{item&&<div className="recording-metadata"><span><b>{item.sample_rate_hz.toLocaleString()}</b> Hz</span><span><b>{item.channel_count}</b> channels</span><span><b>{formatDuration(item.duration_s)}</b> duration</span><span><b>{formatBytes(item.file_size_bytes)}</b> file</span></div>}</div>
-   {item&&<div className="analysis-grid"><div className="panel chart-panel full"><SectionTitle title="Waveform" sub={`Browser-decoded preview at ${waveform?.rate.toLocaleString()??'—'} Hz; API metadata below reports original file rate · amplitude in sample units`}/><audio controls src={api.audioUrl(item.id)} className="wide-audio"/>{waveform?<ResponsiveContainer width="100%" height={220}><AreaChart data={waveform.points}><defs><linearGradient id="waveFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#45d8e7" stopOpacity={0.32}/><stop offset="95%" stopColor="#45d8e7" stopOpacity={0.01}/></linearGradient></defs><CartesianGrid strokeDasharray="3 3" stroke="#27333b"/><XAxis dataKey="time" type="number" domain={['dataMin','dataMax']} tickFormatter={x=>`${Number(x).toFixed(2)}s`} stroke="#70808b"/><YAxis stroke="#70808b" width={48}/><Tooltip contentStyle={{background:'#171e23',border:'1px solid #303d46',borderRadius:8}} labelFormatter={v=>`${Number(v).toFixed(4)} s`}/><Area dataKey="amplitude" stroke="#49d6e4" fill="url(#waveFill)" dot={false} isAnimationActive={false}/></AreaChart></ResponsiveContainer>:<Loading/>}</div>
+   {item&&<div className="analysis-grid"><div className="panel chart-panel full"><SectionTitle title="Waveform" sub={`Browser-decoded preview at ${waveform?.rate.toLocaleString()??'—'} Hz; API metadata below reports original file rate · amplitude in sample units`}/><audio controls src={api.audioUrl(item.id)} className="wide-audio"/>{waveform?<ResponsiveContainer width="100%" height={220}><AreaChart data={waveform.points}><defs><linearGradient id="waveFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#0e5a5e" stopOpacity={0.35}/><stop offset="95%" stopColor="#0e5a5e" stopOpacity={0.03}/></linearGradient></defs><CartesianGrid strokeDasharray="3 3" stroke="rgba(12, 28, 30, 0.16)"/><XAxis dataKey="time" type="number" domain={['dataMin','dataMax']} tickFormatter={x=>`${Number(x).toFixed(2)}s`} stroke="#263b3c"/><YAxis stroke="#263b3c" width={48}/><Tooltip contentStyle={{background:'#e5eff1',border:'1px solid rgba(12, 28, 30, 0.25)',borderRadius:8,color:'#0a1213'}} labelFormatter={v=>`${Number(v).toFixed(4)} s`}/><Area dataKey="amplitude" stroke="#0d4a4d" fill="url(#waveFill)" dot={false} isAnimationActive={false}/></AreaChart></ResponsiveContainer>:<Loading/>}</div>
    <div className="panel analysis-settings"><SectionTitle title="Analysis settings" sub="Reference generated by the existing backend signal module"/><div className="form-grid two"><Field label="Reference waveform"><select value={config.waveform} onChange={e=>setConfig({...config,waveform:e.target.value})}><option value="linear_sweep">Linear sweep</option><option value="sine">Sine</option></select></Field><Field label="Reference duration (s)"><input type="number" step="0.001" min="0.001" value={config.reference_duration_s} onChange={e=>setConfig({...config,reference_duration_s:Number(e.target.value)})}/></Field><Field label="Start frequency (Hz)"><input type="number" value={config.start_frequency_hz} onChange={e=>setConfig({...config,start_frequency_hz:Number(e.target.value)})}/></Field>{config.waveform==='linear_sweep'&&<Field label="End frequency (Hz)"><input type="number" value={config.end_frequency_hz} onChange={e=>setConfig({...config,end_frequency_hz:Number(e.target.value)})}/></Field>}<Field label="Window length (samples)"><input type="number" min="1" value={config.window_length_samples} onChange={e=>setConfig({...config,window_length_samples:Number(e.target.value)})}/></Field><Field label="thr1 local"><input type="number" min="0" max="1" step="0.05" value={config.thr1} onChange={e=>setConfig({...config,thr1:Number(e.target.value)})}/></Field><Field label="thr2 global"><input type="number" min="0" max="1" step="0.05" value={config.thr2} onChange={e=>setConfig({...config,thr2:Number(e.target.value)})}/></Field><Field label="Speed of sound (m/s)"><input type="number" step="0.5" min="250" max="450" value={config.speed_of_sound_m_s??343} onChange={e=>setConfig({...config,speed_of_sound_m_s:Number(e.target.value)})}/></Field><Field label="Correlation normalization"><select value={config.normalization} onChange={e=>setConfig({...config,normalization:e.target.value})}><option value="reference_energy">Reference energy</option><option value="none">None (raw correlation)</option></select></Field></div><button className="button primary full-button" onClick={run} disabled={busy}>{busy?'Analyzing…':'Run matched filter + peak detection'}</button><p className="form-note">Positive correlation lag indicates a delayed reference. This is ordinary correlation, not GCC-PHAT.</p></div>
    <div className="panel chart-panel"><SectionTitle title="Spectrogram" sub="Magnitude · dB re 1 sample amplitude"/>{analysis?<Spectrogram result={analysis.spectrogram}/>:<Empty icon={Activity} title="Run analysis to view spectrogram" body="Spectrogram uses the backend’s Hann-window SciPy transform."/>}</div>
-   <div className="panel chart-panel"><SectionTitle title="Matched-filter output" sub="Reference-energy normalized unless configured otherwise"/>{analysis?<><ResponsiveContainer width="100%" height={230}><LineChart data={analysis.matched_filter.curve}><CartesianGrid strokeDasharray="3 3" stroke="#27333b"/><XAxis dataKey="time_s" type="number" domain={['dataMin','dataMax']} tickFormatter={v=>`${Number(v).toFixed(3)}s`} stroke="#70808b"/><YAxis stroke="#70808b" width={50}/><Tooltip contentStyle={{background:'#171e23',border:'1px solid #303d46'}} labelFormatter={v=>`${Number(v).toFixed(5)} s`}/><Line dataKey="value" stroke="#8c9aff" strokeWidth={1.5} dot={false} isAnimationActive={false}/>{analysis.matched_filter.peaks.map((p:any)=><ReferenceLine key={p.correlation_sample_index} x={p.lag_seconds} stroke="#ffbd68" strokeDasharray="3 3"/>)}</LineChart></ResponsiveContainer><div className="analysis-result-note">{analysis.matched_filter.peaks.length} candidate peaks · thr1 {analysis.matched_filter.peak_detection.thr1}, thr2 {analysis.matched_filter.peak_detection.thr2} · all unclassified · {analysis.matched_filter.peak_detection.threshold_rejection_reasons_available?'rejection details available':'rejection reasons unavailable'}</div></>:<Empty icon={Activity} title="No matched-filter result yet" body="Choose parameters and run analysis."/>}</div>
+   <div className="panel chart-panel"><SectionTitle title="Matched-filter output" sub="Reference-energy normalized unless configured otherwise"/>{analysis?<><ResponsiveContainer width="100%" height={230}><LineChart data={analysis.matched_filter.curve}><CartesianGrid strokeDasharray="3 3" stroke="rgba(12, 28, 30, 0.16)"/><XAxis dataKey="time_s" type="number" domain={['dataMin','dataMax']} tickFormatter={v=>`${Number(v).toFixed(3)}s`} stroke="#263b3c"/><YAxis stroke="#263b3c" width={50}/><Tooltip contentStyle={{background:'#e5eff1',border:'1px solid rgba(12, 28, 30, 0.25)',color:'#0a1213'}} labelFormatter={v=>`${Number(v).toFixed(5)} s`}/><Line dataKey="value" stroke="#183d6e" strokeWidth={1.5} dot={false} isAnimationActive={false}/>{analysis.matched_filter.peaks.map((p:any)=><ReferenceLine key={p.correlation_sample_index} x={p.lag_seconds} stroke="#7a4b06" strokeDasharray="3 3"/>)}</LineChart></ResponsiveContainer><div className="analysis-result-note">{analysis.matched_filter.peaks.length} candidate peaks · thr1 {analysis.matched_filter.peak_detection.thr1}, thr2 {analysis.matched_filter.peak_detection.thr2} · all unclassified · {analysis.matched_filter.peak_detection.threshold_rejection_reasons_available?'rejection details available':'rejection reasons unavailable'}</div></>:<Empty icon={Activity} title="No matched-filter result yet" body="Choose parameters and run analysis."/>}</div>
    {analysis&&(()=>{
      const speed = config.speed_of_sound_m_s || 343.0;
      const directPeak = analysis.matched_filter.peaks.find((p:any)=>p.lag_seconds>=0) ?? analysis.matched_filter.peaks[0];
@@ -158,11 +227,11 @@ function Analysis({setToast}:{setToast:(t:Toast)=>void}){
          <SectionTitle title="Detected echo reflections" sub={`Estimated distances at ${speed} m/s using round-trip delay d = c · Δt / 2 relative to direct arrival (${directLag.toFixed(4)} s)`} action={<button className="button primary small" disabled={savingMeasurement} onClick={()=>saveMeasurement(echoPeaks,directLag,speed)}><Database size={14}/> {savingMeasurement?'Saving…':'Save measurement'}</button>}/>
          <ResponsiveContainer width="100%" height={180}>
            <BarChart data={echoPeaks}>
-             <CartesianGrid strokeDasharray="3 3" stroke="#27333b"/>
-             <XAxis dataKey="name" stroke="#70808b"/>
-             <YAxis stroke="#70808b"/>
-             <Tooltip contentStyle={{background:'#171e23',border:'1px solid #303d46',borderRadius:8}} formatter={(val:any)=>[val,'Amplitude']}/>
-             <Bar dataKey="amplitude" fill="#48d6df" radius={[4,4,0,0]}/>
+             <CartesianGrid strokeDasharray="3 3" stroke="rgba(12, 28, 30, 0.16)"/>
+             <XAxis dataKey="name" stroke="#263b3c"/>
+             <YAxis stroke="#263b3c"/>
+             <Tooltip contentStyle={{background:'#e5eff1',border:'1px solid rgba(12, 28, 30, 0.25)',borderRadius:8,color:'#0a1213'}} formatter={(val:any)=>[val,'Amplitude']}/>
+             <Bar dataKey="amplitude" fill="#0d4a4d" radius={[4,4,0,0]}/>
            </BarChart>
          </ResponsiveContainer>
          <div className="analysis-result-note" style={{display:'flex',gap:16,flexWrap:'wrap'}}>
@@ -212,15 +281,15 @@ function Recordings({selectedProject,refresh,setToast}:{selectedProject?:number;
   <div className="panel" style={{marginBottom:24,padding:20}}><SectionTitle title="Scanned Room Models" sub={`${rooms?.length??0} room(s) stored in local database`}/>
   {rooms===null?<Loading/>:rooms.length===0?<Empty icon={Cuboid} title="No scanned rooms yet" body="Use the guided Room Scanner to map your room walls and obstacles." action={<Link className="button primary small" to="/scanner">Open Room Scanner</Link>}/>:
   <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill, minmax(320px, 1fr))',gap:16,marginTop:14}}>
-    {rooms.map(r=><div key={r.id} style={{background:'#11181d',border:'1px solid #222f38',borderRadius:10,padding:18,display:'flex',flexDirection:'column',gap:12,boxShadow:'0 4px 16px rgba(0,0,0,0.3)'}}>
-      <div style={{display:'flex',justifyContent:'space-between',alignItems:'flex-start'}}><div><div style={{fontSize:11,color:'#00f5d4',fontWeight:700,letterSpacing:0.5}}>ROOM #{r.id}</div><h3 style={{margin:'3px 0 0 0',fontSize:18,color:'#f0f6fc'}}>{r.name}</h3></div><button className="icon-button danger subtle" onClick={()=>removeRoom(r)} title="Delete room"><Trash2 size={16}/></button></div>
-      <div style={{display:'grid',gridTemplateColumns:'1fr 1fr 1fr',gap:8,background:'#0a0f12',padding:10,borderRadius:6,border:'1px solid #1a252c'}}>
-        <div><div style={{fontSize:10,color:'#70808b'}}>DIMENSIONS</div><b style={{fontSize:12,color:'#00f5d4'}}>{r.length_x_m} × {r.width_y_m}m</b></div>
-        <div><div style={{fontSize:10,color:'#70808b'}}>FLOOR AREA</div><b style={{fontSize:12,color:'#f0f6fc'}}>{r.floor_area_m2} m²</b></div>
-        <div><div style={{fontSize:10,color:'#70808b'}}>VOLUME</div><b style={{fontSize:12,color:'#f0f6fc'}}>{r.room_volume_m3} m³</b></div>
+    {rooms.map(r=><div key={r.id} className="saved-room-card">
+      <div style={{display:'flex',justifyContent:'space-between',alignItems:'flex-start'}}><div><div className="saved-room-id">ROOM #{r.id}</div><h3 className="saved-room-title">{r.name}</h3></div><button className="icon-button danger subtle" onClick={()=>removeRoom(r)} title="Delete room"><Trash2 size={16}/></button></div>
+      <div className="saved-room-stats">
+        <div><div className="saved-room-stat-label">DIMENSIONS</div><b className="saved-room-stat-value accent">{r.length_x_m} × {r.width_y_m}m</b></div>
+        <div><div className="saved-room-stat-label">FLOOR AREA</div><b className="saved-room-stat-value">{r.floor_area_m2} m²</b></div>
+        <div><div className="saved-room-stat-label">VOLUME</div><b className="saved-room-stat-value">{r.room_volume_m3} m³</b></div>
       </div>
       {r.obstacles&&r.obstacles.length>0&&<div style={{display:'flex',gap:6,flexWrap:'wrap'}}>
-        {r.obstacles.map((obs,idx)=><span key={idx} style={{background:'#1f1606',border:'1px solid #4a340b',color:'#f59e0b',padding:'2px 8px',borderRadius:4,fontSize:10,fontWeight:600}}>📦 {obs.label||`Obstacle (${obs.direction})`}: {Number(obs.distance_m).toFixed(2)}m</span>)}
+        {r.obstacles.map((obs,idx)=><span key={idx} className="obstacle-badge">📦 {obs.label||`Obstacle (${obs.direction})`}: {Number(obs.distance_m).toFixed(2)}m</span>)}
       </div>}
       <div style={{display:'flex',gap:8,marginTop:'auto',paddingTop:6}}>
         <Link to="/workspace/3d" className="button primary small" style={{flex:1,display:'flex',alignItems:'center',justifyContent:'center',gap:6,fontSize:12}}><Cuboid size={13}/> View 3D & 2D</Link>
